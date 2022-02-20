@@ -4,6 +4,12 @@ import './index.css';
 import App from './App';
 import { ChakraProvider } from '@chakra-ui/react'
 import { extendTheme } from "@chakra-ui/react"
+import { createBreakpoints } from '@chakra-ui/theme-tools'
+
+const breakpoints = createBreakpoints({
+  base: '800px',
+ 
+})
 
 const theme = extendTheme({
   colors: {
@@ -16,6 +22,7 @@ const theme = extendTheme({
       dark:"white"
     }
   },
+  breakpoints
 })
 
 

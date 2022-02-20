@@ -1,6 +1,15 @@
 import React,{useEffect} from 'react'
-import { Text,IconButton,useColorMode,useColorModeValue,Grid } from '@chakra-ui/react'
-import { MoonIcon,SunIcon } from '@chakra-ui/icons'
+import { Text,IconButton,useColorMode,useColorModeValue,Grid, 
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    MenuItemOption,
+    MenuGroup,
+    MenuOptionGroup,
+    MenuDivider, } 
+    from '@chakra-ui/react'
+import { MoonIcon,SunIcon,HamburgerIcon } from '@chakra-ui/icons'
 
 function Navigation() {
 
@@ -8,7 +17,6 @@ function Navigation() {
     const navBg = useColorModeValue("white","gray.800")
     const navText = useColorModeValue("text.light","text.dark")
     const navIconColor = useColorModeValue("gray.400","gray.600")
-
 
     useEffect(() => {
         if(colorMode === "light"){
@@ -19,11 +27,8 @@ function Navigation() {
         }
     });
     
-    
-
     function changeTheme(){
         toggleColorMode()
-        // document.getElementById("fp-nav ").style.backgroundColor = "white"
         if(colorMode === "light"){
             document.body.classList.add("dark-theme")
         }
@@ -32,11 +37,10 @@ function Navigation() {
         }
     }
     
-    // const navIcon = 
-    // const clasNav = "w-full h-14 fixed z-10 text-[#26282b] grid grid-cols-3 bg-[" + navBg + "]"
+   
 
     return (
-    <Grid templateColumns='1fr 1fr 1fr' background={navBg} position="fixed" zIndex={10} width={"100%"} paddingBottom={"10px"}>
+    <Grid templateColumns={{base:'1fr 1fr 1fr',sm:'1fr 1fr'}} background={navBg} position="fixed" zIndex={10} width={"100%"} paddingBottom={"10px"}>
         <div className='flex items-center col-start-1 ml-5'>
             <p className='font-bold text-xl cursor-pointer' onClick={() =>{window.location.href = "#first"}}><Text color={navText} fontSize='2xl' className='mt-5'>My Portfolio</Text></p>
         </div>
@@ -63,6 +67,41 @@ function Navigation() {
             icon={colorMode === 'light' ? <MoonIcon/> : <SunIcon/> }
             onClick={() => {changeTheme()}}
             />
+
+            <Menu>
+                <MenuButton
+                    display={{base:'none',sm:''}}
+                    marginLeft={"10px"}
+                    px={4}
+                    py={3}
+                    transition='all 0.2s'
+                    borderRadius='md'
+                    borderWidth='1px'
+                    backgroundColor={'blue.300'}
+                    _hover={{ bg: 'blue.200' }}
+                    _expanded={{ bg: 'blue.200' }}
+                    _focus={{ boxShadow: 'outline' }}
+                >
+                <HamburgerIcon/>
+                </MenuButton>
+                <MenuList>
+                    <MenuItem onClick={() =>{window.location.href = "#first"}}>Home</MenuItem>
+                    <MenuItem onClick={() =>{window.location.href = "#second"}}>test1</MenuItem>
+                    <MenuItem onClick={() =>{window.location.href = "#third"}}>test</MenuItem>
+                </MenuList>
+            </Menu>
+
+            {/* <IconButton
+           display={{base:'none',sm:''}}
+            marginRight={"10px"}
+            bg={navIconColor}
+            aria-label='Call Segun'
+            size='lg'
+            icon={<HamburgerIcon/> }
+            onClick={() => {changeTheme()}}
+            /> */}
+
+           
         </div>
         
     </Grid>
