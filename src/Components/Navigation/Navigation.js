@@ -1,19 +1,20 @@
 import React,{useEffect} from 'react'
-import { Text,IconButton,useColorMode,useColorModeValue,Grid, 
+import { Text,useColorMode,useColorModeValue,Grid, 
     Menu,
     MenuButton,
     MenuList,
     MenuItem,
     } 
     from '@chakra-ui/react'
-import { MoonIcon,SunIcon,HamburgerIcon } from '@chakra-ui/icons'
+import {HamburgerIcon } from '@chakra-ui/icons'
+import ToggleThemeButton from './ToggleThemeButton'
 
 function Navigation() {
 
-    const {colorMode,toggleColorMode} = useColorMode()
+    const {colorMode} = useColorMode()
     const navBg = useColorModeValue("white","gray.900")
     const navText = useColorModeValue("text.light","text.dark")
-    const navIconColor = useColorModeValue("blue.400","blue.600")
+    
 
     useEffect(() => {
         if(colorMode === "light"){
@@ -24,15 +25,7 @@ function Navigation() {
         }
     });
     
-    function changeTheme(){
-        toggleColorMode()
-        if(colorMode === "light"){
-            document.body.classList.add("dark-theme")
-        }
-        else{
-            document.body.classList.remove("dark-theme")
-        }
-    }
+    
     
    
 
@@ -57,13 +50,8 @@ function Navigation() {
         </ul>
 
         <div className='flex justify-end items-center mr-5 mt-5'>
-            <IconButton
-            bg={navIconColor}
-            aria-label='Call Segun'
-            size='lg'
-            icon={colorMode === 'light' ? <MoonIcon color={"white"}/> : <SunIcon/> }
-            onClick={() => {changeTheme()}}
-            />
+          
+            <ToggleThemeButton/>
 
             <Menu>
                 <MenuButton
@@ -87,17 +75,6 @@ function Navigation() {
                     <MenuItem onClick={() =>{window.location.href = "#third"}}>test</MenuItem>
                 </MenuList>
             </Menu>
-
-            {/* <IconButton
-           display={{base:'none',sm:''}}
-            marginRight={"10px"}
-            bg={navIconColor}
-            aria-label='Call Segun'
-            size='lg'
-            icon={<HamburgerIcon/> }
-            onClick={() => {changeTheme()}}
-            /> */}
-
            
         </div>
         
