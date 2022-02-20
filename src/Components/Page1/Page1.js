@@ -1,11 +1,10 @@
 import React, { Suspense } from 'react'
 import { Canvas} from '@react-three/fiber'
 import {OrbitControls} from '@react-three/drei'
-import { Heading,Text ,Center,useColorMode,useColorModeValue} from '@chakra-ui/react'
+import { Heading,Text ,Center,useColorModeValue} from '@chakra-ui/react'
 import Oldcomputer from './Oldcomputer'
 function Page1() {
   const themeText = useColorModeValue("text.light","text.dark")
-
 
   return (
     <div className='h-screen grid grid-rows-page1'>

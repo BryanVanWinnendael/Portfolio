@@ -6,7 +6,7 @@ source: https://sketchfab.com/3d-models/old-pc-f0dca426be374fba96af9675799f9855
 title: Old PC
 */
 
-import React, { useRef,useEffect,useState } from 'react'
+import React, { useRef,useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { useFrame} from "@react-three/fiber";
 

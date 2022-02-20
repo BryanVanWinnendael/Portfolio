@@ -20,3 +20,9 @@
   background-color: var(--full-color);
   background: var(--full-color) !important;
 }
+
+@media (max-width: 800px) {
+  #nav {
+    display: none;
+  }
+}

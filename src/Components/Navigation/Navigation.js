@@ -41,7 +41,7 @@ function Navigation() {
             <p className='font-bold text-xl cursor-pointer' onClick={() =>{window.location.href = "#first"}}><Text color={navText} fontSize='2xl' className='mt-5'>My Portfolio</Text></p>
         </div>
         
-        <ul className='flex justify-center items-center h-full col-start-2 text-l'>
+        <ul className='flex justify-center items-center h-full col-start-2 text-l' id="nav">
             <li className='mr-12'>
                 <a href='#first' className='font-bold '> <Text color={navText} fontSize='xl' className='mt-5'>Home</Text></a>
             </li>
@@ -54,6 +54,7 @@ function Navigation() {
                 <a href='#third' className='font-bold'><Text color={navText} fontSize='xl' className='mt-5'>Home</Text></a>
             </li>
         </ul>
+
         <div className='flex justify-end items-center mr-5 mt-5'>
             <IconButton
             bg={navIconColor}
