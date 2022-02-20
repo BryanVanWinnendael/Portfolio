@@ -18,6 +18,9 @@ const ThemeToggleButton = () => {
       >
         <IconButton
             size='lg'
+            _hover={{
+                background: useColorModeValue("purple.300", "blue.400")
+            }}
             bg={navIconColor}
             aria-label="Toggle theme"
             icon={useColorModeValue(<MoonIcon color={"white"}/>, <SunIcon />)}
@@ -29,11 +32,3 @@ const ThemeToggleButton = () => {
 }
 
 export default ThemeToggleButton
-
-  {/* <IconButton
-            bg={navIconColor}
-            aria-label='Call Segun'
-            size='lg'
-            icon={colorMode === 'light' ? <MoonIcon color={"white"}/> : <SunIcon/> }
-            onClick={() => {changeTheme()}}
-            /> */}
