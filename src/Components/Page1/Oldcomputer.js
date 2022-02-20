@@ -21,6 +21,8 @@ export default function Model({ ...props }) {
     })
   }
 
+
+
   async function spin(clock){
     for (let i = 0; i < 10; ++i) {
       const elapsedTime = clock.getElapsedTime()

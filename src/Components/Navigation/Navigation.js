@@ -11,9 +11,9 @@ import { MoonIcon,SunIcon,HamburgerIcon } from '@chakra-ui/icons'
 function Navigation() {
 
     const {colorMode,toggleColorMode} = useColorMode()
-    const navBg = useColorModeValue("white","gray.800")
+    const navBg = useColorModeValue("white","gray.900")
     const navText = useColorModeValue("text.light","text.dark")
-    const navIconColor = useColorModeValue("gray.400","gray.600")
+    const navIconColor = useColorModeValue("blue.400","blue.600")
 
     useEffect(() => {
         if(colorMode === "light"){
@@ -61,7 +61,7 @@ function Navigation() {
             bg={navIconColor}
             aria-label='Call Segun'
             size='lg'
-            icon={colorMode === 'light' ? <MoonIcon/> : <SunIcon/> }
+            icon={colorMode === 'light' ? <MoonIcon color={"white"}/> : <SunIcon/> }
             onClick={() => {changeTheme()}}
             />
 
@@ -74,12 +74,12 @@ function Navigation() {
                     transition='all 0.2s'
                     borderRadius='md'
                     borderWidth='1px'
-                    backgroundColor={'blue.300'}
-                    _hover={{ bg: 'blue.200' }}
-                    _expanded={{ bg: 'blue.200' }}
+                    backgroundColor={'gray.600'}
+                    _hover={{ bg: 'gray.500' }}
+                    _expanded={{ bg: 'gray.500' }}
                     _focus={{ boxShadow: 'outline' }}
                 >
-                <HamburgerIcon/>
+                <HamburgerIcon color={"white"}/>
                 </MenuButton>
                 <MenuList>
                     <MenuItem onClick={() =>{window.location.href = "#home"}}>Home</MenuItem>
