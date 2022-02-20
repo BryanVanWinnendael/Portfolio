@@ -13,7 +13,7 @@ const Fullpage = () => (
     scrollingSpeed = {1000} 
     navigation = {true}
     showActiveTooltip = {true}
-    anchors = {['first','second','third']}
+    anchors = {['home','skills','third']}
     // navigationTooltips =  {['Home','second','third']}
     // navigationPosition = {'left'}
   

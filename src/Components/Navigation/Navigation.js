@@ -4,10 +4,7 @@ import { Text,IconButton,useColorMode,useColorModeValue,Grid,
     MenuButton,
     MenuList,
     MenuItem,
-    MenuItemOption,
-    MenuGroup,
-    MenuOptionGroup,
-    MenuDivider, } 
+    } 
     from '@chakra-ui/react'
 import { MoonIcon,SunIcon,HamburgerIcon } from '@chakra-ui/icons'
 
@@ -40,18 +37,18 @@ function Navigation() {
    
 
     return (
-    <Grid templateColumns={{base:'1fr 1fr 1fr',sm:'1fr 1fr'}} background={navBg} position="fixed" zIndex={10} width={"100%"} paddingBottom={"10px"}>
+    <Grid templateColumns={{base:'1fr 1fr 1fr',sm:'1fr 1fr'}} position={"sticky"} background={navBg} zIndex={10} width={"100%"} paddingBottom={"10px"}>
         <div className='flex items-center col-start-1 ml-5'>
-            <p className='font-bold text-xl cursor-pointer' onClick={() =>{window.location.href = "#first"}}><Text color={navText} fontSize='2xl' className='mt-5'>My Portfolio</Text></p>
+            <p className='font-bold text-xl cursor-pointer' onClick={() =>{window.location.href = "#home"}}><Text color={navText} fontSize='2xl' className='mt-5'>My Portfolio</Text></p>
         </div>
         
         <ul className='flex justify-center items-center h-full col-start-2 text-l' id="nav">
             <li className='mr-12'>
-                <a href='#first' className='font-bold '> <Text color={navText} fontSize='xl' className='mt-5'>Home</Text></a>
+                <a href='#home' className='font-bold '> <Text color={navText} fontSize='xl' className='mt-5'>Home</Text></a>
             </li>
 
             <li className='mr-12'>
-                <a href='#second' className='font-bold'><Text color={navText} fontSize='xl' className='mt-5'>Home</Text></a>
+                <a href='#skills' className='font-bold'><Text color={navText} fontSize='xl' className='mt-5'>Skills</Text></a>
             </li>
 
             <li className='mr-12'>
@@ -85,8 +82,8 @@ function Navigation() {
                 <HamburgerIcon/>
                 </MenuButton>
                 <MenuList>
-                    <MenuItem onClick={() =>{window.location.href = "#first"}}>Home</MenuItem>
-                    <MenuItem onClick={() =>{window.location.href = "#second"}}>test1</MenuItem>
+                    <MenuItem onClick={() =>{window.location.href = "#home"}}>Home</MenuItem>
+                    <MenuItem onClick={() =>{window.location.href = "#skills"}}>Skills</MenuItem>
                     <MenuItem onClick={() =>{window.location.href = "#third"}}>test</MenuItem>
                 </MenuList>
             </Menu>

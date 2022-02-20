@@ -7,7 +7,7 @@ function Page1() {
   const themeText = useColorModeValue("text.light","text.dark")
 
   return (
-    <div className='h-screen grid grid-rows-page1'>
+    <div className='h-screen grid grid-rows-page1 bg-transparent'>
       <Canvas className='pt-5'>
         <OrbitControls enableZoom={false} />
         <ambientLight intensity={0.5} />
