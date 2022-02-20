@@ -1,23 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+import Page1 from './Components/Page1/Page1';
+import Page2 from './Components/Page2/page2';
+import Page3 from './Components/Page3/page3';
+import ReactFullpage from '@fullpage/react-fullpage';
+import Navigation from './Components/Navigation/Navigation';
+
+
+
+const Fullpage = () => (
+  <ReactFullpage
+    //fullpage options
+    scrollingSpeed = {1000} 
+    navigation = {true}
+    showActiveTooltip = {true}
+    anchors = {['first','second','third']}
+    // navigationTooltips =  {['Home','second','third']}
+    // navigationPosition = {'left'}
+  
+
+    render={({ state, fullpageApi }) => {
+      return (
+        <ReactFullpage.Wrapper>
+          <div className="section">
+            <Page1/>
+          </div>
+          <div className="section">
+            <Page2/>
+          </div>
+          <div className="section">
+            <Page3/>
+          </div>
+        </ReactFullpage.Wrapper>
+      );
+    }}
+  />
+);
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation/>
+      <div className='pt-14'>
+        <Fullpage />
+      </div>
+
     </div>
   );
 }
