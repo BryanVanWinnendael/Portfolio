@@ -2,14 +2,15 @@ import React, { Suspense } from 'react'
 import { Canvas} from '@react-three/fiber'
 import {OrbitControls,ContactShadows} from '@react-three/drei'
 import { Heading,Text ,Center,useColorModeValue} from '@chakra-ui/react'
-import Oldcomputer from './Oldcomputer'
+import Oldcomputer from '../3D/Oldcomputer'
 import Typewriter from "typewriter-effect";
+
 function Page1() {
   const themeText = useColorModeValue("text.light","text.dark")
 
   return (
     <div className='h-screen grid grid-rows-page1 bg-transparent'>
-      <Canvas className='pt-6'>
+      <Canvas >
         <OrbitControls enableZoom={false} />
         <ambientLight intensity={0.3} />
         <Suspense fallback={null}>

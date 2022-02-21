@@ -1,11 +1,11 @@
 import './App.css';
-import Page1 from './Components/Page1/Page1';
-import Page2 from './Components/Page2/page2';
-import Page3 from './Components/Page3/page3';
+import Page1 from './Components/Pages/Page1';
+import Page2 from './Components/Pages/Page2';
+import Page3 from './Components/Pages/Page3';
 import ReactFullpage from '@fullpage/react-fullpage';
 import Navigation from './Components/Navigation/Navigation';
-
-
+import { BrowserRouter as Router,Route,Switch } from 'react-router-dom';
+import Clne from './Components/Projects/Clne';
 
 const Fullpage = () => (
   <ReactFullpage
@@ -20,20 +20,20 @@ const Fullpage = () => (
 
     render={({ state, fullpageApi }) => {
       return (
-        <ReactFullpage.Wrapper>
-          <div className="section">
-            <Page1/>
-          </div>
-          <div className="section">
-            <Page2/>
-          </div>
-          <div className="section">
-            <Page3/>
-          </div>
-          <div className="section">
-            <Page3/>
-          </div>
-        </ReactFullpage.Wrapper>
+      <ReactFullpage.Wrapper>
+        <div className="section">
+          <Page1/>
+        </div>
+        <div className="section">
+          <Page2/>
+        </div>
+        <div className="section">
+          <Page3/>
+        </div>
+        <div className="section">
+          <Page3/>
+        </div>
+      </ReactFullpage.Wrapper>
       );
     }}
   />
@@ -42,11 +42,24 @@ const Fullpage = () => (
 function App() {
   return (
     <div className="App">
-      <Navigation/>
-      <div>
-        <Fullpage />
-      </div>
+      <Router>
+        <Switch>
 
+          <Route exact path="/">
+            <Navigation/>
+            <div className='pt-20'>
+              <Fullpage />
+            </div>
+          </Route>
+
+          <Route path="/clne">
+            <div className='pt-20'>
+              <Clne/>
+            </div>
+          </Route>
+
+        </Switch>
+      </Router>
     </div>
   );
 }

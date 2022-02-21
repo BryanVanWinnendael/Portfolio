@@ -8,14 +8,22 @@ title: Room 04 /  MagicaVoxel
 
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { useFrame} from "@react-three/fiber";
 
 export default function Model({ ...props }) {
   const group = useRef()
   const { nodes, materials } = useGLTF('/room.gltf')
+
+  useFrame(({ clock }) => {
+    const elapsedTime = clock.getElapsedTime()
+    group.current.rotation.y = elapsedTime / 6
+    group.current.rotation.y = elapsedTime / 6
+  })
+
   return (
     <group ref={group} {...props} dispose={null} scale={0.2}>
-      <group rotation={[-Math.PI / 3, 0, 10.5]} scale={0.2}>
-        <group position={[-20, -30, -6]} scale={1}>
+      <group rotation={[-Math.PI / 2, 0, 10]} scale={0.1}>
+        <group position={[-50, -60, -10]} scale={2}>
           <mesh geometry={nodes.mesh_0.geometry} material={materials['Scene_-_Root']} />
         </group>
       </group>

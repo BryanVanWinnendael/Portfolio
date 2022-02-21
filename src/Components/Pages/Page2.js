@@ -2,11 +2,9 @@ import React from 'react'
 import { Grid,Center,Heading,Box } from '@chakra-ui/react'
 
 
-
-function page2() {
+function Page2() {
   return (
     <div className='h-screen mt-2'>
-    
           <Center marginBottom={"20px"}>
             <Heading>Skills</Heading>
           </Center>
@@ -45,4 +43,4 @@ function page2() {
   )
 }
 
-export default page2
+export default Page2
