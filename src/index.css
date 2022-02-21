@@ -15,3 +15,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+:root {
+  --full-color: #26282b;
+}
+
+.dark-theme {
+  --full-color: white;
+}

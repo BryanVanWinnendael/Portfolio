@@ -9,7 +9,7 @@ function Page1() {
 
   return (
     <div className='h-screen grid grid-rows-page1 bg-transparent'>
-      <Canvas className='pt-5'>
+      <Canvas className='pt-6'>
         <OrbitControls enableZoom={false} />
         <ambientLight intensity={0.3} />
         <Suspense fallback={null}>

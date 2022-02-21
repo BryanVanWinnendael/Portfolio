@@ -13,7 +13,7 @@ const Fullpage = () => (
     scrollingSpeed = {1000} 
     navigation = {true}
     showActiveTooltip = {true}
-    anchors = {['home','skills','third']}
+    anchors = {['home','competenties','projects','contact']}
     // navigationTooltips =  {['Home','second','third']}
     // navigationPosition = {'left'}
   
@@ -30,6 +30,9 @@ const Fullpage = () => (
           <div className="section">
             <Page3/>
           </div>
+          <div className="section">
+            <Page3/>
+          </div>
         </ReactFullpage.Wrapper>
       );
     }}
@@ -40,7 +43,7 @@ function App() {
   return (
     <div className="App">
       <Navigation/>
-      <div className='pt-14'>
+      <div>
         <Fullpage />
       </div>
 
