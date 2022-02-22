@@ -13,7 +13,7 @@ import { Heading,Text ,Center,Grid,
 } from '@chakra-ui/react'
 import {ExternalLinkIcon  } from '@chakra-ui/icons'
 
-function ChatApp() {
+function ToDo() {
   return (
     <div className='m-5 mb-12'>
       <Breadcrumb>
@@ -22,19 +22,21 @@ function ChatApp() {
         </BreadcrumbItem>
 
         <BreadcrumbItem>
-          <Text fontSize="xl" fontWeight="bold">ChatApp</Text>
+          <Text fontSize="xl" fontWeight="bold">ToDo</Text>
         </BreadcrumbItem>
       </Breadcrumb>
 
       <Center marginTop="1em">
-        <Heading as='h2' size='2xl'>ChatApp</Heading>
+        <Heading as='h2' size='2xl'>ToDo</Heading>
       </Center>
 
-      <Heading as='h3' size='lg' marginTop="1em">What is ChatApp?</Heading>
-      <Text marginTop="1em">ChatApp is social media platform just like Messenger.</Text>
+      <Heading as='h3' size='lg' marginTop="1em">What is ToDo?</Heading>
+      <Text marginTop="1em">ToDo lets you create tasks that you need to complete and keep track of them when these are needed to be done.</Text>
+      <Text>With ToDo you can also give these tasks a cattegory to filter them quickly.</Text>
+
 
       <Heading as='h3' size='lg' marginTop="1em">Tools used</Heading>
-      <Text marginTop="1em">ChatApp is made with 
+      <Text marginTop="1em">ToDo is made with 
         <Code children='React' colorScheme='blue' marginLeft="5px" marginRight="5px"/>
         and uses 
         <Code children='Firebase' colorScheme='red' marginLeft="5px" marginRight="5px"/>
@@ -63,7 +65,7 @@ function ChatApp() {
 
      
       <Box boxSize='sm' marginTop="2em" width="100%">
-        <Image src='/images/chatProject.jpg' alt='Dan Abramov' />
+        <Image src='/images/todoProject.jpg' alt='Dan Abramov' maxHeight="400px"/>
       </Box>
 
  
@@ -72,4 +74,4 @@ function ChatApp() {
   )
 }
 
-export default ChatApp
+export default ToDo

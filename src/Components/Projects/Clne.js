@@ -16,18 +16,17 @@ import {ExternalLinkIcon  } from '@chakra-ui/icons'
 function Clne() {
   return (
     <div className='m-5 mb-12'>
-      <Grid templateColumns='repeat(3, 1fr)' alignItems="center">
-        <Breadcrumb>
-          <BreadcrumbItem>
-            <BreadcrumbLink onClick={() => {window.location.href = "/#projects" }}><Text color={useColorModeValue("purple.600", "blue.400")}>Projects</Text></BreadcrumbLink>
-          </BreadcrumbItem>
+      
+      <Breadcrumb>
+        <BreadcrumbItem>
+          <BreadcrumbLink onClick={() => {window.location.href = "/#projects" }}><Text color={useColorModeValue("purple.600", "blue.400")}>Projects</Text></BreadcrumbLink>
+        </BreadcrumbItem>
 
-          <BreadcrumbItem>
-            <Text fontSize="xl" fontWeight="bold">Clne</Text>
-          </BreadcrumbItem>
-        </Breadcrumb>
-      </Grid>
-      <Center>
+        <BreadcrumbItem>
+          <Text fontSize="xl" fontWeight="bold">Clne</Text>
+        </BreadcrumbItem>
+      </Breadcrumb>
+      <Center marginTop="1em">
         <Heading as='h2' size='2xl'>Clne</Heading>
       </Center>
 

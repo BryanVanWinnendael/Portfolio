@@ -34,7 +34,7 @@ function Navigation() {
     return (
     <Grid templateColumns={{base:'1fr 1fr 0.5fr',sm:'1fr 1fr'}}  position={"sticky"} alignItems={'center'} css={{ backdropFilter: 'blur(10px)' }} background={navBg} zIndex={10} width={"100%"} paddingBottom={"10px"}>
         <div className='flex items-center col-start-1 mr-5 ml-5'>
-            <Text color={navTitle} fontSize='2xl' className='mt-5 font-bold text-xl cursor-pointer' >My Portfolio</Text>
+            <Text onClick={() => {window.location.href = "#home"}} color={navTitle} fontSize='2xl' className='mt-5 font-bold text-xl cursor-pointer'>My Portfolio</Text>
         </div>
         
         <ul className='flex justify-center items-center h-full col-start-2' id="nav">
