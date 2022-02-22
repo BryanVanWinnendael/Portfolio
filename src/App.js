@@ -44,13 +44,13 @@ function App() {
 
           <Route exact path="/">
             <Navigation/>
-            <div className='pt-20'>
+            <div className='pt-15'>
               <Fullpage />
             </div>
           </Route>
 
           <Route path="/clne">
-            <div className='pt-20'>
+            <div className='pt-15 w-full'>
               <Clne/>
             </div>
           </Route>

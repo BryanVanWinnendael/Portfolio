@@ -8,6 +8,7 @@
 
 .App {
   max-width: 700px;
+  width: 100%;
 }
 
 #fp-nav ul li .fp-tooltip {
