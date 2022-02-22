@@ -15,7 +15,7 @@ import {ExternalLinkIcon  } from '@chakra-ui/icons'
 
 function Clne() {
   return (
-    <div className='w-full m-5'>
+    <div className='m-5'>
       <Grid templateColumns='repeat(3, 1fr)' alignItems="center">
         <Breadcrumb>
           <BreadcrumbItem>
@@ -63,8 +63,8 @@ function Clne() {
       </Stack>
 
      
-      <Box boxSize='sm' marginTop="2em">
-        <Image src='/images/clneProject.png' alt='Dan Abramov' maxWidth="100%"/>
+      <Box boxSize='sm' marginTop="2em" width="100%">
+        <Image src='/images/clneProject.png' alt='Dan Abramov' />
       </Box>
 
  
