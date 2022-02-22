@@ -6,6 +6,7 @@ import ReactFullpage from '@fullpage/react-fullpage';
 import Navigation from './Components/Navigation/Navigation';
 import { BrowserRouter as Router,Route,Switch } from 'react-router-dom';
 import Clne from './Components/Projects/Clne';
+import ChatApp from './Components/Projects/ChatApp';
 
 const Fullpage = () => (
   <ReactFullpage
@@ -52,6 +53,12 @@ function App() {
           <Route path="/clne">
             <div className='pt-15 w-full'>
               <Clne/>
+            </div>
+          </Route>
+
+          <Route path="/chatapp">
+            <div className='pt-15 w-full'>
+              <ChatApp/>
             </div>
           </Route>
 

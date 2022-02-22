@@ -13,7 +13,7 @@ import { Heading,Text ,Center,Grid,
 } from '@chakra-ui/react'
 import {ExternalLinkIcon  } from '@chakra-ui/icons'
 
-function Clne() {
+function ChatApp() {
   return (
     <div className='m-5 mb-12'>
       <Grid templateColumns='repeat(3, 1fr)' alignItems="center">
@@ -23,19 +23,19 @@ function Clne() {
           </BreadcrumbItem>
 
           <BreadcrumbItem>
-            <Text fontSize="xl" fontWeight="bold">Clne</Text>
+            <Text fontSize="xl" fontWeight="bold">ChatApp</Text>
           </BreadcrumbItem>
         </Breadcrumb>
       </Grid>
       <Center>
-        <Heading as='h2' size='2xl'>Clne</Heading>
+        <Heading as='h2' size='2xl'>ChatApp</Heading>
       </Center>
 
-      <Heading as='h3' size='lg' marginTop="1em">What is Clne?</Heading>
-      <Text marginTop="1em">Clne is social media platform just like Instagram.</Text>
+      <Heading as='h3' size='lg' marginTop="1em">What is ChatApp?</Heading>
+      <Text marginTop="1em">ChatApp is social media platform just like Messenger.</Text>
 
       <Heading as='h3' size='lg' marginTop="1em">Tools used</Heading>
-      <Text marginTop="1em">Clne is made with 
+      <Text marginTop="1em">ChatApp is made with 
         <Code children='React' colorScheme='blue' marginLeft="5px" marginRight="5px"/>
         and uses 
         <Code children='Firebase' colorScheme='red' marginLeft="5px" marginRight="5px"/>
@@ -64,7 +64,7 @@ function Clne() {
 
      
       <Box boxSize='sm' marginTop="2em" width="100%">
-        <Image src='/images/clneProject.png' alt='Dan Abramov' />
+        <Image src='/images/chatProject.jpg' alt='Dan Abramov' />
       </Box>
 
  
@@ -73,4 +73,4 @@ function Clne() {
   )
 }
 
-export default Clne
+export default ChatApp
