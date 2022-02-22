@@ -14,9 +14,6 @@ const Fullpage = () => (
     navigation = {true}
     showActiveTooltip = {true}
     anchors = {['home','competenties','projects','contact']}
-    // navigationTooltips =  {['Home','second','third']}
-    // navigationPosition = {'left'}
-  
 
     render={({ state, fullpageApi }) => {
       return (
