@@ -12,20 +12,27 @@ import { Heading,Text ,Center,
   useColorModeValue
 } from '@chakra-ui/react'
 import {ExternalLinkIcon  } from '@chakra-ui/icons'
+import ToggleThemeButton from '../Navigation/ToggleThemeButton'
 
 function Clne() {
   return (
     <div className='m-5 mb-12'>
       
-      <Breadcrumb>
-        <BreadcrumbItem>
-          <BreadcrumbLink onClick={() => {window.location.href = "/#projects" }}><Text color={useColorModeValue("purple.600", "blue.400")}>Projects</Text></BreadcrumbLink>
-        </BreadcrumbItem>
+      <div className='w-full flex'>
+        <Breadcrumb width="full" display="flex" alignItems="center">
+          <BreadcrumbItem >
+            <BreadcrumbLink onClick={() => {window.location.href = "/#projects" }}><Text color={useColorModeValue("purple.600", "blue.400")}>Projects</Text></BreadcrumbLink>
+          </BreadcrumbItem>
 
-        <BreadcrumbItem>
-          <Text fontSize="xl" fontWeight="bold">Clne</Text>
-        </BreadcrumbItem>
-      </Breadcrumb>
+          <BreadcrumbItem>
+            <Text fontSize="xl" fontWeight="bold">Clne</Text>
+          </BreadcrumbItem>
+        </Breadcrumb>
+        <div className='flex justify-end items-center w-full'>
+          <ToggleThemeButton/>
+        </div>
+      </div>
+
       <Center marginTop="1em">
         <Heading as='h2' size='2xl'>Clne</Heading>
       </Center>
@@ -55,8 +62,8 @@ function Clne() {
           <Badge variant='outline' colorScheme='red' maxWidth="fit-content">
             Code
           </Badge>
-          <Link href='https://clne.netlify.app/' isExternal>
-            https://clne.netlify.app/<ExternalLinkIcon mx='2px' />
+          <Link href='https://github.com/BryanVanWinnendael/Clone' isExternal>
+            https://github.com/BryanVanWinnendael/Clone<ExternalLinkIcon mx='2px' />
           </Link>
         </Stack>
       </Stack>

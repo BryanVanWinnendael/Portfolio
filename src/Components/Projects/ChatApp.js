@@ -12,19 +12,26 @@ import { Heading,Text ,Center,
   useColorModeValue
 } from '@chakra-ui/react'
 import {ExternalLinkIcon  } from '@chakra-ui/icons'
+import ToggleThemeButton from '../Navigation/ToggleThemeButton'
 
 function ChatApp() {
   return (
     <div className='m-5 mb-12'>
-      <Breadcrumb>
-        <BreadcrumbItem>
-          <BreadcrumbLink onClick={() => {window.location.href = "/#projects" }}><Text color={useColorModeValue("purple.600", "blue.400")}>Projects</Text></BreadcrumbLink>
-        </BreadcrumbItem>
 
-        <BreadcrumbItem>
-          <Text fontSize="xl" fontWeight="bold">ChatApp</Text>
-        </BreadcrumbItem>
-      </Breadcrumb>
+       <div className='w-full flex'>
+        <Breadcrumb width="full" display="flex" alignItems="center">
+          <BreadcrumbItem >
+            <BreadcrumbLink onClick={() => {window.location.href = "/#projects" }}><Text color={useColorModeValue("purple.600", "blue.400")}>Projects</Text></BreadcrumbLink>
+          </BreadcrumbItem>
+
+          <BreadcrumbItem>
+            <Text fontSize="xl" fontWeight="bold">ChatApp</Text>
+          </BreadcrumbItem>
+        </Breadcrumb>
+        <div className='flex justify-end items-center w-full'>
+          <ToggleThemeButton/>
+        </div>
+      </div>
 
       <Center marginTop="1em">
         <Heading as='h2' size='2xl'>ChatApp</Heading>

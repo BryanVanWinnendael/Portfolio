@@ -1,10 +1,9 @@
 import React from 'react'
-import { Heading ,Center,Grid, GridItem, useColorModeValue,Tooltip  } from '@chakra-ui/react'
-// import {OrbitControls,ContactShadows} from '@react-three/drei'
-// import Room from '../3D/Room'
-// import { Canvas} from '@react-three/fiber'
+import { Heading ,Center,Grid, GridItem, useColorModeValue,Tooltip,useMediaQuery   } from '@chakra-ui/react'
+
 
 function Page3() {
+  const [isLargerThan690] = useMediaQuery('(max-width: 690px)')
 
   return (
     <div className='h-screen'>
@@ -12,22 +11,11 @@ function Page3() {
         <Heading>Projects</Heading>
       </Center>
       <div className='overflow-x-hidden overflow-y-visible m-5'>
-        {/* <div className='absolute w-full h-full'>
-          <Canvas>
-            <OrbitControls enableZoom={false} />
-            <ambientLight intensity={0.3} />
-            <Suspense fallback={null}>
-              <Room/>
-              <ContactShadows rotation-x={Math.PI / 2} position={[0, -0.8, 0]} opacity={0.5} width={20} height={10} blur={1} far={0.8} />
-            </Suspense>
-          </Canvas>
-        </div> */}
-
         <Grid
           marginTop='25px'
           h='400px'
           templateRows='repeat(3, 1fr)'
-          templateColumns='repeat(5, 1fr)'
+          templateColumns= {isLargerThan690? 'repeat(3, 1fr)':'repeat(5, 1fr)'}
           gap={4}
           position='relative'
         > 
