@@ -12,7 +12,6 @@ function Skills() {
           p = {2}
           bg={colorHeader}
           borderRadius="lg"
-          boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)'
           >
             <Heading >Competenties</Heading>
           </Box>

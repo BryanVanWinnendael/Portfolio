@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       <Navigation setActive={setActive}/>
       <div>
-        <div className='h-80 mt-16'>
+        <div className='mt-24 h-72'>
           <Canvas >
             <OrbitControls enableZoom={false} />
             <ambientLight intensity={0.3} />

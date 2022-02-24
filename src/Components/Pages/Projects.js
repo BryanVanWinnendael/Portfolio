@@ -30,7 +30,6 @@ function Projects() {
         <Box 
         m="1.25rem"
         p = {2}
-        boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)'
         bg={colorHeader}
         borderRadius="lg"
         >
