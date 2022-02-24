@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading,Text ,Center,useColorModeValue} from '@chakra-ui/react'
+import { Heading,Text ,useColorModeValue} from '@chakra-ui/react'
 import Typewriter from "typewriter-effect";
 
 function Home() {

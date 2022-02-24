@@ -9,7 +9,6 @@ import { Heading,Text ,Center,
   
 } from '@chakra-ui/react'
 import {ExternalLinkIcon  } from '@chakra-ui/icons'
-import ToggleThemeButton from '../Navigation/ToggleThemeButton'
 
 function Clne() {
   return (

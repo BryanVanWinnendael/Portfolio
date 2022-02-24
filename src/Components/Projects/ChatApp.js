@@ -1,18 +1,14 @@
 import React from 'react'
 import { Heading,Text ,Center,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
   Image ,
   Badge,
   Stack,
   Link,
   Code,
   Box,
-  useColorModeValue
+  
 } from '@chakra-ui/react'
 import {ExternalLinkIcon  } from '@chakra-ui/icons'
-import ToggleThemeButton from '../Navigation/ToggleThemeButton'
 
 function ChatApp() {
   return (
