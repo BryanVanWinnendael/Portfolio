@@ -18,21 +18,6 @@ function ChatApp() {
   return (
     <div className='m-5 mb-12'>
 
-       <div className='w-full flex'>
-        <Breadcrumb width="full" display="flex" alignItems="center">
-          <BreadcrumbItem >
-            <BreadcrumbLink onClick={() => {window.location.href = "/#projects" }}><Text color={useColorModeValue("purple.600", "blue.400")}>Projects</Text></BreadcrumbLink>
-          </BreadcrumbItem>
-
-          <BreadcrumbItem>
-            <Text fontSize="xl" fontWeight="bold">ChatApp</Text>
-          </BreadcrumbItem>
-        </Breadcrumb>
-        <div className='flex justify-end items-center w-full'>
-          <ToggleThemeButton/>
-        </div>
-      </div>
-
       <Center marginTop="1em">
         <Heading as='h2' size='2xl'>ChatApp</Heading>
       </Center>
@@ -53,8 +38,8 @@ function ChatApp() {
           <Badge variant='outline' colorScheme='green' maxWidth="fit-content">
             Website
           </Badge>
-          <Link href='https://clne.netlify.app/' isExternal>
-            https://clne.netlify.app/<ExternalLinkIcon mx='2px' />
+          <Link href='https://chatapponline.netlify.app/' isExternal>
+            https://chatapponline.netlify.app/<ExternalLinkIcon mx='2px' />
           </Link>
         </Stack>
         
@@ -62,8 +47,8 @@ function ChatApp() {
           <Badge variant='outline' colorScheme='red' maxWidth="fit-content">
             Code
           </Badge>
-          <Link href='https://clne.netlify.app/' isExternal>
-            https://clne.netlify.app/<ExternalLinkIcon mx='2px' />
+          <Link href='https://github.com/BryanVanWinnendael/ChatApp' isExternal>
+            https://github.com/BryanVanWinnendael/ChatApp<ExternalLinkIcon mx='2px' />
           </Link>
         </Stack>
       </Stack>

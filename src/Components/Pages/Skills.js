@@ -1,13 +1,21 @@
 import React from 'react'
-import { Grid,Center,Heading,Box } from '@chakra-ui/react'
+import { Grid,Center,Heading,Box,useColorModeValue } from '@chakra-ui/react'
 
 
-function Page2() {
+function Skills() {
+  const colorHeader = useColorModeValue('#ffffff40', '#20202380')
+
   return (
-    <div className='h-screen mt-2'>
-          <Center marginBottom={"20px"}>
-            <Heading>Skills</Heading>
-          </Center>
+    <div className='h-screen'>
+          <Box 
+          m="1.25rem"
+          p = {2}
+          bg={colorHeader}
+          borderRadius="lg"
+          boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)'
+          >
+            <Heading >Competenties</Heading>
+          </Box>
 
           <Center>
             <Grid templateColumns='1fr 1fr 1fr' gap={6}>
@@ -43,4 +51,4 @@ function Page2() {
   )
 }
 
-export default Page2
+export default Skills

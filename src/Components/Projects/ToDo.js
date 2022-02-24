@@ -18,21 +18,6 @@ function ToDo() {
   return (
     <div className='m-5 mb-12'>
       
-      <div className='w-full flex'>
-        <Breadcrumb width="full" display="flex" alignItems="center">
-          <BreadcrumbItem >
-            <BreadcrumbLink onClick={() => {window.location.href = "/#projects" }}><Text color={useColorModeValue("purple.600", "blue.400")}>Projects</Text></BreadcrumbLink>
-          </BreadcrumbItem>
-
-          <BreadcrumbItem>
-            <Text fontSize="xl" fontWeight="bold">ToDo</Text>
-          </BreadcrumbItem>
-        </Breadcrumb>
-        <div className='flex justify-end items-center w-full'>
-          <ToggleThemeButton/>
-        </div>
-      </div>
-
       <Center marginTop="1em">
         <Heading as='h2' size='2xl'>ToDo</Heading>
       </Center>
@@ -68,6 +53,7 @@ function ToDo() {
             https://github.com/BryanVanWinnendael/ToDo.<ExternalLinkIcon mx='2px' />
           </Link>
         </Stack>
+        
       </Stack>
 
      
