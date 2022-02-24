@@ -5,22 +5,20 @@ import { Heading,Text ,Center,
   Stack,
   Link,
   Code,
-  Box,
+  Box,  
 } from '@chakra-ui/react'
 import {ExternalLinkIcon  } from '@chakra-ui/icons'
 
 function ToDo() {
   return (
     <div className='m-5 mb-12'>
-      
       <Center marginTop="1em">
-        <Heading as='h2' size='2xl'>ToDo</Heading>
+        <Heading as='h2' size='2xl'>ToDo.</Heading>
       </Center>
 
       <Heading as='h3' size='lg' marginTop="1em">What is ToDo?</Heading>
       <Text marginTop="1em">ToDo lets you create tasks that you need to complete and keep track of them when these are needed to be done.</Text>
       <Text>With ToDo you can also give these tasks a cattegory to filter them quickly.</Text>
-
 
       <Heading as='h3' size='lg' marginTop="1em">Tools used</Heading>
       <Text marginTop="1em">ToDo is made with 
@@ -30,9 +28,9 @@ function ToDo() {
         as a database.
       </Text>
 
-      <Stack direction='column' marginTop="1em">
+      <Stack direction='column' marginTop="1em" marginRight="50px">
         <Stack direction='row' alignItems="center">
-          <Badge variant='outline' colorScheme='green' maxWidth="fit-content">
+          <Badge variant='outline' colorScheme='green' maxWidth="fit-content" margin="0" padding="0">
             Website
           </Badge>
           <Link href='https://todopublic.netlify.app/' isExternal>
@@ -40,20 +38,19 @@ function ToDo() {
           </Link>
         </Stack>
         
-        <Stack direction='row' alignItems="center">
-          <Badge variant='outline' colorScheme='red' maxWidth="fit-content">
+        <Stack direction='row' alignItems="center" >
+          <Badge variant='outline' colorScheme='red' maxWidth="fit-content" marginRight="0" padding="0">
             Code
           </Badge>
-          <Link href='https://github.com/BryanVanWinnendael/ToDo.' isExternal>
-            https://github.com/BryanVanWinnendael/ToDo.<ExternalLinkIcon mx='2px' />
+          <Link href='https://github.com/BryanVanWinnendael/ToDo.' isExternal maxWidth="100%">
+            https://github.com/BryanVanWinnendael/ToDo<ExternalLinkIcon/>
           </Link>
         </Stack>
-        
       </Stack>
 
      
-      <Box boxSize='sm' marginTop="2em" width="100%">
-        <Image src='/images/todoProject.jpg' alt='Dan Abramov' maxHeight="400px"/>
+      <Box boxSize='sm' marginTop="2em" width="100%" marginBottom="200px">
+        <Image src='/images/todoProject.jpg' alt='Dan Abramov' maxHeight="500px"/>
       </Box>
 
  

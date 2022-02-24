@@ -8,7 +8,7 @@ import { Heading ,Box,Grid, GridItem,Tooltip,useMediaQuery,
 } from '@chakra-ui/react'
 import MakeProject from '../Projects/MakeProject'
 const NavProject = ({active,setActive}) => (
-  <Breadcrumb width="full" display="flex" alignItems="center" marginLeft="1.25rem">
+  <Breadcrumb width="full" display="flex" alignItems="center" marginLeft="1.25rem" width="fit-content">
     <BreadcrumbItem >
       <BreadcrumbLink onClick={() => {setActive() }}><Text color={useColorModeValue("purple.600", "blue.400")}>Projects</Text></BreadcrumbLink>
     </BreadcrumbItem>
@@ -19,15 +19,13 @@ const NavProject = ({active,setActive}) => (
   </Breadcrumb>
 )
 
-
-
 function Projects() {
   const [isLargerThan690] = useMediaQuery('(max-width: 690px)')
   const [active,setActive] = useState()
   const colorHeader = useColorModeValue('#ffffff40', '#20202380')
 
   return (
-    <div className='h-screen'>
+    <div>
       {!active && (
         <Box 
         m="1.25rem"
@@ -43,9 +41,8 @@ function Projects() {
       {active && (
        <NavProject active={active} setActive={setActive}/>
       )}
-
       
-      <div className='overflow-hidden m-5'>
+      <div className='m-5'>
         {active && (
           <MakeProject active={active}/>
         )}
@@ -75,8 +72,6 @@ function Projects() {
               <Text fontSize='lg' className='mt-5'>Check out more...</Text>
             </GridItem>
           </Tooltip>
-
-          
 
           {/* <Tooltip label="" aria-label='A tooltip'>
             <GridItem colSpan={2} bg={useColorModeValue('#ffffff40', '#20202380')}  cursor='pointer' css={{ backdropFilter: 'blur(10px)' }} />

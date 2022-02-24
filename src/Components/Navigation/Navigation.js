@@ -28,9 +28,7 @@ function Navigation(props) {
     });
 
     function handleChange(param){
-        console.log(param)
         props.setActive(param)
-        // setActive(param)
     }
     
     
@@ -38,7 +36,7 @@ function Navigation(props) {
    
 
     return (
-    <Grid templateColumns={{base:'1fr 1fr 0.5fr',sm:'1fr 1fr'}}  position={"fixed"} alignItems={'center'} css={{ backdropFilter: 'blur(10px)' }} background={navBg} zIndex={10} width={"100%"} paddingBottom={"10px"}>
+    <Grid templateColumns={{base:'1fr 1fr 0.5fr',sm:'1fr 1fr'}} maxWidth="700px" position={"fixed"} alignItems={'center'} css={{ backdropFilter: 'blur(10px)' }} background={navBg} zIndex={10} width={"100%"} paddingBottom={"10px"}>
         <div className='flex items-center col-start-1 mr-5 ml-5'>
             <Text onClick={() => {handleChange("home")}} color={navTitle} fontSize='2xl' className='mt-5 font-bold text-xl cursor-pointer'>My Portfolio</Text>
         </div>

@@ -7,7 +7,7 @@ function Home() {
 
   return (
     <div className='h-screen grid grid-rows-page1 bg-transparent'>
-        <div>
+        <div className='m-5'>
           <Heading color={themeText}>
             <Typewriter
             onInit={(typewriter)=> {

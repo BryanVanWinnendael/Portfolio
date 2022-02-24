@@ -5,15 +5,13 @@ import { Heading,Text ,Center,
   Stack,
   Link,
   Code,
-  Box,
-  
+  Box,  
 } from '@chakra-ui/react'
 import {ExternalLinkIcon  } from '@chakra-ui/icons'
 
 function ChatApp() {
   return (
     <div className='m-5 mb-12'>
-
       <Center marginTop="1em">
         <Heading as='h2' size='2xl'>ChatApp</Heading>
       </Center>
@@ -29,9 +27,9 @@ function ChatApp() {
         as a database.
       </Text>
 
-      <Stack direction='column' marginTop="1em">
+      <Stack direction='column' marginTop="1em" marginRight="50px">
         <Stack direction='row' alignItems="center">
-          <Badge variant='outline' colorScheme='green' maxWidth="fit-content">
+          <Badge variant='outline' colorScheme='green' maxWidth="fit-content" margin="0" padding="0">
             Website
           </Badge>
           <Link href='https://chatapponline.netlify.app/' isExternal>
@@ -39,12 +37,12 @@ function ChatApp() {
           </Link>
         </Stack>
         
-        <Stack direction='row' alignItems="center">
-          <Badge variant='outline' colorScheme='red' maxWidth="fit-content">
+        <Stack direction='row' alignItems="center" >
+          <Badge variant='outline' colorScheme='red' maxWidth="fit-content" marginRight="0" padding="0">
             Code
           </Badge>
-          <Link href='https://github.com/BryanVanWinnendael/ChatApp' isExternal>
-            https://github.com/BryanVanWinnendael/ChatApp<ExternalLinkIcon mx='2px' />
+          <Link href='https://github.com/BryanVanWinnendael/ChatApp' isExternal maxWidth="100%">
+            https://github.com/BryanVanWinnendael/ChatApp<ExternalLinkIcon/>
           </Link>
         </Stack>
       </Stack>

@@ -5,8 +5,7 @@ import { Heading,Text ,Center,
   Stack,
   Link,
   Code,
-  Box,
-  
+  Box,  
 } from '@chakra-ui/react'
 import {ExternalLinkIcon  } from '@chakra-ui/icons'
 
@@ -28,9 +27,9 @@ function Clne() {
         as a database.
       </Text>
 
-      <Stack direction='column' marginTop="1em">
+      <Stack direction='column' marginTop="1em" marginRight="50px">
         <Stack direction='row' alignItems="center">
-          <Badge variant='outline' colorScheme='green' maxWidth="fit-content">
+          <Badge variant='outline' colorScheme='green' maxWidth="fit-content" margin="0" padding="0">
             Website
           </Badge>
           <Link href='https://clne.netlify.app/' isExternal>
@@ -38,12 +37,12 @@ function Clne() {
           </Link>
         </Stack>
         
-        <Stack direction='row' alignItems="center">
-          <Badge variant='outline' colorScheme='red' maxWidth="fit-content" margin="0" padding="0">
+        <Stack direction='row' alignItems="center" >
+          <Badge variant='outline' colorScheme='red' maxWidth="fit-content" marginRight="0" padding="0">
             Code
           </Badge>
           <Link href='https://github.com/BryanVanWinnendael/Clone' isExternal maxWidth="100%">
-            https://github.com/BryanVanWinnendael/Clone<ExternalLinkIcon mx='2px' />
+            https://github.com/BryanVanWinnendael/Clone<ExternalLinkIcon/>
           </Link>
         </Stack>
       </Stack>
