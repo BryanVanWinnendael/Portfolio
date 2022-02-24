@@ -8,7 +8,7 @@ import { Heading ,Box,Grid, GridItem,Tooltip,useMediaQuery,
 } from '@chakra-ui/react'
 import MakeProject from '../Projects/MakeProject'
 const NavProject = ({active,setActive}) => (
-  <Breadcrumb width="full" display="flex" alignItems="center" marginLeft="1.25rem" width="fit-content">
+  <Breadcrumb display="flex" alignItems="center" marginLeft="1.25rem" width="fit-content">
     <BreadcrumbItem >
       <BreadcrumbLink onClick={() => {setActive() }}><Text color={useColorModeValue("purple.600", "blue.400")}>Projects</Text></BreadcrumbLink>
     </BreadcrumbItem>
