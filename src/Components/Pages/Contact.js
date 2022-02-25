@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useRef,useEffect} from 'react'
 import {Heading,Box,useColorModeValue,
   FormControl,
   FormLabel,
@@ -9,6 +9,7 @@ import {Heading,Box,useColorModeValue,
 import {EmailIcon } from '@chakra-ui/icons'
 
 function Contact() {
+  const formRef = useRef()
   const buttonIconColor = useColorModeValue("purple.400","blue.600")
   const colorHeader = useColorModeValue('#ffffff40', '#20202380')
   const [inputName, setInputName] = useState('')
@@ -25,11 +26,12 @@ function Contact() {
   const handleInputChangeText = (e) => setInputText(e.target.value)
 
   function submitMail(){
-
     setIsErrorName(inputName === ''?'error':'')
     setIsErrorEmail(inputEmail === ''?'error':'')
     setIsErrorText(inputText === ''?'error':'')
+    if(isErrorName === '' && isErrorEmail === '' && isErrorText === '') formRef.current.submit()
   }
+
   
   return (
     <div>
@@ -42,7 +44,9 @@ function Contact() {
         <Heading >Contact</Heading>
       </Box>
 
-      <form className='m-5 mb-28' data-netlify="true" name="contact" method="POST">
+      <form ref={formRef} className='m-5 mb-28' data-netlify="true" name="contact" 
+      
+      >
         <input type="hidden" name="form-name" value="contact"/>
         <FormControl isInvalid={isErrorName} marginBottom="1em">
           <FormLabel htmlFor='name'>Name</FormLabel>
@@ -90,16 +94,16 @@ function Contact() {
 
 
         <Button onClick={() => {submitMail()}}  
-            _hover={{
-                background: useColorModeValue("purple.300", "blue.400")
-            }} 
-            leftIcon={<EmailIcon />} 
-            color="white" 
-            background={buttonIconColor} 
-            variant='solid'
-            type="submit"
-          >
-            Send
+          _hover={{
+              background: useColorModeValue("purple.300", "blue.400")
+          }} 
+          leftIcon={<EmailIcon />} 
+          color="white" 
+          background={buttonIconColor} 
+          variant='solid'
+          type='button'
+        >
+          Send
         </Button>
       </form>
 
