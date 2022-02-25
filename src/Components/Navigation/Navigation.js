@@ -17,7 +17,6 @@ function Navigation(props) {
     const navTitle = useColorModeValue("text.light","text.dark")
 
     
-
     useEffect(() => {
         if(colorMode === "light"){
             document.body.classList.remove("dark-theme")

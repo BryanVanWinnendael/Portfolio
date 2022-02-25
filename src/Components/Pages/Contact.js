@@ -42,60 +42,66 @@ function Contact() {
         <Heading >Contact</Heading>
       </Box>
 
-      <Box margin="1.25rem" marginBottom="100px">
+      <form className='m-5 mb-28' data-netlify="true" name="contact" method="POST">
+        <input type="hidden" name="form-name" value="contact"/>
         <FormControl isInvalid={isErrorName} marginBottom="1em">
-          <FormLabel htmlFor='email'>Name</FormLabel>
+          <FormLabel htmlFor='name'>Name</FormLabel>
           <Input
             id='name'
             type='text'
+            name='name'
             value={inputName}
             onChange={handleInputChangeName}
           />
           {isErrorName && (
             <FormErrorMessage>Name is required.</FormErrorMessage>
           )}
-          </FormControl>
+        </FormControl>
 
-          <FormControl isInvalid={isErrorEmail}  marginBottom="1em">
-            <FormLabel htmlFor='email'>Email</FormLabel>
-            <Input
-              id='email'
-              type='email'
-              value={inputEmail}
-              onChange={handleInputChangeEmail}
-            />
-            {isErrorEmail && (
-              <FormErrorMessage>Email is required.</FormErrorMessage>
-            )}
-          </FormControl>
+        <FormControl isInvalid={isErrorEmail}  marginBottom="1em">
+          <FormLabel htmlFor='email'>Email</FormLabel>
+          <Input
+            id='email'
+            type='email'
+            name='email'
+            value={inputEmail}
+            onChange={handleInputChangeEmail}
+          />
+          {isErrorEmail && (
+            <FormErrorMessage>Email is required.</FormErrorMessage>
+          )}
+        </FormControl>
 
-          <FormControl isInvalid={isErrorText}  marginBottom="1em">
-            <FormLabel htmlFor='email'>Message</FormLabel>
-            <Input
-              id='text'
-              type='text'
-              value={inputText}
-              onChange={handleInputChangeText}
-              height="200px"
-            />
-            {isErrorText && (
-              <FormErrorMessage>Message is required.</FormErrorMessage>
-            )}
-          </FormControl>
+        <FormControl isInvalid={isErrorText}  marginBottom="1em">
+          <FormLabel htmlFor='text'>Message</FormLabel>
+          <Input
+            id='text'
+            type='text'
+            name='text'
+            value={inputText}
+            onChange={handleInputChangeText}
+            height="200px"
+          />
+          
+          {isErrorText && (
+            <FormErrorMessage>Message is required.</FormErrorMessage>
+          )}
+        </FormControl>
 
 
-           <Button onClick={() => {submitMail()}}  
-              _hover={{
-                  background: useColorModeValue("purple.300", "blue.400")
-              }} 
-              leftIcon={<EmailIcon />} 
-              color="white" 
-              background={buttonIconColor} 
-              variant='solid'
-            >
-              Send
-          </Button>
-      </Box>
+        <Button onClick={() => {submitMail()}}  
+            _hover={{
+                background: useColorModeValue("purple.300", "blue.400")
+            }} 
+            leftIcon={<EmailIcon />} 
+            color="white" 
+            background={buttonIconColor} 
+            variant='solid'
+            type="submit"
+          >
+            Send
+        </Button>
+      </form>
 
 
     </div>
