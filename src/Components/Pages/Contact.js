@@ -10,26 +10,53 @@ import {EmailIcon } from '@chakra-ui/icons'
 
 function Contact() {
   const formRef = useRef()
+
+  const nameRef = useRef()
+  const emailRef = useRef()
+  const textRef = useRef()
+
   const buttonIconColor = useColorModeValue("purple.400","blue.600")
   const colorHeader = useColorModeValue('#ffffff40', '#20202380')
   const [inputName, setInputName] = useState('')
   const [inputEmail, setInputEmail] = useState('')
   const [inputText, setInputText] = useState('')
+  const [buttonActive, setButtonActive] = useState(false)
+
 
   const [isErrorName,setIsErrorName] = useState()
   const [isErrorEmail,setIsErrorEmail] = useState()
   const [isErrorText,setIsErrorText] = useState()
 
 
-  const handleInputChangeName = (e) => setInputName(e.target.value)
-  const handleInputChangeEmail = (e) => setInputEmail(e.target.value)
-  const handleInputChangeText = (e) => setInputText(e.target.value)
+  function ValidateEmail(mail) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) return (true)
+    return (false)
+  }
 
-  function submitMail(){
-    setIsErrorName(inputName === ''?'error':'')
-    setIsErrorEmail(inputEmail === ''?'error':'')
-    setIsErrorText(inputText === ''?'error':'')
-    if(isErrorName === '' && isErrorEmail === '' && isErrorText === '') formRef.current.submit()
+  function checkFilledIn(){
+    if(nameRef.current.value === "" ) setIsErrorName(true)
+    else setIsErrorName(false)
+
+    if(emailRef.current.value === "" ) setIsErrorEmail(true)
+    else setIsErrorEmail(false)
+
+    if(textRef.current.value === "" ) setIsErrorText(true)
+    else setIsErrorText(false)
+
+
+    if(nameRef.current.value !== "" && emailRef.current.value !== "" && textRef.current.value !== "" && ValidateEmail(emailRef.current.value)) setButtonActive(true)
+    else setButtonActive(false)
+  }
+
+  const handleInputChangeName = (e) => {
+    setInputName(e.target.value)
+  }
+  const handleInputChangeEmail = (e) => {
+    setInputEmail(e.target.value)
+
+  }
+  const handleInputChangeText = (e) => {
+    setInputText(e.target.value)
   }
 
   
@@ -45,12 +72,14 @@ function Contact() {
       </Box>
 
       <form ref={formRef} className='m-5 mb-28' data-netlify="true" name="contact" 
-      
+      method="POST"
+      onChange={() => { checkFilledIn()}}
       >
         <input type="hidden" name="form-name" value="contact"/>
         <FormControl isInvalid={isErrorName} marginBottom="1em">
           <FormLabel htmlFor='name'>Name</FormLabel>
           <Input
+            ref={nameRef}
             id='name'
             type='text'
             name='name'
@@ -65,6 +94,7 @@ function Contact() {
         <FormControl isInvalid={isErrorEmail}  marginBottom="1em">
           <FormLabel htmlFor='email'>Email</FormLabel>
           <Input
+            ref={emailRef}
             id='email'
             type='email'
             name='email'
@@ -79,6 +109,7 @@ function Contact() {
         <FormControl isInvalid={isErrorText}  marginBottom="1em">
           <FormLabel htmlFor='text'>Message</FormLabel>
           <Input
+            ref={textRef}
             id='text'
             type='text'
             name='text'
@@ -93,7 +124,7 @@ function Contact() {
         </FormControl>
 
 
-        <Button onClick={() => {submitMail()}}  
+        <Button  
           _hover={{
               background: useColorModeValue("purple.300", "blue.400")
           }} 
@@ -101,7 +132,8 @@ function Contact() {
           color="white" 
           background={buttonIconColor} 
           variant='solid'
-          type='button'
+          type='submit'
+          disabled={!buttonActive}
         >
           Send
         </Button>
