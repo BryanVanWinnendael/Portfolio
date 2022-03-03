@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid,Center,Heading,Box,useColorModeValue,Flex } from '@chakra-ui/react'
+import {Heading,Box,useColorModeValue,Flex } from '@chakra-ui/react'
 
 
 function Skills() {

@@ -7,7 +7,6 @@ import Contact from './Components/Pages/Contact';
 import Navigation from './Components/Navigation/Navigation';
 
 // import { chakra, shouldForwardProp  } from '@chakra-ui/react'
-import Oldcomputer from './Components/3D/Oldcomputer'
 import Computer from './Components/3D/Computer'
 
 import { Canvas} from '@react-three/fiber'
