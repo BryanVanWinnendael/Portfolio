@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid,Center,Heading,Box,useColorModeValue } from '@chakra-ui/react'
+import { Grid,Center,Heading,Box,useColorModeValue,Flex } from '@chakra-ui/react'
 
 
 function Skills() {
@@ -16,33 +16,29 @@ function Skills() {
             <Heading >Competenties</Heading>
           </Box>
 
-          <Center>
-            <Grid templateColumns='1fr 1fr 1fr' gap={6}>
-              <Box bg='rgba(230, 80, 10, 0.5)' w='fit-content' p={4} color='white' borderRadius={"8px"}>
+            <Flex m="1.25rem">
+              <Box bg='rgba(230, 80, 10, 0.5)' w='fit-content' p={4} m={2} color='white' borderRadius={"8px"}>
                 <img src="/icons/html.svg" alt="html icon" className='w-12'/>
               </Box>
-              <Box bg='rgba(3, 155, 229, 0.5)' w='fit-content' p={4} color='white' borderRadius={"8px"}>
+              <Box bg='rgba(3, 155, 229, 0.5)' w='fit-content' p={4} m={2} color='white' borderRadius={"8px"}>
                 <img src="/icons/css.svg" alt="css icon" className='w-12'/>
               </Box>
-              <Box bg='rgba(255, 214, 0, 0.5)' w='fit-content' p={4} color='white' borderRadius={"8px"}>
+              <Box bg='rgba(255, 214, 0, 0.5)' w='fit-content' p={4} m={2} color='white' borderRadius={"8px"}>
                 <img src="/icons/js.svg" alt="js icon" className='w-12'/>
               </Box>
-            </Grid>
-          </Center>
+            </Flex>
 
-          <Center marginTop={"20px"}>
-            <Grid templateColumns='1fr 1fr 1fr' gap={6}>
-              <Box bg='rgba(21, 101, 192, 0.5)' w='fit-content' p={4} color='white' borderRadius={"8px"}>
+            <Flex m="1.25rem">
+              <Box bg='rgba(21, 101, 192, 0.5)' w='fit-content' p={4} m={2} color='white' borderRadius={"8px"}>
                 <img src="/icons/java.svg" alt="java icon" className='w-12'/>
               </Box>
-              <Box bg='rgba(22, 86, 146, 0.5)' w='fit-content' p={4} color='white' borderRadius={"8px"}>
+              <Box bg='rgba(22, 86, 146, 0.5)' w='fit-content' p={4} m={2} color='white' borderRadius={"8px"}>
                 <img src="/icons/python.svg" alt="python icon" className='w-12'/>
               </Box>
-              <Box bg='rgba(2, 119, 189, 0.5)' w='fit-content' p={4} color='white' borderRadius={"8px"}>
+              <Box bg='rgba(2, 119, 189, 0.5)' w='fit-content' p={4} m={2} color='white' borderRadius={"8px"}>
                 <img src="/icons/sql.svg" alt="sql icon" className='w-12'/>
               </Box>
-            </Grid>
-          </Center>
+            </Flex>
 
       
       

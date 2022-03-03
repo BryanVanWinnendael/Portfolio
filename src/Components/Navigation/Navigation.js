@@ -4,18 +4,18 @@ import { Text,useColorMode,useColorModeValue,Grid,
     MenuButton,
     MenuList,
     MenuItem,
+    useMediaQuery,
     } 
     from '@chakra-ui/react'
 import {HamburgerIcon } from '@chakra-ui/icons'
 import ToggleThemeButton from './ToggleThemeButton'
-
 function Navigation(props) {
 
     const {colorMode} = useColorMode()
     const navBg = useColorModeValue("#edf2f733","blackAlpha")
     const navText = useColorModeValue("gray.600","whiteAlpha.700")
     const navTitle = useColorModeValue("text.light","text.dark")
-
+    const [isSmallerThan800] = useMediaQuery('(max-width: 800px)')
     
     useEffect(() => {
         if(colorMode === "light"){
@@ -40,7 +40,7 @@ function Navigation(props) {
             <Text onClick={() => {handleChange("home")}} color={navTitle} fontSize='2xl' className='mt-5 font-bold text-xl cursor-pointer'>My Portfolio</Text>
         </div>
         
-        <ul className='flex justify-center items-center h-full col-start-2' id="nav">
+        <ul className='flex justify-center items-center h-full col-start-2' className={ isSmallerThan800 ? 'hidden h-full col-start-2one' : 'flex justify-center items-center h-full col-start-2'}>
             <li className='mr-5 h-full flex items-center'>
                <Text cursor="pointer" onClick={() => {handleChange("home")}} color={navText} fontSize='l' className='mt-5'>Home</Text>
             </li>

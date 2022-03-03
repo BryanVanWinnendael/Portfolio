@@ -74,7 +74,7 @@ function Contact() {
       <form ref={formRef} className='m-5 mb-28' data-netlify="true" name="contact" 
       method="POST"
       onChange={() => { checkFilledIn()}}
-      submission-created={() => {console.log("eheheheehhee")}}
+      noValidate
       >
         <input type="hidden" name="form-name" value="contact"/>
         <FormControl isInvalid={isErrorName} marginBottom="1em">

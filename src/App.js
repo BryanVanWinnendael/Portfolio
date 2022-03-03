@@ -8,6 +8,8 @@ import Navigation from './Components/Navigation/Navigation';
 
 // import { chakra, shouldForwardProp  } from '@chakra-ui/react'
 import Oldcomputer from './Components/3D/Oldcomputer'
+import Computer from './Components/3D/Computer'
+
 import { Canvas} from '@react-three/fiber'
 import {OrbitControls,ContactShadows} from '@react-three/drei'
 import Section from './Components/Pages/Section';
@@ -25,7 +27,7 @@ function App() {
             <OrbitControls enableZoom={false} />
             <ambientLight intensity={0.3} />
             <Suspense fallback={null}>
-              <Oldcomputer/>
+              <Computer/>
               <ContactShadows rotation-x={Math.PI / 2} position={[0, -0.8, 0]} opacity={0.5} width={20} height={10} blur={1} far={0.8} />
             </Suspense>
           </Canvas>
