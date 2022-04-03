@@ -5,6 +5,7 @@ import {Heading,Box,useColorModeValue,
   FormErrorMessage,
   Button,  
   Input,
+  Textarea 
 } from '@chakra-ui/react'
 import {EmailIcon } from '@chakra-ui/icons'
 
@@ -17,21 +18,51 @@ function Contact() {
 
   const buttonIconColor = useColorModeValue("purple.400","blue.600")
   const colorHeader = useColorModeValue('#ffffff89', '#20202380')
-  const [inputName, setInputName] = useState('')
-  const [inputEmail, setInputEmail] = useState('')
-  const [inputText, setInputText] = useState('')
-
-
+ 
   const [isErrorName,setIsErrorName] = useState()
   const [isErrorEmail,setIsErrorEmail] = useState()
   const [isErrorText,setIsErrorText] = useState()
 
 
+  //check if mail is valid
+  const checkEmail = (email) => {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
   const sumbitForm = (e) =>{
     e.preventDefault()
-    formRef.current.submit()
-    formRef.current.reset() 
 
+    if(nameRef.current.value === ''){
+      setIsErrorName(true)
+    }else{
+      setIsErrorName(false)
+    }
+
+    if(emailRef.current.value === ''){
+      setIsErrorEmail("required")
+    }else{
+      if(checkEmail(emailRef.current.value)){
+        setIsErrorEmail(false)
+      }else{
+        setIsErrorEmail("invalid")
+      }
+    }
+
+    if(textRef.current.value === ''){
+      setIsErrorText(true)
+    }else{
+      setIsErrorText(false)
+    }
+
+    if(!isErrorName && !isErrorEmail && !isErrorText && isErrorName !== undefined && isErrorEmail !== undefined && isErrorText !== undefined){
+
+      localStorage.setItem('mail',"send")
+      formRef.current.submit()
+      formRef.current.reset() 
+    }
+
+   
   }
 
   
@@ -72,19 +103,22 @@ function Contact() {
             type='email'
             name='email'
           />
-          {isErrorEmail && (
+          {isErrorEmail === "required" && (
             <FormErrorMessage>Email is required.</FormErrorMessage>
+          )}
+           {isErrorEmail === "invalid" && (
+            <FormErrorMessage>Email is invalid.</FormErrorMessage>
           )}
         </FormControl>
 
         <FormControl isInvalid={isErrorText}  marginBottom="1em">
           <FormLabel htmlFor='text'>Message</FormLabel>
-          <Input
+          <Textarea 
             ref={textRef}
             id='text'
             type='text'
             name='text'
-            height="200px"
+            size='lg'
           />
           
           {isErrorText && (
