@@ -37,7 +37,7 @@ function Contact() {
   
   return (
     <div>
-     <Box 
+      <Box 
       m="1.25rem"
       p = {2}
       bg={colorHeader}
@@ -46,7 +46,7 @@ function Contact() {
         <Heading >Contact</Heading>
       </Box>
 
-      <form ref={formRef} className='m-5 mb-28' data-netlify="true" name="contact" 
+      <form action="" ref={formRef} className='m-5 mb-28' data-netlify="true" name="contact" 
       method="POST"
       noValidate
       >
