@@ -22,7 +22,7 @@ const NavProject = ({active,setActive}) => (
 function Projects() {
   const [isLargerThan690] = useMediaQuery('(max-width: 690px)')
   const [active,setActive] = useState()
-  const colorHeader = useColorModeValue('#ffffff40', '#20202380')
+  const colorHeader = useColorModeValue('#ffffff89', '#20202380')
 
   return (
     <div>

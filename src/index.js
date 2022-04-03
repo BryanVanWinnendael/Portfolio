@@ -10,7 +10,7 @@ import { mode } from '@chakra-ui/theme-tools';
 const styles = {
   global: props => ({
     body: {
-      bg: mode('gray.100', 'blackAlpha.900')(props),
+      bg: mode('#EEEFF6', 'blackAlpha.900')(props),
     },
   }),
 };
@@ -21,6 +21,9 @@ const breakpoints = createBreakpoints({
 })
 
 const theme = extendTheme({
+  fonts:{
+    body: 'Nunito, sans-serif, Roboto, sans-serif',
+  },
   colors: {
     icon: {
       100: "#b2b1a7",

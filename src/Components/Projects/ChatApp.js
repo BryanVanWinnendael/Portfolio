@@ -29,7 +29,7 @@ function ChatApp() {
 
       <Stack direction='column' marginTop="1em" marginRight="50px">
         <Stack direction='row' alignItems="center">
-          <Badge variant='outline' colorScheme='green' maxWidth="fit-content" margin="0" padding="0">
+          <Badge variant='outline' colorScheme='green' maxWidth="fit-content" margin="0" padding="1">
             Website
           </Badge>
           <Link href='https://chatapponline.netlify.app/' isExternal>
@@ -38,7 +38,7 @@ function ChatApp() {
         </Stack>
         
         <Stack direction='row' alignItems="center" >
-          <Badge variant='outline' colorScheme='red' maxWidth="fit-content" marginRight="0" padding="0">
+          <Badge variant='outline' colorScheme='red' maxWidth="fit-content" marginRight="0" padding="1">
             Code
           </Badge>
           <Link href='https://github.com/BryanVanWinnendael/ChatApp' isExternal maxWidth="100%">

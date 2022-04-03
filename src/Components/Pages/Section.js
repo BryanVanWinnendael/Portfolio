@@ -13,9 +13,8 @@ const Section = ({ children, delay = 0 }) => (
     animate={{ y: 0, opacity: 1 }}
     transition={{ duration: 0.6, delay }}
     mb={6}
-    // overflow="hidden"
     height="100%"
-
+    position="relative"
 
   >
     {children}

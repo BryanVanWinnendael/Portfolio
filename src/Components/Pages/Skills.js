@@ -3,7 +3,7 @@ import {Heading,Box,useColorModeValue,Flex } from '@chakra-ui/react'
 
 
 function Skills() {
-  const colorHeader = useColorModeValue('#ffffff40', '#20202380')
+  const colorHeader = useColorModeValue('#ffffff89', '#20202380')
 
   return (
     <div className='h-screen'>

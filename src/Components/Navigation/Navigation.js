@@ -35,12 +35,12 @@ function Navigation(props) {
    
 
     return (
-    <Grid templateColumns={{base:'1fr 1fr 0.5fr',sm:'1fr 1fr'}} maxWidth="700px" position={"fixed"} alignItems={'center'} css={{ backdropFilter: 'blur(10px)' }} background={navBg} zIndex={10} width={"100%"} paddingBottom={"10px"}>
+    <Grid className='testnav' templateColumns={{base:'1fr 1fr 0.5fr',sm:'1fr 1fr'}} maxWidth="700px" position={"fixed"} alignItems={'center'} css={{ backdropFilter: 'blur(10px)' }} background={navBg} zIndex={10} width={"100%"} paddingBottom={"10px"}>
         <div className='flex items-center col-start-1 mr-5 ml-5'>
             <Text onClick={() => {handleChange("home")}} color={navTitle} fontSize='2xl' className='mt-5 font-bold text-xl cursor-pointer'>My Portfolio</Text>
         </div>
         
-        <ul className='flex justify-center items-center h-full col-start-2' className={ isSmallerThan800 ? 'hidden h-full col-start-2one' : 'flex justify-center items-center h-full col-start-2'}>
+        <ul className={ isSmallerThan800 ? 'hidden h-full col-start-2one' : 'flex justify-center items-center h-full col-start-2'}>
             <li className='mr-5 h-full flex items-center'>
                <Text cursor="pointer" onClick={() => {handleChange("home")}} color={navText} fontSize='l' className='mt-5'>Home</Text>
             </li>
