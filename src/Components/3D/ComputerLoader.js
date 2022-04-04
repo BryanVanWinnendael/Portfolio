@@ -1,38 +1,35 @@
 import { Box} from '@chakra-ui/react'
-import { Canvas,useThree } from '@react-three/fiber'
+import { Canvas,useThree,useFrame, extend } from '@react-three/fiber'
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import Computer from './Computer'
+import ComputerGlow from './ComputerGlow'
 import * as THREE from 'three'
-import React, { useState, Suspense,useEffect } from 'react'
+import React, { useState, Suspense ,useRef} from 'react'
 
+extend({ OrbitControls });
 
 function ComputerLoader() {
-
+  const [loaded,setLoaded] = useState(false)
   const [initialCameraPosition] = useState(
     new THREE.Vector3(
-      13 * Math.sin(0.2 * Math.PI),
+     10 * Math.sin(0.2 * Math.PI),
       10,
       20 * Math.cos(0.2 * Math.PI)
     )
   )
 
-  const CameraController = () => {
-    const {camera,gl } = useThree();
+  const CameraControls = () => {
+    const {
+      camera,
+      gl: { domElement },
+    } = useThree();
+    if(!loaded){  
+      camera.position.copy(initialCameraPosition)
+      setLoaded(true)
+    }
 
-    camera.position.copy(initialCameraPosition)
-
-    useEffect(
-       () => {
-          const controls = new OrbitControls(camera, gl.domElement);
-          controls.minDistance = 10;
-          controls.maxDistance = 20;
-          return () => {
-            controls.dispose();
-          };
-       },
-       [camera, gl]
-    );
-    return null;
+    const controls = useRef();
+    useFrame((state) => controls.current.update());
+    return <orbitControls ref={controls} args={[camera, domElement]} />;
   };
 
       return (
@@ -45,10 +42,10 @@ function ComputerLoader() {
     
         position="relative">
           <Canvas>
-            <CameraController />
-            <ambientLight intensity={0.8} color="#cccccc" />
+          <CameraControls />
+            <ambientLight intensity={0.8} color="#cccccc"/>
             <Suspense fallback={null}>
-              <Computer/>
+              <ComputerGlow/>
             </Suspense>
           </Canvas>
         </Box>

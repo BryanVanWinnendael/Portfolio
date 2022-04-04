@@ -4,8 +4,9 @@ import { useFrame} from "@react-three/fiber";
 
 export default function Model({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/computer.gltf')
+  const { nodes, materials } = useGLTF('/computerGlow.gltf')
   const [pageLoaded,setPageloaded] = useState(false)
+
 
   function waitforme(milisec) {
     return new Promise(resolve => {
@@ -22,8 +23,7 @@ export default function Model({ ...props }) {
     }
     setPageloaded(true)
   }
-    
-
+   
   
   useFrame(({ clock }) => {
     spin(clock)
@@ -34,12 +34,17 @@ export default function Model({ ...props }) {
     }
   })
 
+
   return (
-    <group ref={group} {...props} dispose={null} position={[0, 0, -1]} rotation={[0,0,0]} scale={3}>
-      <mesh geometry={nodes.untitled.geometry} material={materials.palette} rotation={[Math.PI / 2, 0, 4.6]} />
+    <group ref={group} {...props} dispose={null} scale={3}>
+      <group rotation={[Math.PI / 2, 0, 4.36]}>
+        <mesh geometry={nodes.untitled_1.geometry} material={materials.palette} />
+        <mesh geometry={nodes.untitled_2.geometry} material={materials.glowBlue} />
+        <mesh geometry={nodes.untitled_3.geometry} material={materials.glowGreen} />
+      </group>
       <mesh geometry={nodes.Plane.geometry} material={materials['Material.001']}  />
     </group>
   )
 }
 
-useGLTF.preload('/computer.gltf')
+useGLTF.preload('/computerGlow.gltf')

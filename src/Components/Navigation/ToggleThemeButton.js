@@ -5,7 +5,6 @@ import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 const ThemeToggleButton = () => {
   const { toggleColorMode } = useColorMode()
   const navIconColor = useColorModeValue("#a79f83","#414243")
-  // const navIconColor = useColorModeValue("#414243","#a79f83")
 
 
   return (

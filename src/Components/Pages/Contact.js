@@ -125,14 +125,13 @@ function Contact() {
           )}
         </FormControl>
 
-
         <Button  
           _hover={{
-              background: useColorModeValue("purple.300", "blue.400")
+              background: useColorModeValue("#555657", "#b8af8e")
           }} 
           leftIcon={<EmailIcon />} 
           color="white" 
-          background={buttonIconColor} 
+          background={useColorModeValue("#414243","#a79f83")} 
           variant='solid'
           onClick={sumbitForm}
         >
