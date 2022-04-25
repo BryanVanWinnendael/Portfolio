@@ -1,17 +1,19 @@
 import React, { useState,useEffect} from 'react'
 import './App.css';
-import Home from './Components/Pages/Home';
-import Skills from './Components/Pages/Skills';
-import Projects from './Components/Pages/Projects';
-import Contact from './Components/Pages/Contact';
+import Home from './Pages/Home';
+import Skills from './Pages/Skills';
+import Projects from './Pages/Projects';
+import Contact from './Pages/Contact';
 import Navigation from './Components/Navigation/Navigation';
 import ComputerLoader from './Components/3D/ComputerLoader';
-import Section from './Components/Pages/Section';
-import { useToast } from '@chakra-ui/react'
-
+import Section from './Components/Section';
+import { useToast,Box,Spinner,Text} from '@chakra-ui/react'
+import Secret from './Components/Secret'; 
+import SecretPage from './Pages/SecretPage';
 
 function App() {
   const [active, setActive] = useState("home")
+  const [loaded,setLoaded] = useState(false)
   const toast = useToast()
 
   useEffect(() => { 
@@ -28,37 +30,60 @@ function App() {
 
   }, [])
 
+
   return (
     <div className="App">
+      {active === "secret" && (
+        <Box w="100vw" h="100vh" >
+          <Secret>
+              {loaded && (
+                <Box w="full" h="full" display="flex" justifyContent="center" alignItems="center" backgroundColor="white">
+                  <Text mr={2}  fontSize='xl' color="black">
+                    Your site is being loaded
+                  </Text>
+                  <Spinner size='lg' color="black"/>
+                </Box>
+              )}
+              {!loaded && (
+               <SecretPage setActive={setActive}/>
+              )}
+          </Secret>
+        </Box>
+
+      )}
+
       <Navigation setActive={setActive} />
-      <div>
-        <ComputerLoader />
-          
-        {active === "home" && (
-          <Section>
-            <Home />
-          </Section>
-        )}
+      
+      {active !== "secret" && (
+        <div>
+          <ComputerLoader setActive={setActive} setLoaded={setLoaded}/>
+          {active === "home" && (
+            <Section>
+              <Home />
+            </Section>
+          )}
 
-        {active === "skills" && (
-          <Section>
-            <Skills />
-          </Section>
-        )}
+          {active === "skills" && (
+            <Section>
+              <Skills />
+            </Section>
+          )}
 
-        {active === "projects" && (
-          <Section>
-            <Projects />
-          </Section>
-        )}
+          {active === "projects" && (
+            <Section>
+              <Projects />
+            </Section>
+          )}
 
-        {active === "contact" && (
-          <Section>
-            <Contact />
-          </Section>
-        )}
-
-      </div>
+          {active === "contact" && (
+            <Section>
+              <Contact />
+            </Section>
+          )}
+        </div>
+        
+      )}
+     
     </div>
   );
 }

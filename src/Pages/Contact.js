@@ -5,9 +5,14 @@ import {Heading,Box,useColorModeValue,
   FormErrorMessage,
   Button,  
   Input,
-  Textarea 
+  Textarea,
+  Text,
+  Icon,
+  Link
 } from '@chakra-ui/react'
 import {EmailIcon } from '@chakra-ui/icons'
+import { IoLogoGithub,IoLogoLinkedin } from "react-icons/io5";
+
 
 function Contact() {
   const formRef = useRef()
@@ -16,7 +21,6 @@ function Contact() {
   const emailRef = useRef()
   const textRef = useRef()
 
-  const buttonIconColor = useColorModeValue("purple.400","blue.600")
   const colorHeader = useColorModeValue('#ffffff89', '#20202380')
  
   const [isErrorName,setIsErrorName] = useState()
@@ -76,7 +80,9 @@ function Contact() {
         <Heading >Contact</Heading>
       </Box>
 
-      <form action="" ref={formRef} className='m-5 mb-28' data-netlify="true" name="contact" 
+      <Text m="1.3rem">You can contact me by filling in the form or by checking out my social media.</Text>
+
+      <form action="" ref={formRef} className='m-5 mb-10' data-netlify="true" name="contact" 
       method="POST"
       noValidate
       >
@@ -138,6 +144,18 @@ function Contact() {
           Send
         </Button>
       </form>
+      <Text m="1.3rem" as='u' fontSize='xl'>Find me online</Text>
+      <Box m="1.3rem" mb="5rem">
+       
+        <Link href='https://github.com/BryanVanWinnendael' isExternal mr={5}>
+            Github<Icon as={IoLogoGithub} ml={2}  mb={1}/>
+        </Link>
+
+        <Link href='https://linkedin.com/in/bryanvanwinnendael' isExternal>
+          LinkedIn<Icon as={IoLogoLinkedin} ml={2}  mb={1}/>
+        </Link>
+
+      </Box>
 
 
     </div>

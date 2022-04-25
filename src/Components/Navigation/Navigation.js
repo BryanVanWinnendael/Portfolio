@@ -46,7 +46,7 @@ function Navigation(props) {
             </li>
 
             <li className='mr-5 h-full flex items-center'>
-                <Text cursor="pointer" onClick={() => {handleChange("skills")}} color={navText} fontSize='l' className='mt-5'>Competenties</Text>
+                <Text cursor="pointer" onClick={() => {handleChange("skills")}} color={navText} fontSize='l' className='mt-5'>Skills</Text>
             </li>
 
             <li className='mr-5 h-full flex items-center'>

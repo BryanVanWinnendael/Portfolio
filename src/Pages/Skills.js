@@ -13,7 +13,7 @@ function Skills() {
           bg={colorHeader}
           borderRadius="lg"
           >
-            <Heading >Competenties</Heading>
+            <Heading >Skills</Heading>
           </Box>
 
             <Flex m="1.25rem">

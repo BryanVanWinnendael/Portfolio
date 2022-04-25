@@ -9,3 +9,36 @@
   max-width: 700px;
   width: 100%;
 }
+
+.jump{
+  animation: jump 0.3s linear;
+}
+
+
+@keyframes jump {
+  0%{
+    top: 248px;
+  }
+  30%{
+    top: 228px;
+  }
+  50%{
+    top: 178px;
+  }
+  80%{
+    top: 228px;
+  }
+  100%{
+    top: 248px;
+  }
+}
+
+
+@keyframes movecactus{
+  0%{
+    left: 575px;
+  }
+  100%{
+    left: -20px;
+  }
+}

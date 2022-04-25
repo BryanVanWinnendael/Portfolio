@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading,Text ,useColorModeValue} from '@chakra-ui/react'
+import { Heading,Text ,useColorModeValue,Box} from '@chakra-ui/react'
 import Typewriter from "typewriter-effect";
 
 function Home() {
@@ -17,7 +17,14 @@ function Home() {
             }}
             />
           </Heading>
-          <Text color={themeText} fontSize='2xl' className='mt-5'>(2xl) In love with React & Next</Text>
+          <Box 
+            mt="1.25rem"
+            p={1.5}
+            bg={useColorModeValue('#ffffff89', '#20202380')}
+            borderRadius="lg"
+            >
+              <Text color={themeText} fontSize='2xl'>My name is Bryan Van Winnendael</Text>
+          </Box>
         </div>
     </div>
   )

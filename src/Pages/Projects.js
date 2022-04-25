@@ -6,7 +6,8 @@ import { Heading ,Box,Grid, GridItem,Tooltip,useMediaQuery,
   BreadcrumbItem,
   BreadcrumbLink
 } from '@chakra-ui/react'
-import MakeProject from '../Projects/MakeProject'
+import MakeProject from '../Components/MakeProject'
+
 const NavProject = ({active,setActive}) => (
   <Breadcrumb display="flex" alignItems="center" marginLeft="1.25rem" width="fit-content">
     <BreadcrumbItem >
@@ -33,7 +34,7 @@ function Projects() {
         bg={colorHeader}
         borderRadius="lg"
         >
-          <Heading >Project</Heading>
+          <Heading >Projects</Heading>
         </Box>
       )}
 
@@ -66,19 +67,10 @@ function Projects() {
             <GridItem onClick={() => {setActive("chatapp")}} colSpan={2} bg={useColorModeValue('#ffffff40', '#20202380')}  cursor='pointer' transitionDuration='0.5s' _hover={{transform:'scale(1.1)'}} boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)' borderRadius='5px' backgroundImage='/images/chatProject.jpg' backgroundSize='cover' backgroundRepeat='no-repeat' backgroundPosition="center"/>
           </Tooltip>
 
-          <Tooltip label="" aria-label='A tooltip'>
-            <GridItem colSpan={4} bg={useColorModeValue('#ffffff40', '#20202380')}  cursor='pointer' css={{ backdropFilter: 'blur(10px)' }} transitionDuration='0.5s' _hover={{transform:'scale(1.1)'}} boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)' borderRadius='5px' display="flex" justifyContent="center" alignItems="center">
-              <Text fontSize='lg' className='mt-5'>Check out more...</Text>
+          <Tooltip label="TicTacToe" aria-label='A tooltip'>
+            <GridItem onClick={() => {setActive("tictactoe")}} colSpan={4} bg={useColorModeValue('#ffffff40', '#20202380')}  cursor='pointer' css={{ backdropFilter: 'blur(10px)' }} transitionDuration='0.5s' _hover={{transform:'scale(1.1)'}} backgroundImage='/images/tictactoe.jpg' backgroundSize='cover' backgroundRepeat='no-repeat' backgroundPosition="center" boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)' borderRadius='5px' display="flex" justifyContent="center" alignItems="center">
             </GridItem>
           </Tooltip>
-
-          {/* <Tooltip label="" aria-label='A tooltip'>
-            <GridItem colSpan={2} bg={useColorModeValue('#ffffff40', '#20202380')}  cursor='pointer' css={{ backdropFilter: 'blur(10px)' }} />
-          </Tooltip>
-
-          <Tooltip label="" aria-label='A tooltip'>
-            <GridItem colSpan={3} bg={useColorModeValue('#ffffff40', '#20202380')}  cursor='pointer' css={{ backdropFilter: 'blur(10px)' }} />
-          </Tooltip> */}
 
         </Grid>
       </div>
