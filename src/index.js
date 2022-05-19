@@ -17,7 +17,6 @@ const styles = {
 
 const breakpoints = createBreakpoints({
   base: '800px',
- 
 })
 
 const theme = extendTheme({

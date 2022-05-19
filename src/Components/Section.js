@@ -15,7 +15,6 @@ const Section = ({ children, delay = 0 }) => (
     mb={6}
     height="100%"
     position="relative"
-
   >
     {children}
   </StyledDiv>
