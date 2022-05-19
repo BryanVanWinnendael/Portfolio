@@ -1,16 +1,18 @@
 import React from 'react'
-import { Heading,Text ,useColorModeValue,Box} from '@chakra-ui/react'
+import { Heading, Text, useColorModeValue, Box, Button, Link} from '@chakra-ui/react'
 import Typewriter from "typewriter-effect";
 import Timeline from '../Components/Timeline';
 import SkillCard from '../Components/SkillCard';
-import { IoBarbellOutline, IoTrendingDownOutline, IoBulbOutline, IoWarningOutline } from "react-icons/io5";
+import { IoBarbellOutline, IoTrendingDownOutline, IoBulbOutline, IoWarningOutline, IoDocumentTextOutline } from "react-icons/io5";
 import Bio from '../Components/Bio';
 
-function Home() {
+function Home(props) {
   const themeText = useColorModeValue("text.light","text.dark")
-  
- 
 
+  const contact = () => {
+    props.setActive("contact")
+  }
+  
   return (
     <div className='h-screen grid grid-rows-page1 bg-transparent'>
         <div className='m-5'>
@@ -62,6 +64,31 @@ function Home() {
             Ook is het bekend dat de <b>IT-sector</b> een sector is waar je altijd moet <b>bijleren</b> en steeds moet zoeken naar nieuwe <b>innovatie</b>. Hier kan ik bij innovatie wat <b>achterlopen</b>. 
             </>
           } icon={<IoWarningOutline/>}/>
+
+
+          <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+            <Text color={useColorModeValue("gray","darkGray")}>Meer intresse? Bekijk mijn <b>CV</b> of 
+              <Link color="#a79f83" fontWeight="bold" ml={1} onClick={contact} isExternal>
+                contacteer
+              </Link> mij.
+            </Text>
+              <Button  
+              _hover={{
+                  background: useColorModeValue("#555657", "#b8af8e")
+              }} 
+              leftIcon={<IoDocumentTextOutline />} 
+              color="white" 
+              background={useColorModeValue("#414243","#a79f83")} 
+              variant='solid'
+              mt={5}
+              mb={5}
+              onClick={() => {
+                window.open('/cv.pdf', '_blank');
+              }}
+              >
+              Bekijk mijn CV
+            </Button>
+          </Box>
 
         </div>
     </div>

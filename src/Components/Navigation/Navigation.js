@@ -29,10 +29,6 @@ function Navigation(props) {
     function handleChange(param){
         props.setActive(param)
     }
-    
-    
-    
-   
 
     return (
     <Grid className='testnav' templateColumns={{base:'1fr 1fr 0.5fr',sm:'1fr 1fr'}} maxWidth="700px" position={"fixed"} alignItems={'center'} css={{ backdropFilter: 'blur(10px)' }} background={navBg} zIndex={10} width={"100%"} paddingBottom={"10px"}>
@@ -50,11 +46,11 @@ function Navigation(props) {
             </li>
 
             <li className='mr-5 h-full flex items-center'>
-                <Text cursor="pointer" onClick={() => {handleChange("projects")}} color={navText} fontSize='l' className='mt-5'>Projects</Text>
+                <Text cursor="pointer" onClick={() => {handleChange("projects")}} color={navText} fontSize='l' className='mt-5'>Projecten</Text>
             </li>
 
             <li className='mr-5 h-full flex items-center'>
-                <Text cursor="pointer" onClick={() => {handleChange("contact")}} color={navText} fontSize='l' className='mt-5'>Contact</Text>
+                <Text cursor="pointer" onClick={() => {handleChange("contact")}} color={navText} fontSize='l' className='mt-5'>Contacteer</Text>
             </li>
         </ul>
 
@@ -76,13 +72,13 @@ function Navigation(props) {
                     _expanded={{ bg: 'gray.500' }}
                     _focus={{ boxShadow: 'outline' }}
                 >
-                <HamburgerIcon color={"white"}/>
+                    <HamburgerIcon color={"white"}/>
                 </MenuButton>
                 <MenuList>
                     <MenuItem onClick={() => {handleChange("home")}}>Home</MenuItem>
-                    <MenuItem onClick={() => {handleChange("skills")}}>Competenties</MenuItem>
+                    <MenuItem onClick={() => {handleChange("skills")}}>Skills</MenuItem>
                     <MenuItem onClick={() => {handleChange("projects")}}>Projects</MenuItem>
-                    <MenuItem onClick={() => {handleChange("contact")}}>Contact</MenuItem>
+                    <MenuItem onClick={() => {handleChange("contact")}}>Contacteer</MenuItem>
 
                 </MenuList>
             </Menu>

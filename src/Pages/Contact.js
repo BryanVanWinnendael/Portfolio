@@ -60,12 +60,10 @@ function Contact() {
     }
 
     if(!isErrorName && !isErrorEmail && !isErrorText && isErrorName !== undefined && isErrorEmail !== undefined && isErrorText !== undefined){
-
       localStorage.setItem('mail',"send")
       formRef.current.submit()
     }
 
-   
   }
 
   
@@ -80,7 +78,7 @@ function Contact() {
         <Heading >Contact</Heading>
       </Box>
 
-      <Text m="1.3rem">You can contact me by filling in the form or by checking out my social media.</Text>
+      <Text color={useColorModeValue("gray","darkGray")} m="1.3rem">Je kunt contact met me opnemen door het formulier in te vullen of door mijn social media te bekijken.</Text>
 
       <form action="" ref={formRef} className='m-5 mb-10' data-netlify="true" name="contact" 
       method="POST"
@@ -88,7 +86,7 @@ function Contact() {
       >
         <input type="hidden" name="form-name" value="contact"/>
         <FormControl isInvalid={isErrorName} marginBottom="1em">
-          <FormLabel htmlFor='name'>Name</FormLabel>
+          <FormLabel htmlFor='name'>Naam</FormLabel>
           <Input
             ref={nameRef}
             id='name'
@@ -96,7 +94,7 @@ function Contact() {
             name='name'
           />
           {isErrorName && (
-            <FormErrorMessage>Name is required.</FormErrorMessage>
+            <FormErrorMessage>Naam mag niet leeg zijn.</FormErrorMessage>
           )}
         </FormControl>
 
@@ -109,15 +107,15 @@ function Contact() {
             name='email'
           />
           {isErrorEmail === "required" && (
-            <FormErrorMessage>Email is required.</FormErrorMessage>
+            <FormErrorMessage>Email mag niet leeg zijn.</FormErrorMessage>
           )}
            {isErrorEmail === "invalid" && (
-            <FormErrorMessage>Email is invalid.</FormErrorMessage>
+            <FormErrorMessage>Email is niet geldig.</FormErrorMessage>
           )}
         </FormControl>
 
         <FormControl isInvalid={isErrorText}  marginBottom="1em">
-          <FormLabel htmlFor='text'>Message</FormLabel>
+          <FormLabel htmlFor='text'>Bericht</FormLabel>
           <Textarea 
             ref={textRef}
             id='text'
@@ -127,7 +125,7 @@ function Contact() {
           />
           
           {isErrorText && (
-            <FormErrorMessage>Message is required.</FormErrorMessage>
+            <FormErrorMessage>Bericht mag niet leeg zijn.</FormErrorMessage>
           )}
         </FormControl>
 
@@ -141,10 +139,10 @@ function Contact() {
           variant='solid'
           onClick={sumbitForm}
         >
-          Send
+          Verstuur
         </Button>
       </form>
-      <Text m="1.3rem" as='u' fontSize='xl'>Find me online</Text>
+      <Text m="1.3rem" as='u' fontSize='xl'>Vind me online</Text>
       <Box m="1.3rem" mb="5rem">
        
         <Link href='https://github.com/BryanVanWinnendael' isExternal mr={5}>

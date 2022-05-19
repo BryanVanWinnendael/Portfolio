@@ -10,13 +10,15 @@ import MakeProject from '../Components/MakeProject'
 
 const NavProject = ({active,setActive}) => (
   <Breadcrumb display="flex" alignItems="center" marginLeft="1.25rem" width="fit-content">
+
     <BreadcrumbItem >
-      <BreadcrumbLink onClick={() => {setActive() }}><Text color={useColorModeValue("purple.600", "blue.400")}>Projects</Text></BreadcrumbLink>
+      <BreadcrumbLink onClick={() => {setActive() }}><Text color={useColorModeValue("#b8af8e", "#555657")}>Projects</Text></BreadcrumbLink>
     </BreadcrumbItem>
 
     <BreadcrumbItem>
       <Text fontSize="xl" fontWeight="bold">{active}</Text>
     </BreadcrumbItem>
+
   </Breadcrumb>
 )
 
@@ -34,7 +36,7 @@ function Projects() {
         bg={colorHeader}
         borderRadius="lg"
         >
-          <Heading >Projects</Heading>
+          <Heading >Projecten</Heading>
         </Box>
       )}
 

@@ -59,7 +59,7 @@ function App() {
           <ComputerLoader setActive={setActive} setLoaded={setLoaded}/>
           {active === "home" && (
             <Section>
-              <Home />
+              <Home setActive={setActive}/>
             </Section>
           )}
 
