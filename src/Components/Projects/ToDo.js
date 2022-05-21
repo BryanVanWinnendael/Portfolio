@@ -16,16 +16,16 @@ function ToDo() {
         <Heading as='h2' size='2xl'>ToDo.</Heading>
       </Center>
 
-      <Heading as='h3' size='lg' marginTop="1em">What is ToDo?</Heading>
-      <Text marginTop="1em">ToDo lets you create tasks that you need to complete and keep track of them when these are needed to be done.</Text>
-      <Text>With ToDo you can also give these tasks a cattegory to filter them quickly.</Text>
+      <Heading as='h3' size='lg' marginTop="1em">Wat is ToDo?</Heading>
+      <Text marginTop="1em">Met ToDo kan je taken maken die je moet voltooien en deze bijhouden wanneer deze moeten worden uitgevoerd.</Text>
+      <Text>Met ToDo kun je deze taken ook een cattegory geven om ze snel te filteren.</Text>
 
-      <Heading as='h3' size='lg' marginTop="1em">Tools used</Heading>
-      <Text marginTop="1em">ToDo is made with 
+      <Heading as='h3' size='lg' marginTop="1em">Tools gebruikt</Heading>
+      <Text marginTop="1em">ToDo is gemaakt met 
         <Code children='React' colorScheme='blue' marginLeft="5px" marginRight="5px"/>
-        and uses 
+        en gebruikt 
         <Code children='Firebase' colorScheme='red' marginLeft="5px" marginRight="5px"/>
-        as a database.
+        als de database.
       </Text>
 
       <Stack direction='column' marginTop="1em" marginRight="50px">

@@ -72,14 +72,11 @@ function Skills() {
               </Flex>
               
               <Flex>
-                <Box bg='rgba(152,160,171, 0.5)' w='fit-content' p={4} m={2} color='white' borderRadius={"8px"}>
-                  <img src="/icons/c.svg" alt="java icon" className='w-12'/>
+                <Box bg='rgba(255,255,255, 0.5)' w='fit-content' p={4} m={2} color='white' borderRadius={"8px"}>
+                  <img src="/icons/figma.svg" alt="java icon" className='w-12'/>
                 </Box>
-                <Box bg='rgba(200,149,232, 0.5)' w='fit-content' p={4} m={2} color='white' borderRadius={"8px"}>
-                  <img src="/icons/cpp.svg" alt="python icon" className='w-12'/>
-                </Box>
-                <Box bg='rgba(143,106,166, 0.5)' w='fit-content' p={4} m={2} color='white' borderRadius={"8px"}>
-                  <img src="/icons/elixir.svg" alt="sql icon" className='w-12'/>
+                <Box bg='rgba(152,152,152, 0.5)' w='fit-content' p={4} m={2} color='white' borderRadius={"8px"}>
+                  <img src="/icons/github.svg" alt="python icon" className='w-12'/>
                 </Box>
               </Flex>
             </Box>

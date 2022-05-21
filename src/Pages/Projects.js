@@ -12,7 +12,7 @@ const NavProject = ({active,setActive}) => (
   <Breadcrumb display="flex" alignItems="center" marginLeft="1.25rem" width="fit-content">
 
     <BreadcrumbItem >
-      <BreadcrumbLink onClick={() => {setActive() }}><Text color={useColorModeValue("#b8af8e", "#555657")}>Projects</Text></BreadcrumbLink>
+      <BreadcrumbLink onClick={() => {setActive() }}><Text color={useColorModeValue("#b8af8e", "#555657")}>Projecten</Text></BreadcrumbLink>
     </BreadcrumbItem>
 
     <BreadcrumbItem>
@@ -50,7 +50,6 @@ function Projects() {
         )}
         <Grid
           display={ active? "none":"grid"}
-          marginTop='25px'
           h='500px'
           templateRows='repeat(3, 1fr)'
           templateColumns= {isLargerThan690? 'repeat(3, 1fr)':'repeat(5, 1fr)'}

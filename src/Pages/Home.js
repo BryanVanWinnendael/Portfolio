@@ -16,18 +16,10 @@ function Home(props) {
   return (
     <div className='h-screen grid grid-rows-page1 bg-transparent'>
         <div className='m-5'>
-          <Heading color={themeText}>
-            <Typewriter
-            onInit={(typewriter)=> {
-            typewriter
-            .typeString("My Portfolio")
-            .start();
-            }}
-            />
-          </Heading>
+          
           <Box 
             mt="1.25rem"
-            p={1.5}
+            p={2}
             bg={useColorModeValue('#ffffff89', '#20202380')}
             borderRadius="lg"
             >
@@ -40,7 +32,7 @@ function Home(props) {
 
           <SkillCard titel={"Sterktes"} tekst={
             <>
-            Ik ben een <b>gemotiveerd</b> persoon die intresse heeft in de IT-sector. Ik <b>help graag</b> mensen die problemen ondervinden met hun code en heb zelf een grote doorzettingsvermogen.
+            Ik ben een <b>gemotiveerde</b> persoon die intresse heeft in de IT-sector. Ik <b>help graag</b> mensen die problemen ondervinden met hun code en heb zelf een grote doorzettingsvermogen.
             Ik ben ook vloeiend in Nederlands en Engels.
             </>
           } icon={<IoBarbellOutline/>}/>

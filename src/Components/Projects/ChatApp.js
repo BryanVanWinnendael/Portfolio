@@ -16,15 +16,15 @@ function ChatApp() {
         <Heading as='h2' size='2xl'>ChatApp</Heading>
       </Center>
 
-      <Heading as='h3' size='lg' marginTop="1em">What is ChatApp?</Heading>
-      <Text marginTop="1em">ChatApp is social media platform just like Messenger.</Text>
+      <Heading as='h3' size='lg' marginTop="1em">Wat is ChatApp?</Heading>
+      <Text marginTop="1em">ChatApp is een social media platform net als Messenger.</Text>
 
-      <Heading as='h3' size='lg' marginTop="1em">Tools used</Heading>
-      <Text marginTop="1em">ChatApp is made with 
+      <Heading as='h3' size='lg' marginTop="1em">Tools gebruikt</Heading>
+      <Text marginTop="1em">ChatApp is gemaakt met 
         <Code children='React' colorScheme='blue' marginLeft="5px" marginRight="5px"/>
-        and uses 
+        en gebruikt 
         <Code children='Firebase' colorScheme='red' marginLeft="5px" marginRight="5px"/>
-        as a database.
+       als de database.
       </Text>
 
       <Stack direction='column' marginTop="1em" marginRight="50px">

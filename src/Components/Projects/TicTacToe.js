@@ -16,17 +16,17 @@ function TicTacToe() {
         <Heading as='h2' size='2xl'>TicTacToe</Heading>
       </Center>
 
-      <Heading as='h3' size='lg' marginTop="1em">What is TicTacToe?</Heading>
-      <Text marginTop="1em">TicTacToe is a online tic tac toe game that you can play against a friend.</Text>
+      <Heading as='h3' size='lg' marginTop="1em">Wat is TicTacToe?</Heading>
+      <Text marginTop="1em">TicTacToe is een online tic tac toe spel dat je tegen een vriend kunt spelen.</Text>
 
-      <Heading as='h3' size='lg' marginTop="1em">Tools used</Heading>
-      <Text marginTop="1em">For the frontend I used
+      <Heading as='h3' size='lg' marginTop="1em">Tools gebruikt</Heading>
+      <Text marginTop="1em">Voor de frontend gebruik ik
         <Code children='React' colorScheme='blue' marginLeft="5px" marginRight="5px"/>
-        and 
+        en 
         <Code children='Chakra UI' colorScheme='red' marginLeft="5px"/>. 
-        For the backend I used
+        Voor de backend gebruik ik
         <Code children='Express' colorScheme='green' marginLeft="5px" marginRight="5px"/>
-        and 
+        en 
         <Code children='Socket.IO' colorScheme='gray' marginLeft="5px"/>
         .
         

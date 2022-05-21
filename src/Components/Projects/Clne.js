@@ -16,15 +16,15 @@ function Clne() {
         <Heading as='h2' size='2xl'>Clne</Heading>
       </Center>
 
-      <Heading as='h3' size='lg' marginTop="1em">What is Clne?</Heading>
-      <Text marginTop="1em">Clne is social media platform just like Instagram.</Text>
+      <Heading as='h3' size='lg' marginTop="1em">Wat is Clne?</Heading>
+      <Text marginTop="1em">Clne is net als Instagram een social media platform.</Text>
 
-      <Heading as='h3' size='lg' marginTop="1em">Tools used</Heading>
-      <Text marginTop="1em">Clne is made with 
+      <Heading as='h3' size='lg' marginTop="1em">Tools gebruikt</Heading>
+      <Text marginTop="1em">Clne is gemaakt met 
         <Code children='React' colorScheme='blue' marginLeft="5px" marginRight="5px"/>
-        and uses 
+        en gebrikt 
         <Code children='Firebase' colorScheme='red' marginLeft="5px" marginRight="5px"/>
-        as a database.
+        als de database.
       </Text>
 
       <Stack direction='column' marginTop="1em" marginRight="50px">
