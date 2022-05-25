@@ -32,7 +32,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <Box className="App">
       {active === "secret" && (
         <Box w="100vw" h="100vh" >
           <Secret>
@@ -84,7 +84,7 @@ function App() {
         
       )}
      
-    </div>
+    </Box>
   );
 }
 

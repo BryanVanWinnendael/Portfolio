@@ -75,7 +75,7 @@ function Contact() {
       bg={colorHeader}
       borderRadius="lg"
       >
-        <Heading >Contact</Heading>
+        <Heading >Contacteer</Heading>
       </Box>
 
       <Text color={useColorModeValue("gray","darkGray")} m="1.3rem">Je kunt contact met me opnemen door het formulier in te vullen of door mijn social media te bekijken.</Text>
