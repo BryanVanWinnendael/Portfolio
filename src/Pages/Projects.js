@@ -57,19 +57,24 @@ function Projects() {
           position='relative'
         > 
           <Tooltip label="ToDo." aria-label='A tooltip'>
-            <GridItem onClick={() => {setActive("todo")}} rowSpan={2} colSpan={1}  bg={useColorModeValue('#ffffff40', '#20202380')}  cursor='pointer'  transitionDuration='0.5s' _hover={{transform:'scale(1.1)'}} boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)' borderRadius='5px'  backgroundImage='/images/todoProject.jpg' backgroundSize='cover' backgroundRepeat='no-repeat' backgroundPosition="center"/>
+            <GridItem onClick={() => {setActive("ToDo.")}} rowSpan={2} colSpan={1}  bg={useColorModeValue('#ffffff40', '#20202380')}  cursor='pointer'  transitionDuration='0.5s' _hover={{transform:'scale(1.1)'}} boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)' borderRadius='5px'  backgroundImage='/images/todoProject.jpg' backgroundSize='cover' backgroundRepeat='no-repeat' backgroundPosition="center"/>
           </Tooltip>
 
           <Tooltip label="Clne" aria-label='A tooltip'>
-            <GridItem onClick={() => {setActive("clne") }} colSpan={2} cursor='pointer' bg={useColorModeValue('#ffffff40', '#20202380')} transitionDuration='0.5s' _hover={{transform:'scale(1.1)'}} boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)' borderRadius='5px'  backgroundImage='/images/clneProject.png' backgroundSize='cover' backgroundRepeat='no-repeat'/>
+            <GridItem onClick={() => {setActive("Clne") }} colSpan={2} cursor='pointer' bg={useColorModeValue('#ffffff40', '#20202380')} transitionDuration='0.5s' _hover={{transform:'scale(1.1)'}} boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)' borderRadius='5px'  backgroundImage='/images/clneProject.png' backgroundSize='cover' backgroundRepeat='no-repeat'/>
           </Tooltip>
 
           <Tooltip label="ChatApp" aria-label='A tooltip'>
-            <GridItem onClick={() => {setActive("chatapp")}} colSpan={2} bg={useColorModeValue('#ffffff40', '#20202380')}  cursor='pointer' transitionDuration='0.5s' _hover={{transform:'scale(1.1)'}} boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)' borderRadius='5px' backgroundImage='/images/chatProject.jpg' backgroundSize='cover' backgroundRepeat='no-repeat' backgroundPosition="center"/>
+            <GridItem onClick={() => {setActive("ChatApp")}} colSpan={2} bg={useColorModeValue('#ffffff40', '#20202380')}  cursor='pointer' transitionDuration='0.5s' _hover={{transform:'scale(1.1)'}} boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)' borderRadius='5px' backgroundImage='/images/chatProject.jpg' backgroundSize='cover' backgroundRepeat='no-repeat' backgroundPosition="center"/>
           </Tooltip>
 
           <Tooltip label="TicTacToe" aria-label='A tooltip'>
-            <GridItem onClick={() => {setActive("tictactoe")}} colSpan={4} bg={useColorModeValue('#ffffff40', '#20202380')}  cursor='pointer' css={{ backdropFilter: 'blur(10px)' }} transitionDuration='0.5s' _hover={{transform:'scale(1.1)'}} backgroundImage='/images/tictactoe.jpg' backgroundSize='cover' backgroundRepeat='no-repeat' backgroundPosition="center" boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)' borderRadius='5px' display="flex" justifyContent="center" alignItems="center">
+            <GridItem onClick={() => {setActive("TicTacToe")}} colSpan={4} bg={useColorModeValue('#ffffff40', '#20202380')}  cursor='pointer' css={{ backdropFilter: 'blur(10px)' }} transitionDuration='0.5s' _hover={{transform:'scale(1.1)'}} backgroundImage='/images/tictactoe.jpg' backgroundSize='cover' backgroundRepeat='no-repeat' backgroundPosition="center" boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)' borderRadius='5px' display="flex" justifyContent="center" alignItems="center">
+            </GridItem>
+          </Tooltip>
+
+          <Tooltip label="TwitterClone" aria-label='A tooltip'>
+            <GridItem onClick={() => {setActive("TwitterClone")}} colSpan={5} bg={useColorModeValue('#ffffff40', '#20202380')}  cursor='pointer' css={{ backdropFilter: 'blur(10px)' }} transitionDuration='0.5s' _hover={{transform:'scale(1.1)'}} backgroundImage='/images/twitter.jpg' backgroundSize='cover' backgroundRepeat='no-repeat' backgroundPosition="center" boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)' borderRadius='5px' display="flex" justifyContent="center" alignItems="center">
             </GridItem>
           </Tooltip>
 

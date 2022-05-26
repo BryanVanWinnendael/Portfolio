@@ -4,14 +4,16 @@ import ChatApp from './Projects/ChatApp';
 import ToDo from './Projects/ToDo';
 import TicTacToe from './Projects/TicTacToe';
 import Section from './Section';
+import TwitterClone from './Projects/TwitterClone';
 
 function MakeProject({active}) {
   return (
     <Section>
-        {active === "todo" && (<ToDo/>)}
-        {active === "clne" && (<Clne/>)}
-        {active === "chatapp" && (<ChatApp/>)}
-        {active === "tictactoe" && (<TicTacToe/>)}
+        {active === "ToDo." && (<ToDo/>)}
+        {active === "Clne" && (<Clne/>)}
+        {active === "ChatApp" && (<ChatApp/>)}
+        {active === "TicTacToe" && (<TicTacToe/>)}
+        {active === "TwitterClone" && (<TwitterClone/>)}
     </Section>
 
   )
