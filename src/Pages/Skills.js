@@ -1,6 +1,5 @@
 import React from 'react'
 import { Heading, Box, useColorModeValue, Flex, Text, Grid } from '@chakra-ui/react'
-import { BsBraces } from "react-icons/bs";
 import { RiBracesLine } from "react-icons/ri";
 import { IoBuildOutline } from "react-icons/io5";
 

@@ -16,7 +16,7 @@ function ToDo() {
         <Heading as='h2' size='2xl'>TwitterClone.</Heading>
       </Center>
 
-      <Heading as='h3' size='lg' marginTop="1em">Wat is ToDo?</Heading>
+      <Heading as='h3' size='lg' marginTop="1em">Wat is TwitterClone?</Heading>
       <Text marginTop="1em">TwitterClone is net als twitter een social media platform.</Text>
 
       <Heading as='h3' size='lg' marginTop="1em">Tools gebruikt</Heading>

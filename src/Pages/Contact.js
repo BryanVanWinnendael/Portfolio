@@ -63,7 +63,6 @@ function Contact() {
       localStorage.setItem('mail',"send")
       formRef.current.submit()
     }
-
   }
 
   

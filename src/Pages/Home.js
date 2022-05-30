@@ -1,6 +1,5 @@
 import React from 'react'
-import { Heading, Text, useColorModeValue, Box, Button, Link} from '@chakra-ui/react'
-import Typewriter from "typewriter-effect";
+import { Text, useColorModeValue, Box, Button, Link} from '@chakra-ui/react'
 import Timeline from '../Components/Timeline';
 import SkillCard from '../Components/SkillCard';
 import { IoBarbellOutline, IoTrendingDownOutline, IoBulbOutline, IoWarningOutline, IoDocumentTextOutline } from "react-icons/io5";
@@ -12,21 +11,28 @@ function Home(props) {
   const contact = () => {
     props.setActive("contact")
   }
+
+  const skills = () => {
+    props.setActive("skills")
+  }
   
+  const projects = () => {
+    props.setActive("projects")
+  }
+
   return (
     <div className='h-screen grid grid-rows-page1 bg-transparent'>
         <div className='m-5'>
           
           <Box 
-            mt="1.25rem"
             p={2}
             bg={useColorModeValue('#ffffff89', '#20202380')}
             borderRadius="lg"
             >
-              <Text color={themeText} fontSize='2xl'>Mijn naam is Bryan Van Winnendael</Text>
+              <Text display="flex" color={themeText} fontSize='2xl'>Mijn naam is <Text color={useColorModeValue("#555657", "#b8af8e")} ml={1} fontWeight="bold">Bryan Van Winnendael</Text></Text>
           </Box>
 
-          <Bio/>
+          <Bio skills={skills} projects={projects}/>
 
           <Timeline/>
 

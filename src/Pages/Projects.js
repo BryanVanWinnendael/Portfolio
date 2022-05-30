@@ -31,10 +31,10 @@ function Projects() {
     <div>
       {!active && (
         <Box 
-        m="1.25rem"
         p = {2}
         bg={colorHeader}
         borderRadius="lg"
+        m="1.25rem"
         >
           <Heading >Projecten</Heading>
         </Box>
@@ -51,7 +51,7 @@ function Projects() {
         <Grid
           display={ active? "none":"grid"}
           h='500px'
-          templateRows='repeat(3, 1fr)'
+          templateRows='repeat(4, 1fr)'
           templateColumns= {isLargerThan690? 'repeat(3, 1fr)':'repeat(5, 1fr)'}
           gap={4}
           position='relative'
@@ -61,11 +61,11 @@ function Projects() {
           </Tooltip>
 
           <Tooltip label="Clne" aria-label='A tooltip'>
-            <GridItem onClick={() => {setActive("Clne") }} colSpan={2} cursor='pointer' bg={useColorModeValue('#ffffff40', '#20202380')} transitionDuration='0.5s' _hover={{transform:'scale(1.1)'}} boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)' borderRadius='5px'  backgroundImage='/images/clneProject.png' backgroundSize='cover' backgroundRepeat='no-repeat'/>
+            <GridItem onClick={() => {setActive("Clne") }} colSpan={isLargerThan690? 4:2} cursor='pointer' bg={useColorModeValue('#ffffff40', '#20202380')} transitionDuration='0.5s' _hover={{transform:'scale(1.1)'}} boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)' borderRadius='5px'  backgroundImage='/images/clneProject.png' backgroundSize='cover' backgroundRepeat='no-repeat'/>
           </Tooltip>
 
           <Tooltip label="ChatApp" aria-label='A tooltip'>
-            <GridItem onClick={() => {setActive("ChatApp")}} colSpan={2} bg={useColorModeValue('#ffffff40', '#20202380')}  cursor='pointer' transitionDuration='0.5s' _hover={{transform:'scale(1.1)'}} boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)' borderRadius='5px' backgroundImage='/images/chatProject.jpg' backgroundSize='cover' backgroundRepeat='no-repeat' backgroundPosition="center"/>
+            <GridItem onClick={() => {setActive("ChatApp")}} colSpan={isLargerThan690? 5:2} rowStart={isLargerThan690? 4:0} bg={useColorModeValue('#ffffff40', '#20202380')}  cursor='pointer' transitionDuration='0.5s' _hover={{transform:'scale(1.1)'}} boxShadow='2px 1px 8px 2px rgb(0 0 0 / 10%)' borderRadius='5px' backgroundImage='/images/chatProject.jpg' backgroundSize='cover' backgroundRepeat='no-repeat' backgroundPosition="center"/>
           </Tooltip>
 
           <Tooltip label="TicTacToe" aria-label='A tooltip'>
