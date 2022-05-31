@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, useColorModeValue, Box, Button, Link} from '@chakra-ui/react'
+import { Text, useColorModeValue, Box, Button, Link, useMediaQuery} from '@chakra-ui/react'
 import Timeline from '../Components/Timeline';
 import SkillCard from '../Components/SkillCard';
 import { IoBarbellOutline, IoTrendingDownOutline, IoBulbOutline, IoWarningOutline, IoDocumentTextOutline } from "react-icons/io5";
@@ -7,6 +7,7 @@ import Bio from '../Components/Bio';
 
 function Home(props) {
   const themeText = useColorModeValue("text.light","text.dark")
+  const [isLargerThan690] = useMediaQuery('(max-width: 690px)')
 
   const contact = () => {
     props.setActive("contact")
@@ -23,13 +24,12 @@ function Home(props) {
   return (
     <div className='h-screen grid grid-rows-page1 bg-transparent'>
         <div className='m-5'>
-          
           <Box 
             p={2}
             bg={useColorModeValue('#ffffff89', '#20202380')}
             borderRadius="lg"
             >
-              <Text display="flex" color={themeText} fontSize='2xl'>Mijn naam is <Text color={useColorModeValue("#555657", "#b8af8e")} ml={1} fontWeight="bold">Bryan Van Winnendael</Text></Text>
+              <Text fontSize={isLargerThan690? 18:28} display="flex" color={themeText}>Mijn naam is <Text color={useColorModeValue("#555657", "#b8af8e")} ml={1} fontWeight="bold">Bryan Van Winnendael</Text></Text>
           </Box>
 
           <Bio skills={skills} projects={projects}/>

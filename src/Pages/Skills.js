@@ -8,7 +8,7 @@ function Skills() {
   const colorHeader = useColorModeValue('#ffffff89', '#20202380')
 
   return (
-    <div className='h-screen'>
+    <Box className='h-screen' mb={12}>
       <Box 
       m="1.25rem"
       p = {2}
@@ -137,7 +137,7 @@ function Skills() {
         </Grid>
 
       </Box>
-    </div>
+    </Box>
   )
 }
 
