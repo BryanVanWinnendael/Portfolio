@@ -1,17 +1,18 @@
-import React,{useEffect} from 'react'
-import { Text,useColorMode,useColorModeValue,Grid, 
+import React,{ useEffect } from 'react'
+import { Text, useColorMode, useColorModeValue, Grid, 
     Menu,
     MenuButton,
     MenuList,
     MenuItem,
     useMediaQuery,
-    } 
-    from '@chakra-ui/react'
-import {HamburgerIcon } from '@chakra-ui/icons'
+    } from '@chakra-ui/react'
+import { HamburgerIcon } from '@chakra-ui/icons'
 import ToggleThemeButton from './ToggleThemeButton'
-function Navigation(props) {
+import { useNav } from '../../Contexts/NavContext'
 
-    const {colorMode} = useColorMode()
+function Navigation() {
+    const { setActivePage } = useNav()
+    const { colorMode } = useColorMode()
     const navBg = useColorModeValue("#edf2f733","blackAlpha")
     const navText = useColorModeValue("gray.600","whiteAlpha.700")
     const navTitle = useColorModeValue("text.light","text.dark")
@@ -24,33 +25,29 @@ function Navigation(props) {
         else{
             document.body.classList.add("dark-theme")
         }
-    });
-
-    function handleChange(param){
-        props.setActive(param)
-    }
+    })
 
     return (
     <Grid className='testnav' templateColumns={{base:'1fr 1fr 0.5fr',sm:'1fr 1fr'}} maxWidth="700px" position={"fixed"} alignItems={'center'} css={{ backdropFilter: 'blur(10px)' }} background={navBg} zIndex={10} width={"100%"} paddingBottom={"10px"}>
         <div className='flex items-center col-start-1 mr-5 ml-5'>
-            <Text onClick={() => {handleChange("home")}} color={navTitle} fontSize='2xl' className='mt-5 font-bold text-xl cursor-pointer'>Mijn Portfolio</Text>
+            <Text onClick={() => {setActivePage("home")}} color={navTitle} fontSize='2xl' className='mt-5 font-bold text-xl cursor-pointer'>Mijn Portfolio</Text>
         </div>
         
         <ul className={ isSmallerThan800 ? 'hidden h-full col-start-2one' : 'flex justify-center items-center h-full col-start-2'}>
             <li className='mr-5 h-full flex items-center'>
-               <Text cursor="pointer" onClick={() => {handleChange("home")}} color={navText} fontSize='l' className='mt-5'>Home</Text>
+               <Text cursor="pointer" onClick={() => {setActivePage("home")}} color={navText} fontSize='l' className='mt-5'>Home</Text>
             </li>
 
             <li className='mr-5 h-full flex items-center'>
-                <Text cursor="pointer" onClick={() => {handleChange("skills")}} color={navText} fontSize='l' className='mt-5'>Skills</Text>
+                <Text cursor="pointer" onClick={() => {setActivePage("skills")}} color={navText} fontSize='l' className='mt-5'>Skills</Text>
             </li>
 
             <li className='mr-5 h-full flex items-center'>
-                <Text cursor="pointer" onClick={() => {handleChange("projects")}} color={navText} fontSize='l' className='mt-5'>Projecten</Text>
+                <Text cursor="pointer" onClick={() => {setActivePage("projects")}} color={navText} fontSize='l' className='mt-5'>Projecten</Text>
             </li>
 
             <li className='mr-5 h-full flex items-center'>
-                <Text cursor="pointer" onClick={() => {handleChange("contact")}} color={navText} fontSize='l' className='mt-5'>Contacteer</Text>
+                <Text cursor="pointer" onClick={() => {setActivePage("contact")}} color={navText} fontSize='l' className='mt-5'>Contacteer</Text>
             </li>
         </ul>
 
@@ -75,10 +72,10 @@ function Navigation(props) {
                     <HamburgerIcon color={"white"}/>
                 </MenuButton>
                 <MenuList>
-                    <MenuItem onClick={() => {handleChange("home")}}>Home</MenuItem>
-                    <MenuItem onClick={() => {handleChange("skills")}}>Skills</MenuItem>
-                    <MenuItem onClick={() => {handleChange("projects")}}>Projects</MenuItem>
-                    <MenuItem onClick={() => {handleChange("contact")}}>Contacteer</MenuItem>
+                    <MenuItem onClick={() => {setActivePage("home")}}>Home</MenuItem>
+                    <MenuItem onClick={() => {setActivePage("skills")}}>Skills</MenuItem>
+                    <MenuItem onClick={() => {setActivePage("projects")}}>Projects</MenuItem>
+                    <MenuItem onClick={() => {setActivePage("contact")}}>Contacteer</MenuItem>
 
                 </MenuList>
             </Menu>

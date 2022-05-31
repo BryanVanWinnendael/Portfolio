@@ -1,8 +1,5 @@
 import React from 'react'
-import { Text ,useColorModeValue,
-    Box,  
-  } from '@chakra-ui/react'
-
+import { Text, useColorModeValue, Box } from '@chakra-ui/react'
 
 export default function Timeline() {
   return (

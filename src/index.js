@@ -1,11 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
 import { ChakraProvider } from '@chakra-ui/react'
 import { extendTheme } from "@chakra-ui/react"
 import { createBreakpoints } from '@chakra-ui/theme-tools'
-import { mode } from '@chakra-ui/theme-tools';
+import { mode } from '@chakra-ui/theme-tools'
+import { NavProvider } from './Contexts/NavContext'
 
 const styles = {
   global: props => ({
@@ -39,9 +40,11 @@ const theme = extendTheme({
 
 
 ReactDOM.render(
-  <ChakraProvider theme={theme}>
-    <App />
-  </ChakraProvider>,
+  <NavProvider>
+     <ChakraProvider theme={ theme }>
+      <App />
+    </ChakraProvider>
+  </NavProvider>,
   document.getElementById('root')
 );
 

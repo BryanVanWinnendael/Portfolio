@@ -6,7 +6,6 @@ const ThemeToggleButton = () => {
   const { toggleColorMode } = useColorMode()
   const navIconColor = useColorModeValue("#a79f83","#414243")
 
-
   return (
     <AnimatePresence exitBeforeEnter initial={false}>
       <motion.div

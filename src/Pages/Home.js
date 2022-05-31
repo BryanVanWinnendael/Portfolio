@@ -1,25 +1,15 @@
 import React from 'react'
 import { Text, useColorModeValue, Box, Button, Link, useMediaQuery} from '@chakra-ui/react'
-import Timeline from '../Components/Timeline';
-import SkillCard from '../Components/SkillCard';
-import { IoBarbellOutline, IoTrendingDownOutline, IoBulbOutline, IoWarningOutline, IoDocumentTextOutline } from "react-icons/io5";
-import Bio from '../Components/Bio';
+import Timeline from '../Components/Timeline'
+import SkillCard from '../Components/SkillCard'
+import { IoBarbellOutline, IoTrendingDownOutline, IoBulbOutline, IoWarningOutline, IoDocumentTextOutline } from "react-icons/io5"
+import Bio from '../Components/Bio'
+import { useNav } from '../Contexts/NavContext'
 
 function Home(props) {
+  const {setActivePage} = useNav()
   const themeText = useColorModeValue("text.light","text.dark")
   const [isLargerThan690] = useMediaQuery('(max-width: 690px)')
-
-  const contact = () => {
-    props.setActive("contact")
-  }
-
-  const skills = () => {
-    props.setActive("skills")
-  }
-  
-  const projects = () => {
-    props.setActive("projects")
-  }
 
   return (
     <div className='h-screen grid grid-rows-page1 bg-transparent'>
@@ -32,7 +22,7 @@ function Home(props) {
               <Text fontSize={isLargerThan690? 18:28} display="flex" color={themeText}>Mijn naam is <Text color={useColorModeValue("#555657", "#b8af8e")} ml={1} fontWeight="bold">Bryan Van Winnendael</Text></Text>
           </Box>
 
-          <Bio skills={skills} projects={projects}/>
+          <Bio/>
 
           <Timeline/>
 
@@ -66,7 +56,7 @@ function Home(props) {
 
           <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
             <Text color={useColorModeValue("gray","darkGray")}>Meer intresse? Bekijk mijn <b>CV</b> of 
-              <Link color="#a79f83" fontWeight="bold" ml={1} onClick={contact} isExternal>
+              <Link color="#a79f83" fontWeight="bold" ml={1} onClick={() => setActivePage("contact")} isExternal>
                 contacteer
               </Link> mij.
             </Text>

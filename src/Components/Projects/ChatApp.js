@@ -1,13 +1,13 @@
 import React from 'react'
-import { Heading,Text ,Center,
-  Image ,
+import { Heading, Text, Center,
+  Image,
   Badge,
   Stack,
   Link,
   Code,
   Box,  
 } from '@chakra-ui/react'
-import {ExternalLinkIcon  } from '@chakra-ui/icons'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 function ChatApp() {
   return (

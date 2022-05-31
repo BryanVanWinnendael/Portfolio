@@ -1,5 +1,5 @@
-import React,{useState} from 'react'
-import { Heading ,Box,Grid, GridItem,Tooltip,useMediaQuery,
+import React,{ useState } from 'react'
+import { Heading , Box, Grid, GridItem, Tooltip, useMediaQuery,
   Text,
   useColorModeValue,
   Breadcrumb,
@@ -8,23 +8,21 @@ import { Heading ,Box,Grid, GridItem,Tooltip,useMediaQuery,
 } from '@chakra-ui/react'
 import MakeProject from '../Components/MakeProject'
 
-const NavProject = ({active,setActive}) => (
+const NavProject = ({ active, setActive }) => (
   <Breadcrumb display="flex" alignItems="center" marginLeft="1.25rem" width="fit-content">
-
     <BreadcrumbItem >
-      <BreadcrumbLink onClick={() => {setActive() }}><Text color={useColorModeValue("#b8af8e", "#555657")}>Projecten</Text></BreadcrumbLink>
+      <BreadcrumbLink onClick={() => {setActive()}}><Text color={useColorModeValue("#b8af8e", "#555657")}>Projecten</Text></BreadcrumbLink>
     </BreadcrumbItem>
 
     <BreadcrumbItem>
       <Text fontSize="xl" fontWeight="bold">{active}</Text>
     </BreadcrumbItem>
-
   </Breadcrumb>
 )
 
 function Projects() {
   const [isLargerThan690] = useMediaQuery('(max-width: 690px)')
-  const [active,setActive] = useState()
+  const [active, setActive] = useState()
   const colorHeader = useColorModeValue('#ffffff89', '#20202380')
 
   return (

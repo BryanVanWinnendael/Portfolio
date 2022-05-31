@@ -1,5 +1,5 @@
-import React,{useState,useRef} from 'react'
-import {Heading,Box,useColorModeValue,
+import React,{ useState, useRef } from 'react'
+import { Heading, Box, useColorModeValue,
   FormControl,
   FormLabel,
   FormErrorMessage,
@@ -10,13 +10,12 @@ import {Heading,Box,useColorModeValue,
   Icon,
   Link
 } from '@chakra-ui/react'
-import {EmailIcon } from '@chakra-ui/icons'
-import { IoLogoGithub,IoLogoLinkedin } from "react-icons/io5";
+import { EmailIcon } from '@chakra-ui/icons'
+import { IoLogoGithub,IoLogoLinkedin } from "react-icons/io5"
 
 
 function Contact() {
   const formRef = useRef()
-
   const nameRef = useRef()
   const emailRef = useRef()
   const textRef = useRef()
@@ -27,11 +26,10 @@ function Contact() {
   const [isErrorEmail,setIsErrorEmail] = useState()
   const [isErrorText,setIsErrorText] = useState()
 
-
   //check if mail is valid
   const checkEmail = (email) => {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    return re.test(String(email).toLowerCase())
   }
 
   const sumbitForm = (e) =>{

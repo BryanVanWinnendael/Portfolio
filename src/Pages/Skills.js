@@ -1,7 +1,7 @@
 import React from 'react'
 import { Heading, Box, useColorModeValue, Flex, Text, Grid } from '@chakra-ui/react'
-import { RiBracesLine } from "react-icons/ri";
-import { IoBuildOutline } from "react-icons/io5";
+import { RiBracesLine } from "react-icons/ri"
+import { IoBuildOutline } from "react-icons/io5"
 
 
 function Skills() {

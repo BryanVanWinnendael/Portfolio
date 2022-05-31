@@ -1,19 +1,20 @@
-import React, { useState,useEffect} from 'react'
-import './App.css';
-import Home from './Pages/Home';
-import Skills from './Pages/Skills';
-import Projects from './Pages/Projects';
-import Contact from './Pages/Contact';
-import Navigation from './Components/Navigation/Navigation';
-import ComputerLoader from './Components/3D/ComputerLoader';
-import Section from './Components/Section';
-import { useToast,Box,Spinner,Text} from '@chakra-ui/react'
-import Secret from './Components/Secret'; 
-import SecretPage from './Pages/SecretPage';
+import React, { useState, useEffect } from 'react'
+import './App.css'
+import Home from './Pages/Home'
+import Skills from './Pages/Skills'
+import Projects from './Pages/Projects'
+import Contact from './Pages/Contact'
+import Navigation from './Components/Navigation/Navigation'
+import ComputerLoader from './Components/3D/ComputerLoader'
+import Section from './Components/Section'
+import { useToast, Box, Spinner, Text } from '@chakra-ui/react'
+import Secret from './Components/Secret'
+import SecretPage from './Pages/SecretPage'
+import { useNav } from './Contexts/NavContext'
 
 function App() {
-  const [active, setActive] = useState("home")
-  const [loaded,setLoaded] = useState(false)
+  const { activePage } = useNav();
+  const [loaded, setLoaded] = useState(false)
   const toast = useToast()
 
   useEffect(() => { 
@@ -30,10 +31,9 @@ function App() {
 
   }, [])
 
-
   return (
     <Box className="App">
-      {active === "secret" && (
+      {activePage === "secret" && (
         <Box w="100vw" h="100vh" >
           <Secret>
               {loaded && (
@@ -45,43 +45,41 @@ function App() {
                 </Box>
               )}
               {!loaded && (
-               <SecretPage setActive={setActive}/>
+               <SecretPage/>
               )}
           </Secret>
         </Box>
-
       )}
 
-      <Navigation setActive={setActive} />
+      <Navigation/>
       
-      {active !== "secret" && (
-        <div>
-          <ComputerLoader setActive={setActive} setLoaded={setLoaded}/>
-          {active === "home" && (
+      {activePage !== "secret" && (
+        <>
+          <ComputerLoader setLoaded={setLoaded}/>
+          {activePage === "home" && (
             <Section>
-              <Home setActive={setActive}/>
+              <Home/>
             </Section>
           )}
 
-          {active === "skills" && (
+          {activePage === "skills" && (
             <Section>
               <Skills />
             </Section>
           )}
 
-          {active === "projects" && (
+          {activePage === "projects" && (
             <Section>
               <Projects />
             </Section>
           )}
 
-          {active === "contact" && (
+          {activePage === "contact" && (
             <Section>
               <Contact />
             </Section>
           )}
-        </div>
-        
+        </>
       )}
      
     </Box>
