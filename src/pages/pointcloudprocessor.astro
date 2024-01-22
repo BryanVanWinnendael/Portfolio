@@ -1,0 +1,112 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/globals.css";
+import { Image } from "astro:assets";
+import DroneImage from "@/assets/images/drone/drone.svg";
+import DroneImage2 from "@/assets/images/drone/drone2.jpg";
+import DroneImage3 from "@/assets/images/drone/drone3.jpg";
+import DroneImage4 from "@/assets/images/drone/drone4.jpg";
+import BackNavigation from "@/components/backNavigation";
+import NavProjects from "@/components/navProjects";
+import { IoIosArrowForward } from "react-icons/io";
+import DialogImage from "@/components/dialogImage";
+---
+
+<Layout title="Welcome to Astro.">
+  <BackNavigation title="Point Cloud Processor" />
+  <div class="p-5 pt-5 pb-20">
+    <DialogImage
+      client:load
+      image={DroneImage}
+      classList="w-full max-h-96 rounded-md object-cover"
+      transitionName="pointcloudprocessor"
+      alt="drone"
+    />
+    <!-- <Image
+      transition:name="pointcloudprocessor"
+      src={DroneImage}
+      alt="drone"
+      class="w-full max-h-96 rounded-md object-cover"
+    /> -->
+    <div
+      class="bg-secondary flex justify-between items-center rounded-md p-5 mt-[-70px] z-50 relative w-5/6"
+    >
+      <h1
+        class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary"
+      >
+        Point Cloud Processor
+      </h1>
+      <p
+        class="scroll-m-20 text-xl font-semibold tracking-tight text-muted-foreground"
+      >
+        2023
+      </p>
+    </div>
+    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+      Overview
+    </h4>
+    <p class="leading-7 text-primary">
+      Noted is a combination of notion and obsidian. It is a note taking app
+      that allows you to write notes in block-style just like notion.
+    </p>
+    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+      Customize
+    </h4>
+    <p class="leading-7 text-primary">
+      With the customizations, like obsidian, you can fully customize your
+      application.
+    </p>
+    <p class="leading-7 text-primary">
+      Don't like the default theme? Change it! Don't like the font? Change it!
+    </p>
+    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+      Built with
+    </h4>
+    <p class="leading-7 text-primary">
+      Noted is built with electron, react and editor.js.
+    </p>
+    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+      Screenshots
+    </h4>
+    <div class="flex flex-col gap-5 mt-5">
+      <Image
+        src={DroneImage2}
+        alt="drone"
+        class="w-1/2 max-h-96 rounded-md object-cover shadow-md"
+      />
+      <Image
+        src={DroneImage3}
+        alt="drone"
+        class="w-1/2 max-h-96 rounded-md object-cover shadow-md"
+      />
+      <Image
+        src={DroneImage4}
+        alt="drone"
+        class="w-1/2 max-h-96 rounded-md object-cover shadow-md"
+      />
+    </div>
+
+    <div class="flex gap-5 bg-secondary shadow-md w-fit p-5 rounded-md mt-5">
+      <div>
+        <p class="leading-7 text-muted-foreground">Download</p>
+        <a
+          target="_blank"
+          href="https://github.com/BryanVanWinnendael/Noted"
+          class="w-full flex items-center text-blue-500 cursor-pointer"
+        >
+          Download <IoIosArrowForward />
+        </a>
+      </div>
+      <div>
+        <p class="leading-7 text-muted-foreground">Code</p>
+        <a
+          target="_blank"
+          class="w-full flex items-center text-blue-500 cursor-pointer"
+          href="https://github.com/BryanVanWinnendael/Noted"
+        >
+          View code <IoIosArrowForward />
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
