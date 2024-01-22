@@ -39,18 +39,16 @@ const About = () => {
 
   return (
     <div id="about" ref={targetRef} className='h-[100dvh] flex justify-center items-center'>
-      <article className="font-semibold p-12 w-5/6">
-        <p className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+      <article className="font-semibold lg:p-12 p-2 w-5/6">
+        <p className="scroll-m-20 lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-extrabold tracking-tight">
           My name is Bryan Van Winnendael,
         </p>
-        <p className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-          I&apos;m {calculateAge()}{" "}
-          years old.
-        </p>
-        <p className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-          I&apos;m a full stack developer and I&apos;m always looking for
+        <p className="scroll-m-20 lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-extrabold tracking-tight">
+          I&apos;m a {calculateAge()}{" "}
+          year old full stack developer and always looking for
           new challenges.
         </p>
+
       </article>
     </div>
   )

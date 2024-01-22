@@ -40,17 +40,7 @@ const Contact = () => {
   return (
     <div id="contact" ref={targetRef} className='h-[100dvh flex justify-center items-center'>
       <article className="font-semibold text-5xl p-12 w-5/6">
-        <p>
-          My name is Bryan Van Winnendael,
-        </p>
-        <p>
-          I&apos;m {calculateAge()}{" "}
-          years old.
-        </p>
-        <p>
-          I&apos;m a full stack developer and I&apos;m always looking for
-          new challenges.
-        </p>
+
       </article>
     </div>
   )

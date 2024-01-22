@@ -80,16 +80,6 @@
   transition: background-color 0.5s ease;
 }
 
-@keyframes customEase {
-  0% {
-    animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
-  }
-
-  100% {
-    animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
-  }
-}
-
-.ease-custom {
-  animation: customEase;
+body {
+  overflow-x: hidden;
 }
