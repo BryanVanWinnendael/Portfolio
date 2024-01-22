@@ -22,12 +22,6 @@ import DialogImage from "@/components/dialogImage";
       transitionName="pointcloudprocessor"
       alt="drone"
     />
-    <!-- <Image
-      transition:name="pointcloudprocessor"
-      src={DroneImage}
-      alt="drone"
-      class="w-full max-h-96 rounded-md object-cover"
-    /> -->
     <div
       class="bg-secondary flex justify-between items-center rounded-md p-5 mt-[-70px] z-50 relative w-5/6"
     >
@@ -43,55 +37,81 @@ import DialogImage from "@/components/dialogImage";
       </p>
     </div>
     <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
-      Overview
+      Problem
     </h4>
     <p class="leading-7 text-primary">
-      Noted is a combination of notion and obsidian. It is a note taking app
-      that allows you to write notes in block-style just like notion.
-    </p>
-    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
-      Customize
-    </h4>
-    <p class="leading-7 text-primary">
-      With the customizations, like obsidian, you can fully customize your
-      application.
-    </p>
-    <p class="leading-7 text-primary">
-      Don't like the default theme? Change it! Don't like the font? Change it!
+      For my Graduation project my group and I had to make a project that was
+      about detecting planes inside a point cloud, in order to get information
+      about all the planes in a point cloud.
     </p>
     <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
       Built with
     </h4>
     <p class="leading-7 text-primary">
-      Noted is built with electron, react and editor.js.
+      The application is seperated into 2 parts:
     </p>
+    <li class="leading-7 text-primary">
+      The desktop application that was made in Pyton using the PyQt5 library.
+    </li>
+    <li class="leading-7 text-primary">
+      The model that will actually process the point cloud was made with Python.
+    </li>
+    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+      Process
+    </h4>
+    <li class="leading-7 text-primary">Load the point cloud</li>
+    <li class="leading-7 text-primary">Use RANSAC to detect planes</li>
+    <li class="leading-7 text-primary">
+      Possibly cluster using a cluster strategy like DBSCAN or agglomerative
+      clustering, using no clustering is also possible
+    </li>
+    <li class="leading-7 text-primary">
+      Save each of the planes as a .ply file
+    </li>
+    <li class="leading-7 text-primary">
+      Generate a color range for each plane and save the entire point cloud with
+      the colors
+    </li>
+    <li class="leading-7 text-primary">
+      Calculate the surface area of each plane
+    </li>
+    <li class="leading-7 text-primary">
+      Write the info for each plane to a .csv file
+    </li>
     <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
       Screenshots
     </h4>
     <div class="flex flex-col gap-5 mt-5">
-      <Image
-        src={DroneImage2}
-        alt="drone"
-        class="w-1/2 max-h-96 rounded-md object-cover shadow-md"
+      <DialogImage
+        client:load
+        image={DroneImage2}
+        classList="w-1/2 max-h-96 rounded-md object-cover shadow-md"
+        alt="drone2"
       />
-      <Image
-        src={DroneImage3}
-        alt="drone"
-        class="w-1/2 max-h-96 rounded-md object-cover shadow-md"
+      <DialogImage
+        client:load
+        image={DroneImage3}
+        classList="w-1/2 max-h-96 rounded-md object-cover shadow-md"
+        alt="drone3"
       />
-      <Image
-        src={DroneImage4}
-        alt="drone"
-        class="w-1/2 max-h-96 rounded-md object-cover shadow-md"
+      <DialogImage
+        client:load
+        image={DroneImage4}
+        classList="w-1/2 max-h-96 rounded-md object-cover shadow-md"
+        alt="drone4"
       />
     </div>
+
+    <p class="leading-7 text-primary mt-5">
+      For an in depth explanation about the app you can visit the github page.
+    </p>
 
     <div class="flex gap-5 bg-secondary shadow-md w-fit p-5 rounded-md mt-5">
       <div>
         <p class="leading-7 text-muted-foreground">Download</p>
         <a
           target="_blank"
-          href="https://github.com/BryanVanWinnendael/Noted"
+          href="https://github.com/BryanVanWinnendael/Drone_project/releases/tag/v1.0"
           class="w-full flex items-center text-blue-500 cursor-pointer"
         >
           Download <IoIosArrowForward />
@@ -102,7 +122,7 @@ import DialogImage from "@/components/dialogImage";
         <a
           target="_blank"
           class="w-full flex items-center text-blue-500 cursor-pointer"
-          href="https://github.com/BryanVanWinnendael/Noted"
+          href="https://github.com/BryanVanWinnendael/Drone_project"
         >
           View code <IoIosArrowForward />
         </a>

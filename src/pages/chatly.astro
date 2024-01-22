@@ -2,25 +2,19 @@
 import Layout from "@/layouts/Layout.astro";
 import "@/styles/globals.css";
 import { Image } from "astro:assets";
-import NotedImage from "@/assets/images/noted/noted.svg";
-import NotedImage1 from "@/assets/images/noted/noted1.png";
-import NotedImage2 from "@/assets/images/noted/noted2.png";
-import NotedImage3 from "@/assets/images/noted/noted3.png";
-
+import ChatlyImage from "@/assets/images/chatly/chatly.jpg";
 import BackNavigation from "@/components/backNavigation";
 import { IoIosArrowForward } from "react-icons/io";
-import DialogImage from "@/components/dialogImage";
 ---
 
 <Layout title="Welcome to Astro.">
-  <BackNavigation title="Noted" />
+  <BackNavigation title="Chatly" />
   <div class="p-5 pt-5">
-    <DialogImage
-      client:load
-      image={NotedImage}
-      classList="w-full max-h-96 rounded-md object-cover"
-      transitionName="noted"
-      alt="noted"
+    <Image
+      transition:name="chatly"
+      src={ChatlyImage}
+      alt="Chatly"
+      class="w-full max-h-96 rounded-md object-cover"
     />
     <div
       class="bg-secondary flex justify-between items-center rounded-md p-5 mt-[-70px] z-50 relative w-5/6"
@@ -28,7 +22,7 @@ import DialogImage from "@/components/dialogImage";
       <h1
         class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary"
       >
-        Noted
+        Chatly
       </h1>
       <p
         class="scroll-m-20 text-xl font-semibold tracking-tight text-muted-foreground"
@@ -40,49 +34,19 @@ import DialogImage from "@/components/dialogImage";
       Overview
     </h4>
     <p class="leading-7 text-primary">
-      Noted is a combination of notion and obsidian. It is a note taking app
-      that allows you to write notes in block-style just like notion.
+      Chatly is an online website that allows you to chat with people from
+      around the world.
     </p>
-    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
-      Customize
-    </h4>
+    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">Use</h4>
     <p class="leading-7 text-primary">
-      With the customizations, like obsidian, you can fully customize your
-      application.
-    </p>
-    <p class="leading-7 text-primary">
-      Don't like the default theme? Change it! Don't like the font? Change it!
+      Go to the website and start chatting! No need to create an account.
     </p>
     <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
       Built with
     </h4>
     <p class="leading-7 text-primary">
-      Noted is built with electron, react and editor.js.
+      Chatly is built with nextjs, agora, supabase and tailwind.
     </p>
-
-    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
-      Screenshots
-    </h4>
-    <div class="flex flex-col gap-5 mt-5">
-      <DialogImage
-        client:load
-        image={NotedImage1}
-        classList="w-1/2 max-h-96 rounded-md object-cover shadow-md"
-        alt="noted1"
-      />
-      <DialogImage
-        client:load
-        image={NotedImage2}
-        classList="w-1/2 max-h-96 rounded-md object-cover shadow-md"
-        alt="noted2"
-      />
-      <DialogImage
-        client:load
-        image={NotedImage3}
-        classList="w-1/2 max-h-96 rounded-md object-cover shadow-md"
-        alt="noted3"
-      />
-    </div>
 
     <div class="flex gap-5 bg-secondary shadow-md w-fit p-5 rounded-md mt-5">
       <div>

@@ -2,10 +2,12 @@
 import Layout from "@/layouts/Layout.astro";
 import "@/styles/globals.css";
 import { Image } from "astro:assets";
-import NotedImage from "@/assets/images/noted/noted.svg";
-import NotedImage1 from "@/assets/images/noted/noted1.png";
-import NotedImage2 from "@/assets/images/noted/noted2.png";
-import NotedImage3 from "@/assets/images/noted/noted3.png";
+import TwitterImage from "@/assets/images/twitter/twitter.jpg";
+
+import TwitterImage1 from "@/assets/images/twitter/twitter1.jpg";
+import TwitterImage2 from "@/assets/images/twitter/twitter2.jpg";
+import TwitterImage3 from "@/assets/images/twitter/twitter3.jpg";
+import TwitterImage4 from "@/assets/images/twitter/twitter4.jpg";
 
 import BackNavigation from "@/components/backNavigation";
 import { IoIosArrowForward } from "react-icons/io";
@@ -13,14 +15,13 @@ import DialogImage from "@/components/dialogImage";
 ---
 
 <Layout title="Welcome to Astro.">
-  <BackNavigation title="Noted" />
+  <BackNavigation title="Twitter Clone" />
   <div class="p-5 pt-5">
-    <DialogImage
-      client:load
-      image={NotedImage}
-      classList="w-full max-h-96 rounded-md object-cover"
-      transitionName="noted"
-      alt="noted"
+    <Image
+      transition:name="twitterclone"
+      src={TwitterImage}
+      alt="Twitter Clone"
+      class="w-full max-h-96 rounded-md object-cover"
     />
     <div
       class="bg-secondary flex justify-between items-center rounded-md p-5 mt-[-70px] z-50 relative w-5/6"
@@ -28,36 +29,35 @@ import DialogImage from "@/components/dialogImage";
       <h1
         class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary"
       >
-        Noted
+        Twitter clone
       </h1>
       <p
         class="scroll-m-20 text-xl font-semibold tracking-tight text-muted-foreground"
       >
-        2023
+        2022
       </p>
     </div>
     <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
       Overview
     </h4>
     <p class="leading-7 text-primary">
-      Noted is a combination of notion and obsidian. It is a note taking app
-      that allows you to write notes in block-style just like notion.
+      Twitter Clone, like twitter, is a social media platform. Make a post,
+      comment, like a post and follow other users. Or create an api-key and use
+      the api.
     </p>
     <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
-      Customize
+      Problem
     </h4>
     <p class="leading-7 text-primary">
-      With the customizations, like obsidian, you can fully customize your
-      application.
-    </p>
-    <p class="leading-7 text-primary">
-      Don't like the default theme? Change it! Don't like the font? Change it!
+      For a school project we had to create a web application with phoenix. I
+      wanted a bit more of a challenge so I decided to create a clone of
+      twitter.
     </p>
     <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
       Built with
     </h4>
     <p class="leading-7 text-primary">
-      Noted is built with electron, react and editor.js.
+      Twitter clone is built with phoemix and mysql.
     </p>
 
     <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
@@ -66,21 +66,27 @@ import DialogImage from "@/components/dialogImage";
     <div class="flex flex-col gap-5 mt-5">
       <DialogImage
         client:load
-        image={NotedImage1}
+        image={TwitterImage1}
         classList="w-1/2 max-h-96 rounded-md object-cover shadow-md"
-        alt="noted1"
+        alt="drone2"
       />
       <DialogImage
         client:load
-        image={NotedImage2}
+        image={TwitterImage2}
         classList="w-1/2 max-h-96 rounded-md object-cover shadow-md"
-        alt="noted2"
+        alt="drone3"
       />
       <DialogImage
         client:load
-        image={NotedImage3}
+        image={TwitterImage3}
         classList="w-1/2 max-h-96 rounded-md object-cover shadow-md"
-        alt="noted3"
+        alt="drone4"
+      />
+      <DialogImage
+        client:load
+        image={TwitterImage4}
+        classList="w-1/2 max-h-96 rounded-md object-cover shadow-md"
+        alt="drone4"
       />
     </div>
 

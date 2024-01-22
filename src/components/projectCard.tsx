@@ -67,7 +67,7 @@ const ProjectCard = ({ image, year, tags, title, text }: { image: string, year: 
       <div className='w-full h-full' id={"projects-" + title.replace(/\s/g, '').toLowerCase()} >
         <a href={title.replace(/\s/g, '').toLowerCase()} className='h-5/6 w-full rounded-md overflow-hidden'>
           <div className='h-5/6 w-full overflow-hidden'>
-            <img ref={cardRef} style={{ viewTransitionName: title.replace(/\s/g, '').toLowerCase() }} className=' object-cover h-full w-full hover:scale-125 duration-150 hover:cursor-none' src={image} alt="" />
+            <img ref={cardRef} style={{ viewTransitionName: title.replace(/\s/g, '').toLowerCase() }} className='object-cover h-full w-full hover:scale-125 duration-150 hover:cursor-none rounded-md' src={image} alt="" />
           </div>
         </a>
         <div className='my-5 flex gap-5'>

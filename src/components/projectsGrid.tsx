@@ -2,8 +2,13 @@ import { setBackgroundColor } from '@/stores/background';
 import { useEffect, useRef } from 'react'
 import ProjectCard from './projectCard';
 
-import NotedImage from '@/assets/images/noted/noted.png'
+import NotedImage from '@/assets/images/noted/noted.svg'
 import DroneImage from '@/assets/images/drone/drone.svg'
+import ChatlyImage from '@/assets/images/chatly/chatly.jpg'
+import ClneImage from '@/assets/images/clne/clne.jpg'
+import TwitterImage from '@/assets/images/twitter/twitter.jpg'
+
+
 
 const ProjectsGrid = () => {
   const targetRefGrid1 = useRef(null)
@@ -41,24 +46,32 @@ const ProjectsGrid = () => {
 
 
   return (
-    <div id="projects" className='h-full pt-12 flex flex-col gap-48'>
+    <div id="projects" className='h-full pt-12 flex flex-col md:gap-48 gap-2'>
       <div ref={targetRefGrid1} className='flex flex-col p-5 h-full'>
-        <div className='w-full h-screen'>
-          <ProjectCard image={NotedImage.src} year='2023' tags='elctron - react - editor.js' title='Noted' text='Noted is a combination of obsidian and notion' />
+        <div className='w-full lg:h-screen'>
+          <ProjectCard image={NotedImage.src} year='2023' tags='electron - react - editor.js' title='Noted'
+            text='Noted is a combination of obsidian and notion. Easily write notes and customize your application.' />
         </div>
       </div>
-      <div ref={targetRefGrid2} className='flex h-screen w-full p-5 mt-5 gap-5'>
-        <div className='w-full h-1/2'>
-          <ProjectCard image={DroneImage.src} year='2023' tags='python - ai' title='Point Cloud Processor' text='Point' />
+      <div ref={targetRefGrid2} className='flex md:flex-row flex-col md:h-screen h-full w-full p-5 mt-5 gap-5'>
+        <div className='w-full md:h-1/2 h-full'>
+          <ProjectCard image={DroneImage.src} year='2023' tags='python - ai' title='Point Cloud Processor'
+            text='With Point Cloud Processor you can process point clouds, segment and classify them.' />
         </div>
         <div className='w-full '>
-          {/* <ProjectCard image={DroneImage.src} year='2023' tags='python - ai' title='Point Cloud Processor' text='Point'/> */}
+          <ProjectCard image={ChatlyImage.src} year='2023' tags='nextjs - agora - supabase' title='Chatly'
+            text='Chat with people from around the world.' />
         </div>
       </div>
-      <div ref={targetRefGrid3} className='flex w-full p-5 h-screen mt-5 gap-5'>
-        <div className='bg-blue-600 w-full h-full'></div>
-        <div className='h-full w-full flex items-end'>
-          <div className='bg-blue-600 w-full h-1/2'></div>
+
+      <div ref={targetRefGrid3} className='flex md:flex-row flex-col md:h-screen h-full w-full p-5 mt-5 gap-5'>
+        <div className='w-full '>
+          <ProjectCard image={TwitterImage.src} year='2022' tags='phoenix - mysql' title='Twitter clone'
+            text='A clone of twitter made in phoenix.' />
+        </div>
+        <div className='w-full md:h-1/2 h-full'>
+          <ProjectCard image={ClneImage.src} year='2021' tags='react - firebase' title='Clne'
+            text='Share your favorite moments online with Clne.' />
         </div>
       </div>
     </div>
