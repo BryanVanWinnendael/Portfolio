@@ -6,6 +6,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import imecImage from "@/assets/images/imec.jpg"
+import ucllImage from "@/assets/images/ucll.png"
+
 
 const Timeline = () => {
   const targetRef = useRef(null);
@@ -45,21 +48,13 @@ const Timeline = () => {
                     13.03.2023 - 09.06.2023
                   </p>
                 </div>
-                <h2 className="ml-2 text-left scroll-m-20 pb-2 lg:text-3xl md:text-2xl text-xl font-semibold tracking-tight first:mt-0">
-                  Full stack developer (internship imec Leuven)
+                <h2 className="ml-2 scroll-m-20 text-start lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-extrabold tracking-tight">
+                  Imec full stack developer (Intern)
                 </h2>
               </div>
             </AccordionTrigger>
             <AccordionContent>
               <div className="mb-6 ml-4 mt-2">
-                <div className="flex items-center gap-4 my-2">
-                  {/* <Image
-                  onClick={() => window.open("https://www.imec.be")}
-                  src={imecImage}
-                  alt="project image"
-                  className="rounded-md cursor-pointer w-auto h-12"
-                /> */}
-                </div>
                 <p className="scroll-m-20 lg:text-xl md:text-lg text-lg font-semibold tracking-tight text-muted-foreground">
                   For these months I worked as a full stack developer at imec
                   on a webapplication. I worked on a project for the ICT-team,
@@ -68,6 +63,12 @@ const Timeline = () => {
                   inside the network, disable switches and automatically
                   create a guest account for the network.
                 </p>
+                <img
+                  onClick={() => window.open("https://www.imec.be")}
+                  src={imecImage.src}
+                  alt="imec image"
+                  className="rounded-md cursor-pointer w-auto lg:h-12 h-10 mt-5"
+                />
               </div>
             </AccordionContent>
           </AccordionItem>
@@ -80,7 +81,7 @@ const Timeline = () => {
                     2020-2023
                   </p>
                 </div>
-                <h2 className="ml-2 text-left scroll-m-20 pb-2 lg:text-3xl md:text-2xl text-xl font-semibold tracking-tight first:mt-0">
+                <h2 className="text-start ml-2 scroll-m-20 lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-extrabold tracking-tight">
                   Applied Computer Science, UCLL
                 </h2>
               </div>
@@ -88,17 +89,17 @@ const Timeline = () => {
             <AccordionContent>
               <div className="mb-6 ml-4 mt-2">
                 <div className="flex items-center gap-4 my-2">
-                  {/* <Image
-                  onClick={() => window.open("https://www.imec.be")}
-                  src={imecImage}
-                  alt="project image"
-                  className="rounded-md cursor-pointer w-auto h-12"
-                /> */}
                 </div>
                 <p className="scroll-m-20 lg:text-xl md:text-lg text-lg font-semibold tracking-tight text-muted-foreground">
                   For three years I studied applied computer science at UCLL
                   and graduated in 2023 with a cum laude.
                 </p>
+                <img
+                  onClick={() => window.open("https://www.imec.be")}
+                  src={ucllImage.src}
+                  alt="imec image"
+                  className="rounded-md cursor-pointer w-auto lg:h-12 h-10 mt-5"
+                />
               </div>
             </AccordionContent>
           </AccordionItem>

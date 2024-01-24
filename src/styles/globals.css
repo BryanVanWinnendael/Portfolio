@@ -104,6 +104,9 @@ p {
   font-family: montserrat;
 }
 
+.fullWidthFontSize {
+  font-size: 25.5vw;
+}
 
 body {
   overflow-x: hidden;

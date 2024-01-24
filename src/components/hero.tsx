@@ -31,13 +31,13 @@ const Hero = () => {
 
   return (
     <motion.div ref={targetRef} className='h-[100dvh] w-full select-none text-secondary uppercase flex flex-col items-center justify-center'>
-      <div className='text-secondary'>
-        <h1 className="scroll-m-20 lg:text-8xl md:text-7xl sm:text-5xl text-3xl font-extrabold tracking-tight">full stack</h1>
-        <h1 className="scroll-m-20 lg:text-8xl md:text-7xl sm:text-5xl text-3xl font-extrabold tracking-tight">developer</h1>
-        <h1 className="scroll-m-20 lg:text-9xl md:text-8xl sm:text-6xl text-4xl font-extrabold tracking-tight">bryan Van</h1>
-        <h1 className="scroll-m-20 lg:text-9xl md:text-8xl sm:text-6xl text-4xl font-extrabold tracking-tight">Winnendael</h1>
+      <div className='text-secondary leading-[1.1] px-12'>
+        <h1 className="scroll-m-20 text-[10vw] font-extrabold tracking-tight h-fit">full stack</h1>
+        <h1 className="scroll-m-20 text-[10vw] font-extrabold tracking-tight h-fit">developer</h1>
+        <h1 className="scroll-m-20 text-[14vw] font-extrabold tracking-tight h-fit">bryan Van</h1>
+        <h1 className="scroll-m-20 text-[14vw] font-extrabold tracking-tight h-fit">Winnendael</h1>
       </div>
-      <div className='flex justify-end text-sm w-full h-12 lowercase px-5 absolute bottom-12'>
+      <div className='flex justify-end text-sm w-full h-12 lowercase px-5 absolute bottom-5 right-0'>
         <div className='flex items-center rotate-90'>
           <p className='text-md'>Scroll</p>
           <ScrollLine />
