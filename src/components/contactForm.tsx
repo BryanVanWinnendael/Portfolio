@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -14,19 +13,42 @@ import {
 import { Input } from "@/components/ui/input"
 import { formSchema } from '@/lib/schema'
 import { Textarea } from './ui/textarea'
-
-
+import { sendContactForm } from '@/lib/api'
+import { useToast } from './ui/use-toast'
+import { useState } from 'react'
+import { Loader2 } from 'lucide-react'
 
 const ContactForm = () => {
+  const { toast } = useToast()
+  const [loading, setLoading] = useState(false)
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
+      text: "",
     },
   })
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    setLoading(true)
+    const res = await sendContactForm(values)
+    console.log(res)
+    if (res) {
+      form.reset()
+      toast({
+        variant: 'default',
+        title: "Message sent!",
+        description: "I'll get back to you as soon as possible!",
+      })
+    } else {
+      toast({
+        variant: "destructive",
+        title: "Message failed to send!",
+        description: "Please try again later.",
+      })
+    }
+    setLoading(false)
   }
 
   return (
@@ -58,7 +80,15 @@ const ContactForm = () => {
             </FormItem>
           )}
         />
-        <Button variant="secondary" type="submit">Submit</Button>
+        {
+          loading ?
+            <Button disabled variant="secondary">
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              Please wait
+            </Button>
+            :
+            <Button variant="secondary" type="submit">Submit</Button>
+        }
       </form>
     </Form>
   )

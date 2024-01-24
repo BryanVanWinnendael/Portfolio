@@ -1,12 +1,11 @@
-import { $background_color, setBackgroundColor } from '@/stores/background';
-import React, { useEffect, useRef, useState } from 'react'
+import { setBackgroundColor } from '@/stores/background';
+import { useEffect, useRef } from 'react'
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { IoIosArrowDown } from "react-icons/io";
 
 const Timeline = () => {
   const targetRef = useRef(null);

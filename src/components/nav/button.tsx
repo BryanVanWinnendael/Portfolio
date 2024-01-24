@@ -49,8 +49,8 @@ const Button = ({ isActive, toggleMenu }: any) => {
 const PerspectiveText = ({ label, text_color }: { label: string, text_color: string }) => {
   return (
     <div className='flex flex-col justify-center items-center h-full w-full transform-style:preserve-3d transition-transform duration-750 ease-in-out cubic-bezier(0.76, 0, 0.24, 1)'>
-      <p className={`${text_color} transition-all duration-750 ease-in-out cubic-bezier(0.76, 0, 0.24, 1) pointer-events-none uppercase`}>{label}</p>
-      <p className="absolute transform-origin-bottom-center transform -rotate-x-90 -translate-y-9 opacity-0">{label}</p>
+      <p className={`${text_color} font-semibold transition-all duration-750 ease-in-out cubic-bezier(0.76, 0, 0.24, 1) pointer-events-none uppercase`}>{label}</p>
+      <p className="absolute font-semibold transform-origin-bottom-center transform -rotate-x-90 -translate-y-9 opacity-0">{label}</p>
     </div>
   )
 }

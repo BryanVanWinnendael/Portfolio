@@ -5,6 +5,7 @@ import Hero from '@/components/hero';
 import Timeline from "@/components/timeline";
 import ProjectsGrid from '@/components/projectsGrid';
 import Contact from '@/components/contact';
+import Footer from './footer';
 
 const Home = () => {
   const [background_color, setBackground_color] = useState("bg-primary")
@@ -26,6 +27,7 @@ const Home = () => {
       <Timeline />
       <ProjectsGrid />
       <Contact />
+      <Footer />
     </main>
   )
 }

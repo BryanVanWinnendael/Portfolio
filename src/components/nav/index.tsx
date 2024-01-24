@@ -1,10 +1,51 @@
 import { motion } from 'framer-motion';
-import { links } from './data';
-import { slideIn } from "./anim";
 import { scrollToElement } from '@/lib/utils';
 import { $background_color } from '@/stores/background';
 import { useEffect, useState } from 'react';
 import useScreen from '@/hooks/useScreen';
+
+const LINKS = [
+  {
+    title: "Home",
+    href: "home"
+  },
+  {
+    title: "About",
+    href: "about"
+  },
+  {
+    title: "Timeline",
+    href: "timeline"
+  },
+  {
+    title: "Projects",
+    href: "projects"
+  },
+  {
+    title: "Let's talk",
+    href: "contact"
+  },
+]
+
+const SLIDEIN = {
+  initial: {
+    opacity: 0,
+    y: 20
+  },
+  enter: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.1,
+      delay: 0.3 + (i * 0.1),
+      ease: [.215, .61, .355, 1]
+    }
+  }),
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.3, type: "tween", ease: "easeInOut" }
+  }
+}
 
 const Index = () => {
   const [textColor, setTextCololr] = useState("text-primary")
@@ -47,7 +88,7 @@ const Index = () => {
 
       <div className="flex lg:gap-4 md:gap-4 gap-1 flex-col">
         {
-          links.map((link, i) => {
+          LINKS.map((link, i) => {
             const { title, href } = link;
             return (
               <div key={`b_${i}`}>
@@ -57,7 +98,7 @@ const Index = () => {
                       className={`${getTextSize()} cursor-pointer w-fit hover:underline ${textColor} font-semibold`}
                       onClick={() => scrollToElement(href)}
                       custom={i}
-                      variants={slideIn}
+                      variants={SLIDEIN}
                       initial="initial"
                       animate="enter"
                       exit="exit"
@@ -69,7 +110,7 @@ const Index = () => {
                       className={`${getTextSize()} cursor-pointer w-fit hover:underline ${textColor} font-semibold`}
                       href={getHref(href)}
                       custom={i}
-                      variants={slideIn}
+                      variants={SLIDEIN}
                       initial="initial"
                       animate="enter"
                       exit="exit"

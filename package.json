@@ -19,6 +19,7 @@
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-toast": "^1.1.5",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "astro": "^4.2.0",
@@ -27,6 +28,7 @@
     "framer-motion": "^10.18.0",
     "lucide-react": "^0.312.0",
     "nanostores": "^0.9.5",
+    "nodemailer": "^6.9.8",
     "react": "^18.2.0",
     "react-animated-cursor": "^2.11.2",
     "react-dom": "^18.2.0",
@@ -37,5 +39,8 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.3.3",
     "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.14"
   }
 }

@@ -45,8 +45,7 @@ const About = () => {
         </p>
         <p className="scroll-m-20 lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-extrabold tracking-tight">
           I&apos;m a {calculateAge()}{" "}
-          year old full stack developer and always looking for
-          new challenges.
+          year old full stack developer based in Belgium.
         </p>
 
       </article>

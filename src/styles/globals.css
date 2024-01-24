@@ -80,6 +80,31 @@
   transition: background-color 0.5s ease;
 }
 
+@font-face {
+  font-family: oswald;
+  src: url("/src/assets/fonts/Oswald-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: montserrat;
+  src: url("/src/assets/fonts/Montserrat-VariableFont_wght.ttf");
+}
+
+
+h1,
+h2 {
+  font-family: oswald;
+}
+
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: montserrat;
+}
+
+
 body {
   overflow-x: hidden;
 }

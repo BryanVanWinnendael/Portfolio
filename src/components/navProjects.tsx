@@ -1,6 +1,5 @@
 import { Button } from './ui/button'
 
-
 const NavProjects = ({ project }: { project: string }) => {
   return (
     <div className="w-full bg-secondary duration-150 bg-animate z-50 fixed top-0 flex justify-between px-5 py-2">

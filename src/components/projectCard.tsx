@@ -4,7 +4,6 @@ import { FaLocationArrow } from 'react-icons/fa';
 
 const ProjectCard = ({ image, year, tags, title, text }: { image: string, year: string, tags: string, title: string, text: string }) => {
   const cardRef = useRef<HTMLImageElement>(null);
-  const [hover, setHover] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0, hover: false })
 
   useEffect(() => {
@@ -18,7 +17,6 @@ const ProjectCard = ({ image, year, tags, title, text }: { image: string, year: 
           e.clientY <= rect.bottom
         );
 
-        setHover(isInside)
         if (isInside) {
           setMousePosition({
             x: e.clientX,
@@ -79,7 +77,7 @@ const ProjectCard = ({ image, year, tags, title, text }: { image: string, year: 
           </div>
         </div>
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary">{title}</h1>
-        <p className="leading-7 [&:not(:first-child)]:mt-6 text-primary">{text}</p>
+        <p className="leading-7 [&:not(:first-child)]:mt-6 text-primary font-semibold max-w-96">{text}</p>
       </div>
     </>
   )

@@ -1,14 +1,11 @@
 import { setBackgroundColor } from '@/stores/background';
 import { useEffect, useRef } from 'react'
 import ProjectCard from './projectCard';
-
 import NotedImage from '@/assets/images/noted/noted.svg'
 import DroneImage from '@/assets/images/drone/drone.svg'
 import ChatlyImage from '@/assets/images/chatly/chatly.jpg'
 import ClneImage from '@/assets/images/clne/clne.jpg'
 import TwitterImage from '@/assets/images/twitter/twitter.jpg'
-
-
 
 const ProjectsGrid = () => {
   const targetRefGrid1 = useRef(null)

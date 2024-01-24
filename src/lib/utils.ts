@@ -27,14 +27,12 @@ export const changeBgColorAbout = (isIntersectin: boolean) => {
     nav?.classList.add('bg-secondary');
     main?.classList.remove('bg-primary');
     main?.classList.add('bg-secondary');
-
   }
 }
 
 export const scrollToElement = (elementId: string) => {
   var targetElement = document.getElementById(elementId)
   if (targetElement) {
-    // Scroll to the target element
     targetElement.scrollIntoView({ behavior: 'smooth' })
   }
 }
