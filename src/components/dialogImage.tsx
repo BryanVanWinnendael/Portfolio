@@ -1,15 +1,25 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 
-const DialogImage = ({ image, classList, transitionName, alt }: { image: ImageMetadata, classList: string, transitionName?: string, alt: string }) => {
+const DialogImage = ({
+  image,
+  classList,
+  transitionName,
+  alt,
+}: {
+  image: ImageMetadata
+  classList: string
+  transitionName?: string
+  alt: string
+}) => {
   return (
-    <Dialog
-    >
+    <Dialog>
       <DialogTrigger asChild>
-        <img style={transitionName ? { viewTransitionName: transitionName } : {}} src={image.src} alt={alt} className={classList + " cursor-pointer"} />
+        <img
+          style={transitionName ? { viewTransitionName: transitionName } : {}}
+          src={image.src}
+          alt={alt}
+          className={classList + " cursor-pointer"}
+        />
       </DialogTrigger>
       <DialogContent className="max-w-[900px]">
         <img

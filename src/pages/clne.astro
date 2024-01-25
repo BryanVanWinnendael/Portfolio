@@ -1,14 +1,14 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import "@/styles/globals.css";
-import { Image } from "astro:assets";
-import ClneImage from "@/assets/images/clne/clne.jpg";
-import BackNavigation from "@/components/backNavigation";
-import { IoIosArrowForward } from "react-icons/io";
+import Layout from "@/layouts/Layout.astro"
+import "@/styles/globals.css"
+import { Image } from "astro:assets"
+import ClneImage from "@/assets/images/clne/clne.jpg"
+import BackNavigation from "@/components/backNavigation"
+import { IoIosArrowForward } from "react-icons/io"
 ---
 
 <Layout title="Clne - Bryan Van Winnendael">
-  <BackNavigation title="Clne" />
+  <BackNavigation title="Clne" client:load />
   <div class="p-5 pt-5">
     <Image
       transition:name="clne"

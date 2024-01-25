@@ -1,7 +1,4 @@
-export const sendContactForm = async (data: {
-  email: string
-  text: string
-}) =>
+export const sendContactForm = async (data: { email: string; text: string }) =>
   fetch(import.meta.env.PUBLIC_EMAIL_API, {
     method: "POST",
     body: JSON.stringify(data),
@@ -14,6 +11,3 @@ export const sendContactForm = async (data: {
     .catch((err) => {
       throw new Error(err)
     })
-
-
-

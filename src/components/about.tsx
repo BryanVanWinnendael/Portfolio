@@ -1,5 +1,6 @@
-import { setBackgroundColor } from '@/stores/background';
-import { useEffect, useRef } from 'react'
+import { setBackgroundColor } from "@/stores/background"
+import { useEffect, useRef } from "react"
+import Reveal from "./reaveal"
 
 const About = () => {
   const targetRef = useRef(null)
@@ -22,32 +23,39 @@ const About = () => {
           if (entry.isIntersecting) {
             setBackgroundColor("bg-secondary")
           }
-        });
+        })
       },
       {
         threshold: 0.5,
-      }
-    );
+      },
+    )
 
     if (targetRef.current) {
-      observer.observe(targetRef.current);
+      observer.observe(targetRef.current)
     }
     return () => {
-      observer.disconnect();
+      observer.disconnect()
     }
   }, [targetRef.current])
 
   return (
-    <div id="about" ref={targetRef} className='h-[100dvh] flex justify-center items-center'>
-      <article className="font-semibold p-2 w-4/6 leading-[1]">
-        <h2 className="scroll-m-20 text-[6vw] font-extrabold tracking-tight h-fit">
-          My name is Bryan Van Winnendael,
-        </h2>
-        <h2 className="scroll-m-20 text-[6vw] font-extrabold tracking-tight h-fit">
-          I&apos;m a {calculateAge()} year old full stack developer based in Belgium.
-        </h2>
-      </article>
-    </div>
+    <Reveal>
+      <div
+        id="about"
+        ref={targetRef}
+        className="h-[100dvh] flex justify-center items-center"
+      >
+        <article className="font-semibold p-2 w-4/6 leading-[1]">
+          <h2 className="scroll-m-20 text-[6vw] font-extrabold tracking-tight h-fit">
+            My name is Bryan Van Winnendael,
+          </h2>
+          <h2 className="scroll-m-20 text-[6vw] font-extrabold tracking-tight h-fit">
+            I&apos;m a {calculateAge()} year old full stack developer based in
+            Belgium.
+          </h2>
+        </article>
+      </div>
+    </Reveal>
   )
 }
 

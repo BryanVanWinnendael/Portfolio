@@ -90,7 +90,6 @@
   src: url("/src/assets/fonts/Montserrat-VariableFont_wght.ttf");
 }
 
-
 h1,
 h2 {
   font-family: oswald;
@@ -104,10 +103,7 @@ p {
   font-family: montserrat;
 }
 
-.fullWidthFontSize {
-  font-size: 25.5vw;
-}
-
 body {
+  user-select: none;
   overflow-x: hidden;
 }

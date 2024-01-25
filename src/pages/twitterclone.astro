@@ -1,19 +1,19 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import "@/styles/globals.css";
-import { Image } from "astro:assets";
-import TwitterImage from "@/assets/images/twitter/twitter.jpg";
-import TwitterImage1 from "@/assets/images/twitter/twitter1.jpg";
-import TwitterImage2 from "@/assets/images/twitter/twitter2.jpg";
-import TwitterImage3 from "@/assets/images/twitter/twitter3.jpg";
-import TwitterImage4 from "@/assets/images/twitter/twitter4.jpg";
-import BackNavigation from "@/components/backNavigation";
-import { IoIosArrowForward } from "react-icons/io";
-import DialogImage from "@/components/dialogImage";
+import Layout from "@/layouts/Layout.astro"
+import "@/styles/globals.css"
+import { Image } from "astro:assets"
+import TwitterImage from "@/assets/images/twitter/twitter.jpg"
+import TwitterImage1 from "@/assets/images/twitter/twitter1.jpg"
+import TwitterImage2 from "@/assets/images/twitter/twitter2.jpg"
+import TwitterImage3 from "@/assets/images/twitter/twitter3.jpg"
+import TwitterImage4 from "@/assets/images/twitter/twitter4.jpg"
+import BackNavigation from "@/components/backNavigation"
+import { IoIosArrowForward } from "react-icons/io"
+import DialogImage from "@/components/dialogImage"
 ---
 
 <Layout title="Twitter Clone - Bryan Van Winnendael">
-  <BackNavigation title="Twitter Clone" />
+  <BackNavigation title="Twitter Clone" client:load />
   <div class="p-5 pt-5">
     <Image
       transition:name="twitterclone"
@@ -61,29 +61,29 @@ import DialogImage from "@/components/dialogImage";
     <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
       Screenshots
     </h4>
-    <div class="flex flex-col gap-5 mt-5">
+    <div class="grid md:grid-cols-2 grid-cols-1 gap-5 mt-5">
       <DialogImage
         client:load
         image={TwitterImage1}
-        classList="w-1/2 max-h-96 rounded-md object-cover shadow-md"
+        classList="w-full rounded-md object-cover shadow-sm"
         alt="drone2"
       />
       <DialogImage
         client:load
         image={TwitterImage2}
-        classList="w-1/2 max-h-96 rounded-md object-cover shadow-md"
+        classList="w-full rounded-md object-cover shadow-sm"
         alt="drone3"
       />
       <DialogImage
         client:load
         image={TwitterImage3}
-        classList="w-1/2 max-h-96 rounded-md object-cover shadow-md"
+        classList="w-full rounded-md object-cover shadow-sm"
         alt="drone4"
       />
       <DialogImage
         client:load
         image={TwitterImage4}
-        classList="w-1/2 max-h-96 rounded-md object-cover shadow-md"
+        classList="w-full rounded-md object-cover shadow-sm"
         alt="drone4"
       />
     </div>

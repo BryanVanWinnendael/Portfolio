@@ -1,4 +1,4 @@
-import { useForm } from 'react-hook-form'
+import { useForm } from "react-hook-form"
 import * as z from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Button } from "@/components/ui/button"
@@ -11,12 +11,12 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { formSchema } from '@/lib/schema'
-import { Textarea } from './ui/textarea'
-import { sendContactForm } from '@/lib/api'
-import { useToast } from './ui/use-toast'
-import { useState } from 'react'
-import { Loader2 } from 'lucide-react'
+import { formSchema } from "@/lib/schema"
+import { Textarea } from "./ui/textarea"
+import { sendContactForm } from "@/lib/api"
+import { useToast } from "./ui/use-toast"
+import { useState } from "react"
+import { Loader2 } from "lucide-react"
 
 const ContactForm = () => {
   const { toast } = useToast()
@@ -37,7 +37,7 @@ const ContactForm = () => {
     if (res) {
       form.reset()
       toast({
-        variant: 'default',
+        variant: "default",
         title: "Message sent!",
         description: "I'll get back to you as soon as possible!",
       })
@@ -61,7 +61,11 @@ const ContactForm = () => {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input className='bg-primary border-gray-200 border-opacity-20' placeholder="email@email.com" {...field} />
+                <Input
+                  className="bg-primary border-gray-200 border-opacity-20"
+                  placeholder="email@email.com"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -74,21 +78,26 @@ const ContactForm = () => {
             <FormItem>
               <FormLabel>Text</FormLabel>
               <FormControl>
-                <Textarea className='min-h-52 bg-primary border-gray-200 border-opacity-20' placeholder="Message" {...field} />
+                <Textarea
+                  className="min-h-52 bg-primary border-gray-200 border-opacity-20"
+                  placeholder="Message"
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        {
-          loading ?
-            <Button disabled variant="secondary">
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Please wait
-            </Button>
-            :
-            <Button variant="secondary" type="submit">Submit</Button>
-        }
+        {loading ? (
+          <Button disabled variant="secondary">
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            Please wait
+          </Button>
+        ) : (
+          <Button variant="secondary" type="submit">
+            Submit
+          </Button>
+        )}
       </form>
     </Form>
   )

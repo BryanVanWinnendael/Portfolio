@@ -1,14 +1,14 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import "@/styles/globals.css";
-import { Image } from "astro:assets";
-import ChatlyImage from "@/assets/images/chatly/chatly.jpg";
-import BackNavigation from "@/components/backNavigation";
-import { IoIosArrowForward } from "react-icons/io";
+import Layout from "@/layouts/Layout.astro"
+import "@/styles/globals.css"
+import { Image } from "astro:assets"
+import ChatlyImage from "@/assets/images/chatly/chatly.jpg"
+import BackNavigation from "@/components/backNavigation"
+import { IoIosArrowForward } from "react-icons/io"
 ---
 
 <Layout title="Chatly - Bryan Van Winnendael">
-  <BackNavigation title="Chatly" />
+  <BackNavigation title="Chatly" client:load />
   <div class="p-5 pt-5">
     <Image
       transition:name="chatly"
