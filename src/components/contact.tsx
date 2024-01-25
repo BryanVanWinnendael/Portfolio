@@ -68,12 +68,12 @@ const Contact = () => {
                 Linkdin
               </a>
               <a
-                  target="_blank"
-                  href="cv.pdf"
-                  className="scroll-m-20 text-xl font-semibold tracking-tight first:mt-0 hover:underline"
-                >
-                  CV
-                </a>
+                target="_blank"
+                href="cv.pdf"
+                className="scroll-m-20 text-xl font-semibold tracking-tight first:mt-0 hover:underline"
+              >
+                CV
+              </a>
             </div>
           </div>
         </div>
