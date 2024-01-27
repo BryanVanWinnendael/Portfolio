@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <main
       id="home"
-      className={`${background_color} duration-150 bg-animate h-full`}
+      className={`${background_color} duration-150 bg-animate h-full w-full`}
     >
       <Hero />
       <About />

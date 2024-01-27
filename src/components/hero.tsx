@@ -34,16 +34,16 @@ const Hero = () => {
       className="h-[100dvh] w-full select-none text-secondary uppercase flex flex-col items-center justify-center"
     >
       <div className="text-secondary leading-[1.1] px-12">
-        <h1 className="scroll-m-20 sm:text-[10vw] text-[4.4rem] font-extrabold tracking-tight h-fit">
+        <h1 className="scroll-m-20 sm:text-[10vw] text-[4rem] font-extrabold tracking-tight h-fit">
           full stack
         </h1>
-        <h1 className="scroll-m-20 sm:text-[10vw] text-[4.4rem] font-extrabold tracking-tight h-fit">
+        <h1 className="scroll-m-20 sm:text-[10vw] text-[4rem] font-extrabold tracking-tight h-fit">
           developer
         </h1>
-        <h1 className="scroll-m-20 sm:text-[14vw] text-[5rem] font-extrabold tracking-tight h-fit">
+        <h1 className="scroll-m-20 sm:text-[14vw] text-[4rem] font-extrabold tracking-tight h-fit">
           bryan Van
         </h1>
-        <h1 className="scroll-m-20 sm:text-[14vw] text-[5rem] font-extrabold tracking-tight h-fit">
+        <h1 className="scroll-m-20 sm:text-[14vw] text-[4rem] font-extrabold tracking-tight h-fit">
           Winnendael
         </h1>
       </div>
