@@ -45,7 +45,7 @@ const About = () => {
         ref={targetRef}
         className="h-[100dvh] flex justify-center items-center"
       >
-        <article className="font-semibold p-2 w-4/6 leading-[1]">
+        <article className="font-semibold p-2 sm:w-4/6 w-full sm:text-left text-center leading-[1]">
           <h2 className="scroll-m-20 sm:text-[6vw] text-[2.5rem] font-extrabold tracking-tight h-fit">
             My name is Bryan Van Winnendael,
           </h2>

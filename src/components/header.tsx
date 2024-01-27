@@ -55,7 +55,7 @@ export default function Index() {
   }, [])
 
   return (
-    <div className="fixed lg:top-10 top-5 lg:right-10 right-5 z-[99999] ">
+    <div className="fixed lg:top-10 top-5 lg:right-10 right-8 z-[99999] ">
       <motion.div
         className={`${background_color} relative rounded-3xl`}
         variants={{
