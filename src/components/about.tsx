@@ -46,10 +46,10 @@ const About = () => {
         className="h-[100dvh] flex justify-center items-center"
       >
         <article className="font-semibold p-2 w-4/6 leading-[1]">
-          <h2 className="scroll-m-20 text-[6vw] font-extrabold tracking-tight h-fit">
+          <h2 className="scroll-m-20 sm:text-[6vw] text-[2.5rem] font-extrabold tracking-tight h-fit">
             My name is Bryan Van Winnendael,
           </h2>
-          <h2 className="scroll-m-20 text-[6vw] font-extrabold tracking-tight h-fit">
+          <h2 className="scroll-m-20 sm:text-[6vw] text-[2.5rem] font-extrabold tracking-tight h-fit">
             I&apos;m a {calculateAge()} year old full stack developer based in
             Belgium.
           </h2>
