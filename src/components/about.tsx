@@ -43,7 +43,7 @@ const About = () => {
       <div
         id="about"
         ref={targetRef}
-        className="h-[100dvh] bg-primary w-full"
+        className="h-screen bg-primary w-full"
       > 
         <div className="bg-secondary rounded-lg w-full h-full">
          <Reveal classList="w-full h-full flex justify-center items-center">

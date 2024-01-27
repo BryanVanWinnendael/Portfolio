@@ -36,7 +36,7 @@ const Contact = () => {
         <div
           id="contact"
           ref={targetRef}
-          className="h-[100dvh] flex flex-col justify-center w-full text-primary px-5 pt-5"
+          className="h-screen flex flex-col justify-center w-full text-primary px-5 pt-5"
         >
           <h1 className="scroll-m-20 text-7xl font-extrabold tracking-tight lg:text-9xl">
             Let's talk!
