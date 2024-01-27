@@ -16,8 +16,8 @@ const NavProjects = ({ project }: { project: string }) => {
             </a>
           </Button>
           <Button variant="link" className="text-primary">
-            <a href="/#timeline" className="text-primary">
-              timeline
+            <a href="/#experience" className="text-primary">
+              experience
             </a>
           </Button>
           <Button variant="link" className="text-primary">

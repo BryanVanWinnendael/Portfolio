@@ -8,66 +8,74 @@ import { IoIosArrowForward } from "react-icons/io"
 ---
 
 <Layout title="Chatly - Bryan Van Winnendael">
-  <BackNavigation title="Chatly" client:load />
-  <div class="p-5 pt-5">
-    <Image
-      transition:name="chatly"
-      src={ChatlyImage}
-      alt="Chatly"
-      class="w-full max-h-96 rounded-md object-cover"
-    />
-    <div
-      class="bg-secondary flex justify-between items-center rounded-md p-5 mt-[-70px] z-50 relative w-5/6"
-    >
-      <h1
-        class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary"
-      >
-        Chatly
-      </h1>
-      <p
-        class="scroll-m-20 text-xl font-semibold tracking-tight text-muted-foreground"
-      >
-        2023
-      </p>
-    </div>
-    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
-      Overview
-    </h4>
-    <p class="leading-7 text-primary">
-      Chatly is an online website that allows you to chat with people from
-      around the world.
-    </p>
-    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">Use</h4>
-    <p class="leading-7 text-primary">
-      Go to the website and start chatting! No need to create an account.
-    </p>
-    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
-      Built with
-    </h4>
-    <p class="leading-7 text-primary">
-      Chatly is built with nextjs, agora, supabase and tailwind.
-    </p>
+  <div class="w-full h-full bg-primary sm:p-5 p-2">
+    <div class="bg-secondary rounded-lg">
+      <BackNavigation title="Chatly" client:load />
+      <div class="p-5 pt-5">
+        <Image
+          transition:name="chatly"
+          src={ChatlyImage}
+          alt="Chatly"
+          class="w-full max-h-96 rounded-md object-cover"
+        />
+        <div
+          class="bg-secondary flex justify-between items-center rounded-md p-5 mt-[-70px] z-50 relative w-5/6"
+        >
+          <h1
+            class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary"
+          >
+            Chatly
+          </h1>
+          <p
+            class="scroll-m-20 text-xl font-semibold tracking-tight text-muted-foreground"
+          >
+            2023
+          </p>
+        </div>
+        <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+          Overview
+        </h4>
+        <p class="leading-7 text-primary">
+          Chatly is an online website that allows you to chat with people from
+          around the world.
+        </p>
+        <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+          Use
+        </h4>
+        <p class="leading-7 text-primary">
+          Go to the website and start chatting! No need to create an account.
+        </p>
+        <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+          Built with
+        </h4>
+        <p class="leading-7 text-primary">
+          Chatly is built with nextjs, agora, supabase and tailwind.
+        </p>
 
-    <div class="flex gap-5 bg-secondary shadow-md w-fit p-5 rounded-md mt-5">
-      <div>
-        <p class="leading-7 text-muted-foreground">Download</p>
-        <a
-          target="_blank"
-          href="https://github.com/BryanVanWinnendael/Noted"
-          class="w-full flex items-center text-blue-500 cursor-pointer"
+        <div
+          class="flex gap-5 bg-secondary shadow-md w-fit p-5 rounded-md mt-5"
         >
-          Download <IoIosArrowForward />
-        </a>
-      </div>
-      <div>
-        <p class="leading-7 text-muted-foreground">Code</p>
-        <a
-          target="_blank"
-          class="w-full flex items-center text-blue-500 cursor-pointer"
-          href="https://github.com/BryanVanWinnendael/Noted"
-        >
-          View code <IoIosArrowForward />
-        </a>
+          <div>
+            <p class="leading-7 text-muted-foreground">Download</p>
+            <a
+              target="_blank"
+              href="https://github.com/BryanVanWinnendael/Noted"
+              class="w-full flex items-center text-blue-500 cursor-pointer"
+            >
+              Download <IoIosArrowForward />
+            </a>
+          </div>
+          <div>
+            <p class="leading-7 text-muted-foreground">Code</p>
+            <a
+              target="_blank"
+              class="w-full flex items-center text-blue-500 cursor-pointer"
+              href="https://github.com/BryanVanWinnendael/Noted"
+            >
+              View code <IoIosArrowForward />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

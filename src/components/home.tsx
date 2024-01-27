@@ -1,35 +1,24 @@
-import { useEffect, useState } from "react"
-import { $background_color } from "@/stores/background"
 import About from "@/components/about"
 import Hero from "@/components/hero"
-import Timeline from "@/components/timeline"
+import Experience from "@/components/experience"
 import ProjectsGrid from "@/components/projectsGrid"
 import Contact from "@/components/contact"
+import { ReactLenis } from '@studio-freight/react-lenis'
 
 const Home = () => {
-  const [background_color, setBackground_color] = useState("bg-primary")
-
-  useEffect(() => {
-    const unbindListenerBackground = $background_color.subscribe((value) => {
-      setBackground_color(value)
-    })
-
-    return () => {
-      unbindListenerBackground()
-    }
-  }, [])
-
   return (
-    <main
-      id="home"
-      className={`${background_color} duration-150 bg-animate h-full w-full`}
-    >
-      <Hero />
-      <About />
-      <Timeline />
-      <ProjectsGrid />
-      <Contact />
-    </main>
+    <ReactLenis root>
+      <main
+        id="home"
+        className="h-full w-full"
+      >
+        <Hero />
+        <About />
+        <Experience />
+        <ProjectsGrid />
+        <Contact />
+      </main>
+    </ReactLenis>
   )
 }
 

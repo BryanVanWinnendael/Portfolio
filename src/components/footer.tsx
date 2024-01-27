@@ -35,16 +35,16 @@ const Footer = () => {
     const unbindListenerBackground = $background_color.subscribe((value) => {
       const location = window.location.pathname
       if (location !== "/") {
-        setBackgroundColor("bg-secondary")
-        setTextColor("text-primary")
-        setBorderColor("border-gray-500")
+        setBackgroundColor("bg-primary")
+        setTextColor("text-secondary")
+        setBorderColor("border-gray-200")
       } else {
         setBackgroundColor(value)
         if (value === "bg-primary") {
           setTextColor("text-secondary")
           setBorderColor("border-gray-200")
         } else {
-          setTextColor("text-secondary")
+          setTextColor("text-primary")
           setBorderColor("border-gray-500")
         }
       }
@@ -76,7 +76,7 @@ const Footer = () => {
         <div className="flex flex-col gap-5">
           <div className="flex gap-5">
             <div className="flex flex-col justify-start">
-              <h2 className="scroll-m-20  pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+              <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0">
                 Navigation
               </h2>
               <div className="flex flex-col">

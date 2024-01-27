@@ -33,7 +33,7 @@ const ProjectsGrid = () => {
     const noted_offset = scroll * -0.03 + 3
     const drone_offset = scroll * 0.03 + 20
     const chatly_offset = scroll * -0.03 + 4
-    const twitter_offset = scroll * 0.03 + 4
+    const twitter_offset = scroll * 0.03 - 150
     const clne_offset = scroll * -0.03 + 9
 
     setOffset({
@@ -50,7 +50,7 @@ const ProjectsGrid = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setBackgroundColor("bg-secondary")
+            setBackgroundColor("bg-primary")
           }
         })
       },
@@ -91,7 +91,8 @@ const ProjectsGrid = () => {
   ])
 
   return (
-    <div id="projects" className="h-full pt-12 flex flex-col md:gap-24 gap-2">
+    <div id="projects" className="h-full pt-12 flex flex-col gap-2 bg-primary pb-5">
+      <h1 className="pl-5 pb-6 scroll-m-20 sm:text-[10vw] text-[3rem] font-semibold tracking-tight h-fit text-muted">MY WORK</h1>
       <div ref={targetRefGrid1} className="flex flex-col p-5 h-full">
         <motion.div
           initial="initial"
@@ -108,14 +109,13 @@ const ProjectsGrid = () => {
             year="2023"
             tags="electron - react - editor.js"
             title="01./Noted"
-            text="Noted is a combination of obsidian and notion. Easily write notes and customize your application."
           />
         </motion.div>
       </div>
 
       <div
         ref={targetRefGrid2}
-        className="flex md:flex-row flex-col md:h-screen h-full w-full p-5 mt-5 gap-5"
+        className="flex md:flex-row flex-col md:h-screen h-full w-full p-5 gap-5"
       >
         <motion.div
           initial="initial"
@@ -132,7 +132,6 @@ const ProjectsGrid = () => {
             year="2023"
             tags="python - ai"
             title="02./Point Cloud Processor"
-            text="With Point Cloud Processor you can process point clouds, segment and classify them."
           />
         </motion.div>
         <motion.div
@@ -150,14 +149,13 @@ const ProjectsGrid = () => {
             year="2023"
             tags="nextjs - agora - supabase"
             title="03./Chatly"
-            text="Chat with people from around the world."
           />
         </motion.div>
       </div>
 
       <div
         ref={targetRefGrid3}
-        className="flex md:flex-row flex-col md:h-screen h-full w-full p-5 mt-5 gap-5"
+        className="flex md:flex-row flex-col md:h-screen h-full w-full p-5 gap-5"
       >
         <motion.div
           className="w-full "
@@ -174,10 +172,9 @@ const ProjectsGrid = () => {
             year="2022"
             tags="phoenix - mysql"
             title="04./Twitter clone"
-            text="A clone of twitter made in phoenix."
           />
         </motion.div>
-        <div className="w-full h-full flex items-end">
+        <div className="w-full h-full flex items-center">
           <motion.div
             className="md:h-1/2 h-full w-full"
             initial="initial"
@@ -193,7 +190,6 @@ const ProjectsGrid = () => {
               year="2021"
               tags="react - firebase"
               title="05./Clne"
-              text="Share your favorite moments online with Clne."
             />
           </motion.div>
         </div>

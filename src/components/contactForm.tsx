@@ -62,7 +62,7 @@ const ContactForm = () => {
               <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input
-                  className="bg-primary border-gray-200 border-opacity-20"
+                  className="bg-secondary border-primary border-opacity-20"
                   placeholder="email@email.com"
                   {...field}
                 />
@@ -79,7 +79,7 @@ const ContactForm = () => {
               <FormLabel>Text</FormLabel>
               <FormControl>
                 <Textarea
-                  className="min-h-52 bg-primary border-gray-200 border-opacity-20"
+                  className="min-h-52 bg-secondary border-primary border-opacity-20"
                   placeholder="Message"
                   {...field}
                 />
@@ -94,7 +94,7 @@ const ContactForm = () => {
             Please wait
           </Button>
         ) : (
-          <Button variant="secondary" type="submit">
+          <Button variant="default" type="submit">
             Submit
           </Button>
         )}

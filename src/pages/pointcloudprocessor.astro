@@ -11,119 +11,128 @@ import DialogImage from "@/components/dialogImage"
 ---
 
 <Layout title="Point Cloud Processor - Bryan Van Winnendael">
-  <BackNavigation title="Point Cloud Processor" client:load />
-  <div class="p-5 pt-5 pb-20">
-    <DialogImage
-      client:load
-      image={DroneImage}
-      classList="w-full max-h-96 rounded-md object-cover"
-      transitionName="pointcloudprocessor"
-      alt="drone"
-    />
-    <div
-      class="bg-secondary flex justify-between items-center rounded-md p-5 mt-[-70px] z-50 relative w-5/6"
-    >
-      <h1
-        class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary"
-      >
-        Point Cloud Processor
-      </h1>
-      <p
-        class="scroll-m-20 text-xl font-semibold tracking-tight text-muted-foreground"
-      >
-        2023
-      </p>
-    </div>
-    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
-      Problem
-    </h4>
-    <p class="leading-7 text-primary">
-      For my Graduation project my group and I had to make a project that was
-      about detecting planes inside a point cloud, in order to get information
-      about all the planes in a point cloud.
-    </p>
-    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
-      Built with
-    </h4>
-    <p class="leading-7 text-primary">
-      The application is seperated into 2 parts:
-    </p>
-    <li class="leading-7 text-primary">
-      The desktop application that was made in Pyton using the PyQt5 library.
-    </li>
-    <li class="leading-7 text-primary">
-      The model that will actually process the point cloud was made with Python.
-    </li>
-    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
-      Process
-    </h4>
-    <li class="leading-7 text-primary">Load the point cloud</li>
-    <li class="leading-7 text-primary">Use RANSAC to detect planes</li>
-    <li class="leading-7 text-primary">
-      Possibly cluster using a cluster strategy like DBSCAN or agglomerative
-      clustering, using no clustering is also possible
-    </li>
-    <li class="leading-7 text-primary">
-      Save each of the planes as a .ply file
-    </li>
-    <li class="leading-7 text-primary">
-      Generate a color range for each plane and save the entire point cloud with
-      the colors
-    </li>
-    <li class="leading-7 text-primary">
-      Calculate the surface area of each plane
-    </li>
-    <li class="leading-7 text-primary">
-      Write the info for each plane to a .csv file
-    </li>
-    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
-      Screenshots
-    </h4>
-    <div class="grid md:grid-cols-2 grid-cols-1 gap-5 mt-5">
-      <DialogImage
-        client:load
-        image={DroneImage2}
-        classList="w-full rounded-md object-cover shadow-sm"
-        alt="drone2"
-      />
-      <DialogImage
-        client:load
-        image={DroneImage3}
-        classList="w-full rounded-md object-cover shadow-sm"
-        alt="drone3"
-      />
-      <DialogImage
-        client:load
-        image={DroneImage4}
-        classList="w-full rounded-md object-cover shadow-sm"
-        alt="drone4"
-      />
-    </div>
-
-    <p class="leading-7 text-primary mt-5">
-      For an in depth explanation about the app you can visit the github page.
-    </p>
-
-    <div class="flex gap-5 bg-secondary shadow-md w-fit p-5 rounded-md mt-5">
-      <div>
-        <p class="leading-7 text-muted-foreground">Download</p>
-        <a
-          target="_blank"
-          href="https://github.com/BryanVanWinnendael/Drone_project/releases/tag/v1.0"
-          class="w-full flex items-center text-blue-500 cursor-pointer"
+  <div class="w-full h-full bg-primary sm:p-5 p-2">
+    <div class="bg-secondary rounded-lg">
+      <BackNavigation title="Point Cloud Processor" client:load />
+      <div class="p-5 pt-5 pb-20">
+        <DialogImage
+          client:load
+          image={DroneImage}
+          classList="w-full max-h-96 rounded-md object-cover"
+          transitionName="pointcloudprocessor"
+          alt="drone"
+        />
+        <div
+          class="bg-secondary flex justify-between items-center rounded-md p-5 mt-[-70px] z-50 relative w-5/6"
         >
-          Download <IoIosArrowForward />
-        </a>
-      </div>
-      <div>
-        <p class="leading-7 text-muted-foreground">Code</p>
-        <a
-          target="_blank"
-          class="w-full flex items-center text-blue-500 cursor-pointer"
-          href="https://github.com/BryanVanWinnendael/Drone_project"
+          <h1
+            class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary"
+          >
+            Point Cloud Processor
+          </h1>
+          <p
+            class="scroll-m-20 text-xl font-semibold tracking-tight text-muted-foreground"
+          >
+            2023
+          </p>
+        </div>
+        <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+          Problem
+        </h4>
+        <p class="leading-7 text-primary">
+          For my Graduation project my group and I had to make a project that
+          was about detecting planes inside a point cloud, in order to get
+          information about all the planes in a point cloud.
+        </p>
+        <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+          Built with
+        </h4>
+        <p class="leading-7 text-primary">
+          The application is seperated into 2 parts:
+        </p>
+        <li class="leading-7 text-primary">
+          The desktop application that was made in Pyton using the PyQt5
+          library.
+        </li>
+        <li class="leading-7 text-primary">
+          The model that will actually process the point cloud was made with
+          Python.
+        </li>
+        <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+          Process
+        </h4>
+        <li class="leading-7 text-primary">Load the point cloud</li>
+        <li class="leading-7 text-primary">Use RANSAC to detect planes</li>
+        <li class="leading-7 text-primary">
+          Possibly cluster using a cluster strategy like DBSCAN or agglomerative
+          clustering, using no clustering is also possible
+        </li>
+        <li class="leading-7 text-primary">
+          Save each of the planes as a .ply file
+        </li>
+        <li class="leading-7 text-primary">
+          Generate a color range for each plane and save the entire point cloud
+          with the colors
+        </li>
+        <li class="leading-7 text-primary">
+          Calculate the surface area of each plane
+        </li>
+        <li class="leading-7 text-primary">
+          Write the info for each plane to a .csv file
+        </li>
+        <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+          Screenshots
+        </h4>
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-5 mt-5">
+          <DialogImage
+            client:load
+            image={DroneImage2}
+            classList="w-full rounded-md object-cover shadow-sm"
+            alt="drone2"
+          />
+          <DialogImage
+            client:load
+            image={DroneImage3}
+            classList="w-full rounded-md object-cover shadow-sm"
+            alt="drone3"
+          />
+          <DialogImage
+            client:load
+            image={DroneImage4}
+            classList="w-full rounded-md object-cover shadow-sm"
+            alt="drone4"
+          />
+        </div>
+
+        <p class="leading-7 text-primary mt-5">
+          For an in depth explanation about the app you can visit the github
+          page.
+        </p>
+
+        <div
+          class="flex gap-5 bg-secondary shadow-md w-fit p-5 rounded-md mt-5"
         >
-          View code <IoIosArrowForward />
-        </a>
+          <div>
+            <p class="leading-7 text-muted-foreground">Download</p>
+            <a
+              target="_blank"
+              href="https://github.com/BryanVanWinnendael/Drone_project/releases/tag/v1.0"
+              class="w-full flex items-center text-blue-500 cursor-pointer"
+            >
+              Download <IoIosArrowForward />
+            </a>
+          </div>
+          <div>
+            <p class="leading-7 text-muted-foreground">Code</p>
+            <a
+              target="_blank"
+              class="w-full flex items-center text-blue-500 cursor-pointer"
+              href="https://github.com/BryanVanWinnendael/Drone_project"
+            >
+              View code <IoIosArrowForward />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

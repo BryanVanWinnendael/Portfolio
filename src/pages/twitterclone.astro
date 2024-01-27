@@ -13,101 +13,107 @@ import DialogImage from "@/components/dialogImage"
 ---
 
 <Layout title="Twitter Clone - Bryan Van Winnendael">
-  <BackNavigation title="Twitter Clone" client:load />
-  <div class="p-5 pt-5">
-    <Image
-      transition:name="twitterclone"
-      src={TwitterImage}
-      alt="Twitter Clone"
-      class="w-full max-h-96 rounded-md object-cover"
-    />
-    <div
-      class="bg-secondary flex justify-between items-center rounded-md p-5 mt-[-70px] z-50 relative w-5/6"
-    >
-      <h1
-        class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary"
-      >
-        Twitter clone
-      </h1>
-      <p
-        class="scroll-m-20 text-xl font-semibold tracking-tight text-muted-foreground"
-      >
-        2022
-      </p>
-    </div>
-    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
-      Overview
-    </h4>
-    <p class="leading-7 text-primary">
-      Twitter Clone, like twitter, is a social media platform. Make a post,
-      comment, like a post and follow other users. Or create an api-key and use
-      the api.
-    </p>
-    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
-      Problem
-    </h4>
-    <p class="leading-7 text-primary">
-      For a school project we had to create a web application with phoenix. I
-      wanted a bit more of a challenge so I decided to create a clone of
-      twitter.
-    </p>
-    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
-      Built with
-    </h4>
-    <p class="leading-7 text-primary">
-      Twitter clone is built with phoemix and mysql.
-    </p>
-
-    <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
-      Screenshots
-    </h4>
-    <div class="grid md:grid-cols-2 grid-cols-1 gap-5 mt-5">
-      <DialogImage
-        client:load
-        image={TwitterImage1}
-        classList="w-full rounded-md object-cover shadow-sm"
-        alt="drone2"
-      />
-      <DialogImage
-        client:load
-        image={TwitterImage2}
-        classList="w-full rounded-md object-cover shadow-sm"
-        alt="drone3"
-      />
-      <DialogImage
-        client:load
-        image={TwitterImage3}
-        classList="w-full rounded-md object-cover shadow-sm"
-        alt="drone4"
-      />
-      <DialogImage
-        client:load
-        image={TwitterImage4}
-        classList="w-full rounded-md object-cover shadow-sm"
-        alt="drone4"
-      />
-    </div>
-
-    <div class="flex gap-5 bg-secondary shadow-md w-fit p-5 rounded-md mt-5">
-      <div>
-        <p class="leading-7 text-muted-foreground">Download</p>
-        <a
-          target="_blank"
-          href="https://github.com/BryanVanWinnendael/Noted"
-          class="w-full flex items-center text-blue-500 cursor-pointer"
+  <div class="w-full h-full bg-primary sm:p-5 p-2">
+    <div class="bg-secondary rounded-lg">
+      <BackNavigation title="Twitter Clone" client:load />
+      <div class="p-5 pt-5">
+        <Image
+          transition:name="twitterclone"
+          src={TwitterImage}
+          alt="Twitter Clone"
+          class="w-full max-h-96 rounded-md object-cover"
+        />
+        <div
+          class="bg-secondary flex justify-between items-center rounded-md p-5 mt-[-70px] z-50 relative w-5/6"
         >
-          Download <IoIosArrowForward />
-        </a>
-      </div>
-      <div>
-        <p class="leading-7 text-muted-foreground">Code</p>
-        <a
-          target="_blank"
-          class="w-full flex items-center text-blue-500 cursor-pointer"
-          href="https://github.com/BryanVanWinnendael/Noted"
+          <h1
+            class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary"
+          >
+            Twitter clone
+          </h1>
+          <p
+            class="scroll-m-20 text-xl font-semibold tracking-tight text-muted-foreground"
+          >
+            2022
+          </p>
+        </div>
+        <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+          Overview
+        </h4>
+        <p class="leading-7 text-primary">
+          Twitter Clone, like twitter, is a social media platform. Make a post,
+          comment, like a post and follow other users. Or create an api-key and
+          use the api.
+        </p>
+        <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+          Problem
+        </h4>
+        <p class="leading-7 text-primary">
+          For a school project we had to create a web application with phoenix.
+          I wanted a bit more of a challenge so I decided to create a clone of
+          twitter.
+        </p>
+        <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+          Built with
+        </h4>
+        <p class="leading-7 text-primary">
+          Twitter clone is built with phoemix and mysql.
+        </p>
+
+        <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+          Screenshots
+        </h4>
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-5 mt-5">
+          <DialogImage
+            client:load
+            image={TwitterImage1}
+            classList="w-full rounded-md object-cover shadow-sm"
+            alt="drone2"
+          />
+          <DialogImage
+            client:load
+            image={TwitterImage2}
+            classList="w-full rounded-md object-cover shadow-sm"
+            alt="drone3"
+          />
+          <DialogImage
+            client:load
+            image={TwitterImage3}
+            classList="w-full rounded-md object-cover shadow-sm"
+            alt="drone4"
+          />
+          <DialogImage
+            client:load
+            image={TwitterImage4}
+            classList="w-full rounded-md object-cover shadow-sm"
+            alt="drone4"
+          />
+        </div>
+
+        <div
+          class="flex gap-5 bg-secondary shadow-md w-fit p-5 rounded-md mt-5"
         >
-          View code <IoIosArrowForward />
-        </a>
+          <div>
+            <p class="leading-7 text-muted-foreground">Download</p>
+            <a
+              target="_blank"
+              href="https://github.com/BryanVanWinnendael/Noted"
+              class="w-full flex items-center text-blue-500 cursor-pointer"
+            >
+              Download <IoIosArrowForward />
+            </a>
+          </div>
+          <div>
+            <p class="leading-7 text-muted-foreground">Code</p>
+            <a
+              target="_blank"
+              class="w-full flex items-center text-blue-500 cursor-pointer"
+              href="https://github.com/BryanVanWinnendael/Noted"
+            >
+              View code <IoIosArrowForward />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -3,9 +3,10 @@ import { useEffect, useRef } from "react"
 
 interface Props {
   children: React.ReactNode
+  classList?: string | undefined
 }
 
-const Reveal = ({ children }: Props) => {
+const Reveal = ({ children, classList = undefined }: Props) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
@@ -33,6 +34,7 @@ const Reveal = ({ children }: Props) => {
       transition={{ duration: 0.5, delay: 0.4 }}
       initial="hidden"
       animate={mainControls}
+      className={classList}
     >
       {children}
     </motion.div>

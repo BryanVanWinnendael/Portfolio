@@ -14,8 +14,8 @@ const LINKS = [
     href: "about",
   },
   {
-    title: "Timeline",
-    href: "timeline",
+    title: "Experience",
+    href: "experience",
   },
   {
     title: "Projects",

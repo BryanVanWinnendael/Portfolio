@@ -31,7 +31,7 @@ const Hero = () => {
   return (
     <motion.div
       ref={targetRef}
-      className="h-[100dvh] w-full select-none text-secondary uppercase flex flex-col items-center justify-center"
+      className="h-[100dvh] w-full bg-primary select-none text-secondary uppercase flex flex-col items-center justify-center"
     >
       <div className="text-secondary leading-[1.1] sm:px-12 px-2">
         <h1 className="scroll-m-20 sm:text-[10vw] text-[3rem] font-extrabold tracking-tight h-fit">

@@ -8,13 +8,11 @@ const ProjectCard = ({
   year,
   tags,
   title,
-  text,
 }: {
   image: string
   year: string
   tags: string
   title: string
-  text: string
 }) => {
   const cardRef = useRef<HTMLImageElement>(null)
   const [mousePosition, setMousePosition] = useState({
@@ -65,9 +63,9 @@ const ProjectCard = ({
           animate={{ scale: mousePosition.hover ? 1 : 0 }}
           exit={{ scale: 0 }}
           transition={{ duration: 0.3 }}
-          className={`bg-primary w-24 h-24 fixed rounded-full flex justify-center z-50 items-center ${mousePosition.hover ? "cursor-none pointer-events-none" : ""}`}
+          className={`bg-secondary w-24 h-24 fixed rounded-full flex justify-center z-50 items-center ${mousePosition.hover ? "cursor-none pointer-events-none" : ""}`}
         >
-          <FaLocationArrow className="w-6 h-6 text-secondary" />
+          <FaLocationArrow className="w-6 h-6 text-primary" />
         </motion.div>
       )}
 
@@ -94,26 +92,23 @@ const ProjectCard = ({
             />
           </div>
         </a>
-        <div className="my-5 flex gap-5">
-          <div className="border border-muted-foreground w-fit py-1 px-3 rounded-2xl">
-            <p className="text-muted-foreground">{year}</p>
-          </div>
-          <div className="border border-muted-foreground w-fit py-1 px-3 rounded-2xl">
-            <p className="text-muted-foreground">{tags}</p>
-          </div>
-        </div>
-        <div className="flex gap-1 items-end">
-          <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight text-primary">
-            {title.split("/")[0]}
-          </h3>
-          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary">
-            {title.split("/")[1]}
-          </h1>
-        </div>
 
-        <p className="leading-7 [&:not(:first-child)]:mt-6 text-primary font-semibold max-w-96">
-          {text}
-        </p>
+        <div className="flex items-center gap-2 mt-5">
+          <div className="flex gap-1 items-end">
+            <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight text-secondary">
+              {title.split("/")[0]}
+            </h3>
+            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-secondary">
+              {title.split("/")[1]}
+            </h1>
+            </div>
+          <div className="my-5 flex gap-5 items-center">
+            <div className="border border-muted-foreground w-fit py-1 px-3 rounded-2xl h-fit">
+              <p className="text-muted-foreground">{year}</p>
+            </div>
+            
+            </div>
+        </div>
       </div>
     </>
   )
