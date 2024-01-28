@@ -31,21 +31,19 @@ const Hero = () => {
   return (
     <motion.div
       ref={targetRef}
-      className="h-screen w-full bg-primary select-none text-secondary uppercase flex flex-col items-center justify-center"
+      className="h-screen w-full bg-primary select-none text-secondary flex flex-col justify-center"
     >
-      <div className="text-secondary leading-[1.1] sm:px-12 px-2">
-        <h1 className="scroll-m-20 sm:text-[10vw] text-[3rem] font-extrabold tracking-tight h-fit">
-          full stack
-        </h1>
-        <h1 className="scroll-m-20 sm:text-[10vw] text-[3rem] font-extrabold tracking-tight h-fit">
-          developer
-        </h1>
-        <h1 className="scroll-m-20 sm:text-[14vw] text-[4.4rem] font-extrabold tracking-tight h-fit">
-          bryan Van
-        </h1>
-        <h1 className="scroll-m-20 sm:text-[14vw] text-[4.4rem] font-extrabold tracking-tight h-fit">
-          Winnendael
-        </h1>
+      <div className="text-secondary leading-[1.1] sm:px-12 px-2 flex flex-col gap-4 sm:text-[7.317vw] text-6xl">
+        <div className="sm:text-left text-center">
+          <h1 className="scroll-m-20 font-extrabold tracking-tight h-fit">
+            Full Stack Developer
+          </h1>
+        </div>
+        <div className="sm:text-right text-center">
+          <h1 className="scroll-m-20 font-extrabold tracking-tight h-fit">
+            Bryan Van Winnendael
+          </h1>
+        </div>
       </div>
       <div className="flex justify-end text-sm w-full h-12 lowercase px-5 absolute bottom-5 right-0">
         <div className="flex items-center rotate-90">

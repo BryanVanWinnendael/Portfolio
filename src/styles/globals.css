@@ -13,10 +13,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
 
-    --primary: 0 0% 9%;
+    --primary: #090909;
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 0 0% 96.1%;
+    --secondary: #f1f0eb;
     --secondary-foreground: 0 0% 9%;
 
     --muted: 0 0% 96.1%;
@@ -76,4 +76,5 @@ p {
 body {
   user-select: none;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }

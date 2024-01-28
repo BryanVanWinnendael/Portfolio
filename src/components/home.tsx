@@ -3,15 +3,12 @@ import Hero from "@/components/hero"
 import Experience from "@/components/experience"
 import ProjectsGrid from "@/components/projectsGrid"
 import Contact from "@/components/contact"
-import { ReactLenis } from '@studio-freight/react-lenis'
+import { ReactLenis } from "@studio-freight/react-lenis"
 
 const Home = () => {
   return (
     <ReactLenis root>
-      <main
-        id="home"
-        className="h-full w-full"
-      >
+      <main id="home" className="h-full w-full">
         <Hero />
         <About />
         <Experience />

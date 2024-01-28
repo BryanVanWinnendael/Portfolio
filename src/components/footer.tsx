@@ -60,7 +60,7 @@ const Footer = () => {
       className={`${backgroundColor} ${textColor} h-full pb-12 w-full px-5 pt-12`}
     >
       <div
-        className={`grid sm:grid-cols-[auto,auto] sm:grid-rows-1 grid-rows-[auto,auto] gap-5 border-opacity-20 border-[1px] ${borderColor} p-5 rounded-md ${backgroundColor} ${textColor}`}
+        className={`grid sm:grid-cols-[auto,auto] sm:grid-rows-1 grid-rows-[auto,auto] gap-5 border-opacity-20 border-[1px] ${borderColor} p-5 rounded-[24px] ${backgroundColor} ${textColor}`}
       >
         <div className="sm:row-start-1 row-start-2">
           <h1 className="scroll-m-20 lg:text-7xl md:text-6xl sm:text-4xl text-2xl font-bold tracking-tight">

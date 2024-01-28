@@ -1,5 +1,5 @@
 import { setBackgroundColor } from "@/stores/background"
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import ProjectCard from "./projectCard"
 import NotedImage from "@/assets/images/noted/noted.svg"
 import DroneImage from "@/assets/images/drone/drone.svg"
@@ -91,8 +91,13 @@ const ProjectsGrid = () => {
   ])
 
   return (
-    <div id="projects" className="h-full pt-12 flex flex-col gap-2 bg-primary pb-5">
-      <h1 className="pl-5 pb-6 scroll-m-20 sm:text-[10vw] text-[3rem] font-semibold tracking-tight h-fit text-muted">MY WORK</h1>
+    <div
+      id="projects"
+      className="h-full pt-12 flex flex-col gap-2 bg-primary pb-5"
+    >
+      <h1 className="pl-5 pb-20 scroll-m-20 sm:text-[3.902vw] text-3xl font-semibold tracking-tight h-fit text-muted">
+        Select Work
+      </h1>
       <div ref={targetRefGrid1} className="flex flex-col p-5 h-full">
         <motion.div
           initial="initial"
@@ -104,12 +109,7 @@ const ProjectsGrid = () => {
           transition={{ duration: 0.5 }}
           className={`w-full lg:h-screen `}
         >
-          <ProjectCard
-            image={NotedImage.src}
-            year="2023"
-            tags="electron - react - editor.js"
-            title="01./Noted"
-          />
+          <ProjectCard image={NotedImage.src} year="2023" title="01./Noted" />
         </motion.div>
       </div>
 
@@ -130,7 +130,6 @@ const ProjectsGrid = () => {
           <ProjectCard
             image={DroneImage.src}
             year="2023"
-            tags="python - ai"
             title="02./Point Cloud Processor"
           />
         </motion.div>
@@ -144,12 +143,7 @@ const ProjectsGrid = () => {
           transition={{ duration: 0.5 }}
           className="w-full "
         >
-          <ProjectCard
-            image={ChatlyImage.src}
-            year="2023"
-            tags="nextjs - agora - supabase"
-            title="03./Chatly"
-          />
+          <ProjectCard image={ChatlyImage.src} year="2023" title="03./Chatly" />
         </motion.div>
       </div>
 
@@ -170,7 +164,6 @@ const ProjectsGrid = () => {
           <ProjectCard
             image={TwitterImage.src}
             year="2022"
-            tags="phoenix - mysql"
             title="04./Twitter clone"
           />
         </motion.div>
@@ -185,12 +178,7 @@ const ProjectsGrid = () => {
             }}
             transition={{ duration: 0.5 }}
           >
-            <ProjectCard
-              image={ClneImage.src}
-              year="2021"
-              tags="react - firebase"
-              title="05./Clne"
-            />
+            <ProjectCard image={ClneImage.src} year="2021" title="05./Clne" />
           </motion.div>
         </div>
       </div>

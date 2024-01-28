@@ -6,12 +6,10 @@ import useScreen from "@/hooks/useScreen"
 const ProjectCard = ({
   image,
   year,
-  tags,
   title,
 }: {
   image: string
   year: string
-  tags: string
   title: string
 }) => {
   const cardRef = useRef<HTMLImageElement>(null)
@@ -75,9 +73,9 @@ const ProjectCard = ({
       >
         <a
           href={title.split("/")[1].replace(/\s/g, "").toLowerCase()}
-          className="h-5/6 w-full rounded-md overflow-hidden"
+          className="h-5/6 w-full rounded-[24px] overflow-hidden"
         >
-          <div className="h-5/6 w-full overflow-hidden hover:scale-90 duration-500 rounded-md">
+          <div className="h-5/6 w-full overflow-hidden hover:scale-90 duration-500 rounded-[24px]">
             <img
               ref={cardRef}
               style={{
@@ -86,7 +84,7 @@ const ProjectCard = ({
                   .replace(/\s/g, "")
                   .toLowerCase(),
               }}
-              className="object-cover h-full w-full hover:scale-125 duration-500 hover:cursor-none rounded-md"
+              className="object-cover h-full w-full hover:scale-125 duration-500 hover:cursor-none rounded-[24px]"
               src={image}
               alt=""
             />
@@ -101,13 +99,12 @@ const ProjectCard = ({
             <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-secondary">
               {title.split("/")[1]}
             </h1>
-            </div>
+          </div>
           <div className="my-5 flex gap-5 items-center">
             <div className="border border-muted-foreground w-fit py-1 px-3 rounded-2xl h-fit">
               <p className="text-muted-foreground">{year}</p>
             </div>
-            
-            </div>
+          </div>
         </div>
       </div>
     </>
