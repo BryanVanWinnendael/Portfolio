@@ -33,7 +33,7 @@ const ProjectsGrid = () => {
     const noted_offset = scroll * -0.03 + 3
     const drone_offset = scroll * 0.03 + 20
     const chatly_offset = scroll * -0.03 + 4
-    const twitter_offset = scroll * 0.03 - 150
+    const twitter_offset = scroll * 0.03 + 20
     const clne_offset = scroll * -0.03 + 9
 
     setOffset({
@@ -115,7 +115,7 @@ const ProjectsGrid = () => {
 
       <div
         ref={targetRefGrid2}
-        className="flex md:flex-row flex-col md:h-screen h-full w-full p-5 gap-5"
+        className="flex md:flex-row flex-col md:h-screen h-full w-full p-5 sm:gap-5 gap-[40px]"
       >
         <motion.div
           initial="initial"
@@ -125,7 +125,7 @@ const ProjectsGrid = () => {
             animate: { marginTop: offset.drone },
           }}
           transition={{ duration: 0.5 }}
-          className="w-full md:h-1/2 h-full"
+          className="w-full md:h-3/4 h-full"
         >
           <ProjectCard
             image={DroneImage.src}
@@ -169,7 +169,7 @@ const ProjectsGrid = () => {
         </motion.div>
         <div className="w-full h-full flex items-center">
           <motion.div
-            className="md:h-1/2 h-full w-full"
+            className="md:h-4/5 h-full w-full"
             initial="initial"
             animate="animate"
             variants={{

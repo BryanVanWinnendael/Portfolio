@@ -52,7 +52,7 @@ const Hero = () => {
         <div className="w-full flex justify-center mt-5">
           <div
             onClick={() => scrollToElement("contact")}
-            className="text-primary bg-secondary h-[45px] w-[130px] cursor-pointer overflow-hidden rounded-3xl flex items-center justify-center"
+            className="text-primary bg-secondary h-[45px] w-[140px] cursor-pointer overflow-hidden rounded-3xl flex items-center justify-center"
           >
             <p className="flex flex-col justify-center text-center items-center text-[24px] h-full w-full font-semibold">
               Let's talk!
