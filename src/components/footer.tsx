@@ -7,6 +7,7 @@ const Footer = () => {
   const [backgroundColor, setBackgroundColor] = useState("bg-primary")
   const [textColor, setTextColor] = useState("text-primary")
   const [borderColor, setBorderColor] = useState("border-primary")
+  const [year, setYear] = useState("")
 
   useEffect(() => {
     const updateTimeZone = () => {
@@ -23,6 +24,14 @@ const Footer = () => {
 
       setBrusselsTime(brusselsTime)
     }
+
+    const getYear = () => {
+      const date = new Date()
+      const year = date.getFullYear()
+      setYear(year.toString())
+    }
+
+    getYear()
 
     updateTimeZone()
 
@@ -64,7 +73,7 @@ const Footer = () => {
       >
         <div className="sm:row-start-1 row-start-2">
           <h1 className="scroll-m-20 lg:text-7xl md:text-6xl sm:text-4xl text-2xl font-bold tracking-tight">
-            © 2024
+            © {year}
           </h1>
           <h1 className="scroll-m-20 lg:text-8xl md:text-7xl sm:text-6xl text-4xl font-extrabold tracking-tight">
             BRYAN

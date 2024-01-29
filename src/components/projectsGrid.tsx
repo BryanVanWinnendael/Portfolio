@@ -95,7 +95,7 @@ const ProjectsGrid = () => {
       id="projects"
       className="h-full pt-12 flex flex-col gap-2 bg-primary pb-5"
     >
-      <h1 className="pl-5 pb-20 scroll-m-20 sm:text-[3.902vw] text-3xl font-semibold tracking-tight h-fit text-muted">
+      <h1 className="scroll-m-20 sm:text-[7.317vw] text-6xl font-extrabold tracking-tight h-fit text-secondary sm:mb-12 ml-5">
         Select Work
       </h1>
       <div ref={targetRefGrid1} className="flex flex-col p-5 h-full">

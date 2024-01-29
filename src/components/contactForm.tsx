@@ -89,12 +89,12 @@ const ContactForm = () => {
           )}
         />
         {loading ? (
-          <Button disabled variant="secondary">
+          <Button disabled variant="secondary" className="w-full">
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
             Please wait
           </Button>
         ) : (
-          <Button variant="default" type="submit">
+          <Button variant="default" type="submit" className="w-full">
             Submit
           </Button>
         )}

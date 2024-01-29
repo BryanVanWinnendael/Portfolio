@@ -99,7 +99,7 @@ export default function Index() {
           animate={isTop && location === "/" ? "open" : "closed"}
           className="flex justify-between items-center fixed top-0 w-full bg-primary sm:p-6 p-2 uppercase font-semibold"
         >
-          <li className="flex md:gap-4 gap-3 md:text-lg text-sm">
+          <li className="flex w-full md:gap-4 gap-3 md:text-lg text-sm sm:justify-normal justify-center">
             <p
               onClick={() => scrollToElement("about")}
               className="text-muted-foreground cursor-pointer"
