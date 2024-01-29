@@ -116,9 +116,9 @@ const Experience = () => {
                       and graduated in 2023 with a cum laude.
                     </p>
                     <img
-                      onClick={() => window.open("https://www.imec.be")}
+                      onClick={() => window.open("https://www.ucll.be/nl")}
                       src={ucllImage.src}
-                      alt="imec image"
+                      alt="ucll image"
                       className="rounded-md cursor-pointer w-auto lg:h-12 h-10 mt-5"
                     />
                   </div>

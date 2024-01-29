@@ -102,10 +102,10 @@ const Footer = () => {
                   About
                 </p>
                 <p
-                  onClick={() => scrollToElement("timeline")}
+                  onClick={() => scrollToElement("experience")}
                   className="scroll-m-20 text-xl font-semibold tracking-tight first:mt-0 hover:underline cursor-pointer"
                 >
-                  Timeline
+                  Experience
                 </p>
                 <p
                   onClick={() => scrollToElement("projects")}
