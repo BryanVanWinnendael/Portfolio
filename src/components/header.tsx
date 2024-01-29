@@ -9,7 +9,7 @@ import { scrollToElement } from "@/lib/utils"
 export default function Index() {
   const [isActive, setIsActive] = useState(false)
   const [background_color, setBackground_color] = useState("bg-primary")
-  const { isLarge, isMedium } = useScreen()
+  const { isLarge, isMedium, isSmall } = useScreen()
   const [isTop, setIsTop] = useState(true)
   const [location, setLocation] = useState("")
 
@@ -99,7 +99,7 @@ export default function Index() {
           animate={isTop && location === "/" ? "open" : "closed"}
           className="flex justify-between items-center fixed top-0 w-full bg-primary sm:p-6 p-2 uppercase font-semibold"
         >
-          <li className="flex md:gap-4 gap-2 md:text-lg text-sm">
+          <li className="flex md:gap-4 gap-3 md:text-lg text-sm">
             <p
               onClick={() => scrollToElement("about")}
               className="text-muted-foreground cursor-pointer"
@@ -119,14 +119,16 @@ export default function Index() {
               Select work
             </p>
           </li>
-          <div
-            onClick={() => scrollToElement("contact")}
-            className="w-[80px] text-primary bg-secondary h-[35px] lg:w-[100px] lg:h-[40px] cursor-pointer overflow-hidden rounded-3xl"
-          >
-            <p className="flex flex-col justify-center items-center md:text-[13px] text-xs h-full w-full font-semibold">
-              Let's talk!
-            </p>
-          </div>
+          {!isSmall && (
+            <div
+              onClick={() => scrollToElement("contact")}
+              className="w-[80px] text-primary bg-secondary h-[35px] lg:w-[100px] lg:h-[40px] cursor-pointer overflow-hidden rounded-3xl flex items-center justify-center"
+            >
+              <p className="flex flex-col justify-center text-center items-center md:text-[13px] text-xs h-full w-full font-semibold">
+                Let's talk!
+              </p>
+            </div>
+          )}
         </motion.div>
       )}
 

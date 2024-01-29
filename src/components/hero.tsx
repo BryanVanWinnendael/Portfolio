@@ -2,9 +2,12 @@ import { motion } from "framer-motion"
 import { useEffect, useRef } from "react"
 import ScrollLine from "@/components/scrollLine"
 import { setBackgroundColor } from "@/stores/background"
+import { scrollToElement } from "@/lib/utils"
+import useScreen from "@/hooks/useScreen"
 
 const Hero = () => {
   const targetRef = useRef(null)
+  const { isSmall } = useScreen()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -45,6 +48,19 @@ const Hero = () => {
           </h1>
         </div>
       </div>
+      {isSmall && (
+        <div className="w-full flex justify-center mt-5">
+          <div
+            onClick={() => scrollToElement("contact")}
+            className="text-primary bg-secondary h-[35px] w-[100px] cursor-pointer overflow-hidden rounded-3xl flex items-center justify-center"
+          >
+            <p className="flex flex-col justify-center text-center items-center md:text-[24px] h-full w-full font-semibold">
+              Let's talk!
+            </p>
+          </div>
+        </div>
+      )}
+
       <div className="flex justify-end text-sm w-full h-12 lowercase px-5 absolute bottom-5 right-0">
         <div className="flex items-center rotate-90">
           <p className="text-md">Scroll</p>
