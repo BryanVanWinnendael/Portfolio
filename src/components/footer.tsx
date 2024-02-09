@@ -1,9 +1,11 @@
 import { scrollToElement } from "@/lib/utils"
+import { $showNav } from "@/stores/nav"
 import { useState, useEffect } from "react"
 
 const Footer = () => {
   const [brusselsTime, setBrusselsTime] = useState("")
   const [year, setYear] = useState("")
+  const [isProject, setIsProject] = useState(false)
 
   useEffect(() => {
     const updateTimeZone = () => {
@@ -21,6 +23,10 @@ const Footer = () => {
       setBrusselsTime(brusselsTime)
     }
 
+    const unbindListenerNav = $showNav.subscribe((value) => {
+      setIsProject(!value)
+    })
+
     const getYear = () => {
       const date = new Date()
       const year = date.getFullYear()
@@ -33,16 +39,15 @@ const Footer = () => {
 
     const intervalId = setInterval(updateTimeZone, 1000)
 
-    return () => clearInterval(intervalId)
+    return () => {
+      clearInterval(intervalId)
+      unbindListenerNav()
+    }
   }, [])
 
   return (
-    <div
-      className="bg-primary text-secondary h-full pb-12 w-full px-5 pt-12"
-    >
-      <div
-        className="grid sm:grid-cols-[auto,auto] sm:grid-rows-1 grid-rows-[auto,auto] gap-5 border-opacity-20 border-[1px] border-gray-200 p-5 rounded-[24px]"
-      >
+    <div className="bg-primary text-secondary h-full pb-12 w-full px-5 pt-12">
+      <div className="grid sm:grid-cols-[auto,auto] sm:grid-rows-1 grid-rows-[auto,auto] gap-5 border-opacity-20 border-[1px] border-gray-200 p-5 rounded-[24px]">
         <div className="sm:row-start-1 row-start-2">
           <h1 className="scroll-m-20 lg:text-7xl md:text-6xl sm:text-4xl text-2xl font-bold tracking-tight">
             © {year}
@@ -61,36 +66,84 @@ const Footer = () => {
                 Navigation
               </h2>
               <div className="flex flex-col">
-                <p
-                  onClick={() => scrollToElement("home")}
-                  className="scroll-m-20 text-xl font-semibold tracking-tight first:mt-0 hover:underline cursor-pointer"
-                >
-                  Home
-                </p>
-                <p
-                  onClick={() => scrollToElement("about")}
-                  className="scroll-m-20 text-xl font-semibold tracking-tight first:mt-0 hover:underline cursor-pointer"
-                >
-                  About
-                </p>
-                <p
-                  onClick={() => scrollToElement("experience")}
-                  className="scroll-m-20 text-xl font-semibold tracking-tight first:mt-0 hover:underline cursor-pointer"
-                >
-                  Experience
-                </p>
-                <p
-                  onClick={() => scrollToElement("projects")}
-                  className="scroll-m-20 text-xl font-semibold tracking-tight first:mt-0 hover:underline cursor-pointer"
-                >
-                  Projects
-                </p>
-                <p
-                  onClick={() => scrollToElement("contact")}
-                  className="scroll-m-20 text-xl font-semibold tracking-tight first:mt-0 hover:underline cursor-pointer"
-                >
-                  Left's talk
-                </p>
+                {isProject ? (
+                  <a
+                    href="/#home"
+                    className="scroll-m-20 text-xl font-semibold tracking-tight first:mt-0 hover:underline cursor-pointer"
+                  >
+                    Home
+                  </a>
+                ) : (
+                  <p
+                    onClick={() => scrollToElement("home")}
+                    className="scroll-m-20 text-xl font-semibold tracking-tight first:mt-0 hover:underline cursor-pointer"
+                  >
+                    Home
+                  </p>
+                )}
+
+                {isProject ? (
+                  <a
+                    href="/#about"
+                    className="scroll-m-20 text-xl font-semibold tracking-tight first:mt-0 hover:underline cursor-pointer"
+                  >
+                    About
+                  </a>
+                ) : (
+                  <p
+                    onClick={() => scrollToElement("about")}
+                    className="scroll-m-20 text-xl font-semibold tracking-tight first:mt-0 hover:underline cursor-pointer"
+                  >
+                    About
+                  </p>
+                )}
+
+                {isProject ? (
+                  <a
+                    href="/#experience"
+                    className="scroll-m-20 text-xl font-semibold tracking-tight first:mt-0 hover:underline cursor-pointer"
+                  >
+                    Experience
+                  </a>
+                ) : (
+                  <p
+                    onClick={() => scrollToElement("experience")}
+                    className="scroll-m-20 text-xl font-semibold tracking-tight first:mt-0 hover:underline cursor-pointer"
+                  >
+                    Experience
+                  </p>
+                )}
+
+                {isProject ? (
+                  <a
+                    href="/#projects"
+                    className="scroll-m-20 text-xl font-semibold tracking-tight first:mt-0 hover:underline cursor-pointer"
+                  >
+                    Projects
+                  </a>
+                ) : (
+                  <p
+                    onClick={() => scrollToElement("projects")}
+                    className="scroll-m-20 text-xl font-semibold tracking-tight first:mt-0 hover:underline cursor-pointer"
+                  >
+                    Projects
+                  </p>
+                )}
+                {isProject ? (
+                  <a
+                    href="/#contact"
+                    className="scroll-m-20 text-xl font-semibold tracking-tight first:mt-0 hover:underline cursor-pointer"
+                  >
+                    Left's talk
+                  </a>
+                ) : (
+                  <p
+                    onClick={() => scrollToElement("contact")}
+                    className="scroll-m-20 text-xl font-semibold tracking-tight first:mt-0 hover:underline cursor-pointer"
+                  >
+                    Left's talk
+                  </p>
+                )}
               </div>
             </div>
             <div className="hidden flex-col justify-start sm:flex">

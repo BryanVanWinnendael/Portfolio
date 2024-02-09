@@ -13,7 +13,7 @@ const DialogImage = ({
 }) => {
   return (
     <Dialog>
-      <DialogTrigger asChild> 
+      <DialogTrigger asChild>
         <img
           style={transitionName ? { viewTransitionName: transitionName } : {}}
           src={image.src}

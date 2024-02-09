@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { setShowNav } from "@/stores/nav" 
+import { setShowNav } from "@/stores/nav"
 import { setBackgroundColor } from "@/stores/background"
 const BackNavigation = ({ title }: { title: string }) => {
   const [active, setActive] = useState(false)

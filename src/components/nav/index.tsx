@@ -3,6 +3,7 @@ import { scrollToElement } from "@/lib/utils"
 import { $background_color } from "@/stores/background"
 import { useEffect, useState } from "react"
 import useScreen from "@/hooks/useScreen"
+import { $showNav } from "@/stores/nav"
 
 const LINKS = [
   {
@@ -49,12 +50,12 @@ const SLIDEIN = {
 
 const Index = () => {
   const [textColor, setTextCololr] = useState("text-primary")
-  const location = window.location.pathname
   const { isLarge, isMedium } = useScreen()
+  const [isProject, setIsProject] = useState(false)
 
   const getHref = (href: string) => {
     const location = window.location.pathname
-    if (location === "/") return href
+    if (!isProject) return href
     else {
       if (href === "projects") {
         const project = location.split("/")[1]
@@ -76,6 +77,10 @@ const Index = () => {
       else setTextCololr("text-secondary")
     })
 
+    const unbindListenerNav = $showNav.subscribe((value) => {
+      setIsProject(!value)
+    })
+
     return () => {
       unbindListenerBackground()
     }
@@ -88,19 +93,7 @@ const Index = () => {
           const { title, href } = link
           return (
             <div key={`b_${i}`}>
-              {location === "/" ? (
-                <motion.p
-                  className={`${getTextSize()} cursor-pointer w-fit hover:underline ${textColor} font-semibold`}
-                  onClick={() => scrollToElement(href)}
-                  custom={i}
-                  variants={SLIDEIN}
-                  initial="initial"
-                  animate="enter"
-                  exit="exit"
-                >
-                  {title}
-                </motion.p>
-              ) : (
+              {isProject ? (
                 <motion.a
                   className={`${getTextSize()} cursor-pointer w-fit hover:underline ${textColor} font-semibold`}
                   href={getHref(href)}
@@ -112,6 +105,18 @@ const Index = () => {
                 >
                   {title}
                 </motion.a>
+              ) : (
+                <motion.p
+                  className={`${getTextSize()} cursor-pointer w-fit hover:underline ${textColor} font-semibold`}
+                  onClick={() => scrollToElement(href)}
+                  custom={i}
+                  variants={SLIDEIN}
+                  initial="initial"
+                  animate="enter"
+                  exit="exit"
+                >
+                  {title}
+                </motion.p>
               )}
             </div>
           )

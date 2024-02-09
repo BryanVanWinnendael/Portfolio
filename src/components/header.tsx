@@ -5,14 +5,14 @@ import Nav from "@/components/nav"
 import { $background_color } from "@/stores/background"
 import useScreen from "@/hooks/useScreen"
 import { scrollToElement } from "@/lib/utils"
-import { $showNav } from "@/stores/nav" 
+import { $showNav } from "@/stores/nav"
 
 export default function Index() {
   const [isActive, setIsActive] = useState(false)
   const [background_color, setBackground_color] = useState("bg-primary")
   const { isLarge, isMedium, isSmall } = useScreen()
   const [isTop, setIsTop] = useState(true)
-  const [showNav, setShowNav ] = useState(true)
+  const [showNav, setShowNav] = useState(true)
 
   const getHeigth = () => {
     if (isActive) {
