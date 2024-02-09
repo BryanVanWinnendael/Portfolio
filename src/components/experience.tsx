@@ -44,7 +44,7 @@ const Experience = () => {
     <div ref={targetRef} id="experience" className="h-[100dvh] w-full">
       <div className="w-full h-full bg-primary">
         <Reveal classList="w-full h-full flex flex-col justify-center items-center gap-5">
-          <h2 className="scroll-m-20 sm:text-[7.317vw] text-6xl font-extrabold tracking-tight h-fit text-secondary">
+          <h2 className="scroll-m-20 sm:text-[7.317vw] text-6xl font-black tracking-tight h-fit text-secondary">
             Experience
           </h2>
           <ol className="border-l border-neutral-300 dark:border-neutral-500 m-5 lg:w-1/2">

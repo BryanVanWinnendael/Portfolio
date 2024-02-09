@@ -13,9 +13,7 @@ const Button = ({ isActive, toggleMenu }: any) => {
 
   useEffect(() => {
     const unbindListenerBackground = $background_color.subscribe((value) => {
-      const location = window.location.pathname
-      if (location !== "/") setBackground_color("bg-primary")
-      else if (value === "bg-primary") setBackground_color("bg-secondary")
+      if (value === "bg-primary") setBackground_color("bg-secondary")
       else setBackground_color("bg-primary")
     })
 

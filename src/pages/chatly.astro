@@ -1,28 +1,30 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import "@/styles/globals.css"
-import { Image } from "astro:assets"
-import ChatlyImage from "@/assets/images/chatly/chatly.jpg"
+import ChatlyImage from "@/assets/images/chatly/chatly.webp"
+import ChatlyImage2 from "@/assets/images/chatly/chatly.webp"
 import BackNavigation from "@/components/backNavigation"
 import { IoIosArrowForward } from "react-icons/io"
+import DialogImage from "@/components/dialogImage"
 ---
 
 <Layout title="Chatly - Bryan Van Winnendael">
   <div class="w-full h-full bg-primary sm:p-5 p-2">
     <div class="bg-secondary rounded-[24px]">
       <BackNavigation title="Chatly" client:load />
-      <div class="p-5 pt-5">
-        <Image
-          transition:name="chatly"
-          src={ChatlyImage}
-          alt="Chatly"
-          class="w-full max-h-96 rounded-[24px] object-cover"
+      <div class="p-5 pt-5 leading-7 [&:not(:first-child)]:mt-6">
+        <DialogImage
+          client:load
+          image={ChatlyImage}
+          classList="w-full max-h-96 rounded-[24px] object-cover"
+          transitionName="chatly"
+          alt="chatly"
         />
         <div
           class="bg-secondary flex justify-between items-center rounded-tr-[24px] p-5 mt-[-70px] z-50 relative w-5/6"
         >
           <h1
-            class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary"
+            class="scroll-m-20 text-5xl font-black tracking-tight lg:text-6xl text-primary"
           >
             Chatly
           </h1>
@@ -49,20 +51,38 @@ import { IoIosArrowForward } from "react-icons/io"
           Built with
         </h4>
         <p class="leading-7 text-primary">
-          Chatly is built with nextjs, agora, supabase and tailwind.
+          Chatly is built with nextjs, agora, supabase, prisma and tailwind.
         </p>
+
+        <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+          Screenshots
+        </h4>
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-5 mt-5">
+          <DialogImage
+            client:load
+            image={ChatlyImage}
+            classList="w-full rounded-md object-cover shadow-sm"
+            alt="chatly2"
+          />
+          <DialogImage
+            client:load
+            image={ChatlyImage2}
+            classList="w-full rounded-md object-cover shadow-sm"
+            alt="chatly3"
+          />
+        </div>
 
         <div
           class="flex gap-5 bg-secondary shadow-md w-fit p-5 rounded-[24px] mt-5"
         >
           <div>
-            <p class="leading-7 text-muted-foreground">Download</p>
+            <p class="leading-7 text-muted-foreground">Site</p>
             <a
               target="_blank"
-              href="https://github.com/BryanVanWinnendael/Noted"
+              href="https://chatly-bryanvanwinnendael.vercel.app/"
               class="w-full flex items-center text-blue-500 cursor-pointer"
             >
-              Download <IoIosArrowForward />
+              Site <IoIosArrowForward />
             </a>
           </div>
           <div>
@@ -70,7 +90,7 @@ import { IoIosArrowForward } from "react-icons/io"
             <a
               target="_blank"
               class="w-full flex items-center text-blue-500 cursor-pointer"
-              href="https://github.com/BryanVanWinnendael/Noted"
+              href="https://github.com/BryanVanWinnendael/Chatly"
             >
               View code <IoIosArrowForward />
             </a>

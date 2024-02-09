@@ -5,13 +5,14 @@ import Nav from "@/components/nav"
 import { $background_color } from "@/stores/background"
 import useScreen from "@/hooks/useScreen"
 import { scrollToElement } from "@/lib/utils"
+import { $showNav } from "@/stores/nav" 
 
 export default function Index() {
   const [isActive, setIsActive] = useState(false)
   const [background_color, setBackground_color] = useState("bg-primary")
   const { isLarge, isMedium, isSmall } = useScreen()
   const [isTop, setIsTop] = useState(true)
-  const [location, setLocation] = useState("")
+  const [showNav, setShowNav ] = useState(true)
 
   const getHeigth = () => {
     if (isActive) {
@@ -50,15 +51,14 @@ export default function Index() {
   }
 
   useEffect(() => {
-    const unbindListenerBackground = $background_color.subscribe((value) => {
-      const location = window.location.pathname
-      if (location !== "/") setBackground_color("bg-primary")
-      else if (value === "bg-primary") setBackground_color("bg-secondary")
-      else setBackground_color("bg-primary")
+    const unbindListenerNav = $showNav.subscribe((value) => {
+      setShowNav(value)
     })
 
-    const location = window.location.pathname
-    setLocation(location)
+    const unbindListenerBackground = $background_color.subscribe((value) => {
+      if (value === "bg-primary") setBackground_color("bg-secondary")
+      else setBackground_color("bg-primary")
+    })
 
     const checkTop = () => {
       if (window.scrollY === 0) setIsTop(true)
@@ -69,13 +69,14 @@ export default function Index() {
 
     return () => {
       unbindListenerBackground()
+      unbindListenerNav()
       window.removeEventListener("scroll", checkTop)
     }
   }, [])
 
   return (
     <>
-      {location === "/" && (
+      {showNav && (
         <motion.div
           initial="open"
           variants={{
@@ -96,8 +97,8 @@ export default function Index() {
               },
             },
           }}
-          animate={isTop && location === "/" ? "open" : "closed"}
-          className="flex justify-between items-center fixed top-0 w-full bg-primary sm:p-6 p-2 uppercase font-semibold"
+          animate={isTop && showNav ? "open" : "closed"}
+          className="flex justify-between items-center fixed top-0 w-full bg-primary sm:p-6 p-2 font-bold"
         >
           <li className="flex w-full md:gap-4 gap-3 md:text-lg text-sm sm:justify-normal justify-center">
             <p
@@ -124,7 +125,7 @@ export default function Index() {
               onClick={() => scrollToElement("contact")}
               className="w-[80px] text-primary bg-secondary h-[35px] lg:w-[100px] lg:h-[40px] cursor-pointer overflow-hidden rounded-3xl flex items-center justify-center"
             >
-              <p className="flex flex-col justify-center text-center items-center md:text-[13px] text-xs h-full w-full font-semibold">
+              <p className="flex flex-col justify-center text-center items-center md:text-[13px] text-xs h-full w-full font-bold">
                 Let's talk!
               </p>
             </div>
@@ -152,7 +153,7 @@ export default function Index() {
             },
           },
         }}
-        animate={isTop && location === "/" ? "closed" : "open"}
+        animate={isTop && showNav ? "closed" : "open"}
         className="fixed lg:top-10 top-5 lg:right-10 right-8 z-[99999] "
       >
         <motion.div

@@ -72,9 +72,7 @@ const Index = () => {
 
   useEffect(() => {
     const unbindListenerBackground = $background_color.subscribe((value) => {
-      const location = window.location.pathname
-      if (location !== "/") setTextCololr("text-secondary")
-      else if (value === "bg-primary") setTextCololr("text-primary")
+      if (value === "bg-primary") setTextCololr("text-primary")
       else setTextCololr("text-secondary")
     })
 

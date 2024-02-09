@@ -30,7 +30,7 @@ const Contact = () => {
 
   return (
     <div className="w-full h-full bg-primary">
-      <div className="rounded-t-[24px] bg-secondary">
+      <div className="rounded-[24px] bg-secondary">
         <Reveal>
           <div
             id="contact"

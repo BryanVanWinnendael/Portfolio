@@ -1,28 +1,33 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import "@/styles/globals.css"
-import { Image } from "astro:assets"
-import ClneImage from "@/assets/images/clne/clne.jpg"
+import ClneImage from "@/assets/images/clne/clne.webp"
+import ClneImage2 from "@/assets/images/clne/clne2.webp"
+import ClneImage3 from "@/assets/images/clne/clne3.webp"
+import ClneImage4 from "@/assets/images/clne/clne4.webp"
+import ClneImage5 from "@/assets/images/clne/clne5.webp"
 import BackNavigation from "@/components/backNavigation"
 import { IoIosArrowForward } from "react-icons/io"
+import DialogImage from "@/components/dialogImage"
 ---
 
 <Layout title="Clne - Bryan Van Winnendael">
   <div class="w-full h-full bg-primary sm:p-5 p-2">
     <div class="bg-secondary rounded-[24px]">
       <BackNavigation title="Clne" client:load />
-      <div class="p-5 pt-5">
-        <Image
-          transition:name="clne"
-          src={ClneImage}
-          alt="Clne"
-          class="w-full max-h-96 rounded-[24px] object-cover"
+      <div class="p-5 pt-5 leading-7 [&:not(:first-child)]:mt-6">
+        <DialogImage
+          client:load
+          image={ClneImage}
+          classList="w-full max-h-96 rounded-[24px] object-cover"
+          transitionName="clne"
+          alt="clne"
         />
         <div
           class="bg-secondary flex justify-between items-center rounded-tr-[24px] p-5 mt-[-70px] z-50 relative w-5/6"
         >
           <h1
-            class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary"
+            class="scroll-m-20 text-5xl font-black tracking-tight lg:text-6xl text-primary"
           >
             Clne
           </h1>
@@ -54,17 +59,51 @@ import { IoIosArrowForward } from "react-icons/io"
           Clne is built with react and firebase.
         </p>
 
+        <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+          Screenshots
+        </h4>
+        <div class="mt-5 flex flex-col gap-4">
+          <div class="flex md:flex-row flex-col gap-4">
+            <DialogImage
+              client:load
+              image={ClneImage2}
+              classList="w-auto max-h-96 h-full rounded-md object-cover shadow-sm"
+              alt="clne2"
+            />
+            <DialogImage
+              client:load
+              image={ClneImage3}
+              classList="w-auto max-h-96 rounded-md object-cover shadow-sm"
+              alt="clne3"
+            />
+          </div>
+          <div class="flex md:flex-row flex-col gap-4">
+            <DialogImage
+              client:load
+              image={ClneImage4}
+              classList="w-auto max-h-96 col-span-1 rounded-md object-cover shadow-sm"
+              alt="clne4"
+            />
+            <DialogImage
+              client:load
+              image={ClneImage5}
+              classList="w-auto max-h-96 col-span-1 rounded-md object-cover shadow-sm"
+              alt="clne5"
+            />
+          </div>
+        </div>
+
         <div
           class="flex gap-5 bg-secondary shadow-md w-fit p-5 rounded-[24px] mt-5"
         >
           <div>
-            <p class="leading-7 text-muted-foreground">Download</p>
+            <p class="leading-7 text-muted-foreground">Site</p>
             <a
               target="_blank"
-              href="https://github.com/BryanVanWinnendael/Noted"
+              href="https://clne.netlify.app/"
               class="w-full flex items-center text-blue-500 cursor-pointer"
             >
-              Download <IoIosArrowForward />
+              Site <IoIosArrowForward />
             </a>
           </div>
           <div>
@@ -72,7 +111,7 @@ import { IoIosArrowForward } from "react-icons/io"
             <a
               target="_blank"
               class="w-full flex items-center text-blue-500 cursor-pointer"
-              href="https://github.com/BryanVanWinnendael/Noted"
+              href="https://github.com/BryanVanWinnendael/clone"
             >
               View code <IoIosArrowForward />
             </a>

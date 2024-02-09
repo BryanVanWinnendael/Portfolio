@@ -1,12 +1,8 @@
 import { scrollToElement } from "@/lib/utils"
 import { useState, useEffect } from "react"
-import { $background_color } from "@/stores/background"
 
 const Footer = () => {
   const [brusselsTime, setBrusselsTime] = useState("")
-  const [backgroundColor, setBackgroundColor] = useState("bg-primary")
-  const [textColor, setTextColor] = useState("text-primary")
-  const [borderColor, setBorderColor] = useState("border-primary")
   const [year, setYear] = useState("")
 
   useEffect(() => {
@@ -40,36 +36,12 @@ const Footer = () => {
     return () => clearInterval(intervalId)
   }, [])
 
-  useEffect(() => {
-    const unbindListenerBackground = $background_color.subscribe((value) => {
-      const location = window.location.pathname
-      if (location !== "/") {
-        setBackgroundColor("bg-primary")
-        setTextColor("text-secondary")
-        setBorderColor("border-gray-200")
-      } else {
-        setBackgroundColor(value)
-        if (value === "bg-primary") {
-          setTextColor("text-secondary")
-          setBorderColor("border-gray-200")
-        } else {
-          setTextColor("text-primary")
-          setBorderColor("border-gray-500")
-        }
-      }
-    })
-
-    return () => {
-      unbindListenerBackground()
-    }
-  }, [])
-
   return (
     <div
-      className={`${backgroundColor} ${textColor} h-full pb-12 w-full px-5 pt-12`}
+      className="bg-primary text-secondary h-full pb-12 w-full px-5 pt-12"
     >
       <div
-        className={`grid sm:grid-cols-[auto,auto] sm:grid-rows-1 grid-rows-[auto,auto] gap-5 border-opacity-20 border-[1px] ${borderColor} p-5 rounded-[24px] ${backgroundColor} ${textColor}`}
+        className="grid sm:grid-cols-[auto,auto] sm:grid-rows-1 grid-rows-[auto,auto] gap-5 border-opacity-20 border-[1px] border-gray-200 p-5 rounded-[24px]"
       >
         <div className="sm:row-start-1 row-start-2">
           <h1 className="scroll-m-20 lg:text-7xl md:text-6xl sm:text-4xl text-2xl font-bold tracking-tight">

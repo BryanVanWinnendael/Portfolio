@@ -1,10 +1,11 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import "@/styles/globals.css"
-import NotedImage from "@/assets/images/noted/noted.svg"
-import NotedImage1 from "@/assets/images/noted/noted1.png"
-import NotedImage2 from "@/assets/images/noted/noted2.png"
-import NotedImage3 from "@/assets/images/noted/noted3.png"
+import NotedImage from "@/assets/images/noted/noted.webp"
+import NotedImage1 from "@/assets/images/noted/noted2.webp"
+import NotedImage2 from "@/assets/images/noted/noted3.webp"
+import NotedImage3 from "@/assets/images/noted/noted4.webp"
+import NotedImage4 from "@/assets/images/noted/noted5.webp"
 import BackNavigation from "@/components/backNavigation"
 import { IoIosArrowForward } from "react-icons/io"
 import DialogImage from "@/components/dialogImage"
@@ -14,7 +15,7 @@ import DialogImage from "@/components/dialogImage"
   <div class="w-full h-full bg-primary sm:p-5 p-2">
     <div class="bg-secondary rounded-[24px]">
       <BackNavigation title="Noted" client:load />
-      <div class="p-5 pt-5">
+      <div class="p-5 pt-5 leading-7 [&:not(:first-child)]:mt-6">
         <DialogImage
           client:load
           image={NotedImage}
@@ -26,7 +27,7 @@ import DialogImage from "@/components/dialogImage"
           class="bg-secondary flex justify-between items-center rounded-tr-[24px] p-5 mt-[-70px] z-50 relative w-5/6"
         >
           <h1
-            class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary"
+            class="scroll-m-20 text-5xl font-black tracking-tight lg:text-6xl text-primary"
           >
             Noted
           </h1>
@@ -40,8 +41,9 @@ import DialogImage from "@/components/dialogImage"
           Overview
         </h4>
         <p class="leading-7 text-primary">
-          Noted is a combination of notion and obsidian. It is a note taking app
-          that allows you to write notes in block-style just like notion.
+          Noted is a combination of notion and obsidian with an inspired style
+          by arc browser. It is a note taking app that allows you to write notes
+          in block-style just like notion.
         </p>
         <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
           Customize
@@ -60,7 +62,21 @@ import DialogImage from "@/components/dialogImage"
         <p class="leading-7 text-primary">
           Noted is built with electron, react and editor.js.
         </p>
-
+        <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
+          Features
+        </h4>
+        <p class="leading-7 text-primary">
+          For a list of all the features, please visit the <a
+            class="text-blue-500"
+            target="_blank"
+            href="https://github.com/BryanVanWinnendael/Noted">github page</a
+          > or
+          <a
+            class="text-blue-500"
+            target="_blank"
+            href="https://write-noted.vercel.app/docs">Noted Docs</a
+          >.
+        </p>
         <h4 class="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
           Screenshots
         </h4>
@@ -69,19 +85,25 @@ import DialogImage from "@/components/dialogImage"
             client:load
             image={NotedImage1}
             classList="w-full rounded-md object-cover shadow-sm"
-            alt="noted1"
+            alt="noted2"
           />
           <DialogImage
             client:load
             image={NotedImage2}
             classList="w-full rounded-md object-cover shadow-sm"
-            alt="noted2"
+            alt="noted3"
           />
           <DialogImage
             client:load
             image={NotedImage3}
             classList="w-full rounded-md object-cover shadow-sm"
-            alt="noted3"
+            alt="noted4"
+          />
+          <DialogImage
+            client:load
+            image={NotedImage4}
+            classList="w-full rounded-md object-cover shadow-sm"
+            alt="noted5"
           />
         </div>
 
@@ -92,7 +114,7 @@ import DialogImage from "@/components/dialogImage"
             <p class="leading-7 text-muted-foreground">Download</p>
             <a
               target="_blank"
-              href="https://github.com/BryanVanWinnendael/Noted"
+              href="https://github.com/BryanVanWinnendael/Noted/releases/latest"
               class="w-full flex items-center text-blue-500 cursor-pointer"
             >
               Download <IoIosArrowForward />

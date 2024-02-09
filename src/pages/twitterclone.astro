@@ -1,12 +1,11 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import "@/styles/globals.css"
-import { Image } from "astro:assets"
-import TwitterImage from "@/assets/images/twitter/twitter.jpg"
-import TwitterImage1 from "@/assets/images/twitter/twitter1.jpg"
-import TwitterImage2 from "@/assets/images/twitter/twitter2.jpg"
-import TwitterImage3 from "@/assets/images/twitter/twitter3.jpg"
-import TwitterImage4 from "@/assets/images/twitter/twitter4.jpg"
+import TwitterImage from "@/assets/images/twitter/twitter.webp"
+import TwitterImage1 from "@/assets/images/twitter/twitter1.webp"
+import TwitterImage2 from "@/assets/images/twitter/twitter2.webp"
+import TwitterImage3 from "@/assets/images/twitter/twitter3.webp"
+import TwitterImage4 from "@/assets/images/twitter/twitter4.webp"
 import BackNavigation from "@/components/backNavigation"
 import { IoIosArrowForward } from "react-icons/io"
 import DialogImage from "@/components/dialogImage"
@@ -16,18 +15,19 @@ import DialogImage from "@/components/dialogImage"
   <div class="w-full h-full bg-primary sm:p-5 p-2">
     <div class="bg-secondary rounded-[24px]">
       <BackNavigation title="Twitter Clone" client:load />
-      <div class="p-5 pt-5">
-        <Image
-          transition:name="twitterclone"
-          src={TwitterImage}
+      <div class="p-5 pt-5 leading-7 [&:not(:first-child)]:mt-6">
+        <DialogImage
+          client:load
+          image={TwitterImage}
+          classList="w-full max-h-96 rounded-[24px] object-cover"
+          transitionName="twitterclone"
           alt="Twitter Clone"
-          class="w-full max-h-96 rounded-[24px] object-cover"
         />
         <div
           class="bg-secondary flex justify-between items-center rounded-tr-[24px] p-5 mt-[-70px] z-50 relative w-5/6"
         >
           <h1
-            class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary"
+            class="scroll-m-20 text-5xl font-black tracking-tight lg:text-6xl text-primary"
           >
             Twitter clone
           </h1>
@@ -68,25 +68,25 @@ import DialogImage from "@/components/dialogImage"
             client:load
             image={TwitterImage1}
             classList="w-full rounded-md object-cover shadow-sm"
-            alt="drone2"
+            alt="twitter2"
           />
           <DialogImage
             client:load
             image={TwitterImage2}
             classList="w-full rounded-md object-cover shadow-sm"
-            alt="drone3"
+            alt="twitter3"
           />
           <DialogImage
             client:load
             image={TwitterImage3}
             classList="w-full rounded-md object-cover shadow-sm"
-            alt="drone4"
+            alt="twitter4"
           />
           <DialogImage
             client:load
             image={TwitterImage4}
             classList="w-full rounded-md object-cover shadow-sm"
-            alt="drone4"
+            alt="twitter5"
           />
         </div>
 
@@ -94,21 +94,11 @@ import DialogImage from "@/components/dialogImage"
           class="flex gap-5 bg-secondary shadow-md w-fit p-5 rounded-md mt-5"
         >
           <div>
-            <p class="leading-7 text-muted-foreground">Download</p>
-            <a
-              target="_blank"
-              href="https://github.com/BryanVanWinnendael/Noted"
-              class="w-full flex items-center text-blue-500 cursor-pointer"
-            >
-              Download <IoIosArrowForward />
-            </a>
-          </div>
-          <div>
             <p class="leading-7 text-muted-foreground">Code</p>
             <a
               target="_blank"
+              href="https://github.com/BryanVanWinnendael/TwitterClone/tree/main"
               class="w-full flex items-center text-blue-500 cursor-pointer"
-              href="https://github.com/BryanVanWinnendael/Noted"
             >
               View code <IoIosArrowForward />
             </a>

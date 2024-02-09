@@ -96,11 +96,11 @@ const ProjectCard = ({
             <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight text-secondary">
               {title.split("/")[0]}
             </h3>
-            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-secondary">
+            <h1 className="scroll-m-20 text-4xl font-black tracking-tight lg:text-5xl text-secondary">
               {title.split("/")[1]}
             </h1>
           </div>
-          <div className="my-5 flex gap-5 items-center">
+          <div className="flex gap-5 items-end">
             <div className="border border-muted-foreground w-fit py-1 px-3 rounded-2xl h-fit">
               <p className="text-muted-foreground">{year}</p>
             </div>

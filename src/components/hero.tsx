@@ -38,12 +38,12 @@ const Hero = () => {
     >
       <div className="text-secondary leading-[1.1] sm:px-12 px-2 flex flex-col gap-4 sm:text-[7.317vw] text-7xl">
         <div className="sm:text-left text-center">
-          <h1 className="scroll-m-20 font-extrabold tracking-tight h-fit">
+          <h1 className="scroll-m-20 font-black tracking-tight h-fit">
             Full Stack Developer
           </h1>
         </div>
         <div className="sm:text-right text-center">
-          <h1 className="scroll-m-20 font-extrabold tracking-tight h-fit">
+          <h1 className="scroll-m-20 font-black tracking-tight h-fit">
             Bryan Van Winnendael
           </h1>
         </div>

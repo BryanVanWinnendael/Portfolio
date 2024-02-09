@@ -1,10 +1,10 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import "@/styles/globals.css"
-import DroneImage from "@/assets/images/drone/drone.svg"
-import DroneImage2 from "@/assets/images/drone/drone2.jpg"
-import DroneImage3 from "@/assets/images/drone/drone3.jpg"
-import DroneImage4 from "@/assets/images/drone/drone4.jpg"
+import DroneImage from "@/assets/images/drone/drone.webp"
+import DroneImage2 from "@/assets/images/drone/drone2.webp"
+import DroneImage3 from "@/assets/images/drone/drone3.webp"
+import DroneImage4 from "@/assets/images/drone/drone4.webp"
 import BackNavigation from "@/components/backNavigation"
 import { IoIosArrowForward } from "react-icons/io"
 import DialogImage from "@/components/dialogImage"
@@ -14,7 +14,7 @@ import DialogImage from "@/components/dialogImage"
   <div class="w-full h-full bg-primary sm:p-5 p-2">
     <div class="bg-secondary rounded-[24px]">
       <BackNavigation title="Point Cloud Processor" client:load />
-      <div class="p-5 pt-5 pb-20">
+      <div class="p-5 pt-5 pb-20 leading-7 [&:not(:first-child)]:mt-6">
         <DialogImage
           client:load
           image={DroneImage}
@@ -26,7 +26,7 @@ import DialogImage from "@/components/dialogImage"
           class="bg-secondary flex justify-between items-center rounded-tr-[24px] p-5 mt-[-70px] z-50 relative w-5/6"
         >
           <h1
-            class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-primary"
+            class="scroll-m-20 text-5xl font-black tracking-tight lg:text-6xl text-primary"
           >
             Point Cloud Processor
           </h1>
