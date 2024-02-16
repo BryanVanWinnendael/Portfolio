@@ -65,7 +65,7 @@ const Experience = () => {
                         13.03.2023 - 09.06.2023
                       </p>
                     </div>
-                    <h2 className="text-start ml-2 scroll-m-20 sm:text-[3.902vw] text-3xl tracking-tight">
+                    <h2 className="text-start ml-2 scroll-m-20 sm:text-[3.902vw] text-3xl tracking-tight leading-none">
                       Imec full stack developer (Intern)
                     </h2>
                   </div>
@@ -103,7 +103,7 @@ const Experience = () => {
                       ></div>
                       <p className="text-sm text-gray-400">2020-2023</p>
                     </div>
-                    <h2 className="text-start ml-2 scroll-m-20 sm:text-[3.902vw] text-3xl tracking-tight">
+                    <h2 className="text-start ml-2 scroll-m-20 sm:text-[3.902vw] text-3xl tracking-tight leading-none">
                       Applied Computer Science, UCLL
                     </h2>
                   </div>
