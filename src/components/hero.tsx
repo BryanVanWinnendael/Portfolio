@@ -1,15 +1,17 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, MotionValue } from "framer-motion";
 import { useStates } from "@/context/stateContext";
 
-const Hero = () => {
+const Hero = ({ filter }: { filter: MotionValue<string> }) => {
   const { bgColor, textColor } = useStates();
 
   return (
     <AnimatePresence>
       <motion.div
         key={bgColor + textColor}
+        initial={{ backgroundColor: "#1E1E1E", color: "#FFFFFF" }}
         animate={{ backgroundColor: bgColor, color: textColor }}
-        exit={{ backgroundColor: "#000", color: "#fff" }}
+        exit={{ backgroundColor: "#000000", color: "#FFFFFF" }}
+        style={{ filter }}
         transition={{ duration: 0.5 }}
         className="fixed top-0 h-screen w-full select-none text-primary flex justify-center items-center"
       >

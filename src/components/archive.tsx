@@ -25,7 +25,7 @@ const Archive = () => {
           animate={{ backgroundColor: bgColor, color: textColor }}
           exit={{ backgroundColor: "#000", color: "#fff" }}
           transition={{ duration: 0.5 }}
-          className="fixed w-full h-full flex flex-col justify-center items-center"
+          className="fixed w-full h-full flex flex-col justify-center items-center blur-sm"
         >
           <h1 className="scroll-m-20 leading-none tracking-tight lg:text-[6.5em] md:text-[4em] text-[3em] uppercase">
             archive
@@ -39,7 +39,7 @@ const Archive = () => {
         </motion.div>
       </AnimatePresence>
       <div className="h-full p-4 relative z-50">
-        <Link href="/#select work" className="text-muted-foreground pl-4">
+        <Link href="/#select-work" className="text-muted-foreground pl-4">
           &lt; back
         </Link>
         <h2 className="h-fit scroll-m-20 tracking-wide sm:text-6xl text-5xl text-primary pl-4 font-medium my-4">
@@ -92,7 +92,7 @@ const Archive = () => {
                 type="video"
               />
             </div>
-            <div className="w-full h-full col-start-2 row-start-6">
+            <div className="w-full h-full col-start-2 row-start-6 lg:-ml-16">
               <ProjectCard
                 image={MomezImage.src}
                 bgColor="#7237c6"
@@ -101,7 +101,7 @@ const Archive = () => {
                 type="img"
               />
             </div>
-            <div className="w-full h-full col-start-1 row-start-7">
+            <div className="w-full h-full col-start-1 row-start-7 lg:ml-20">
               <ProjectCard
                 image={TwitterImage.src}
                 bgColor="#8db4fc"
@@ -110,7 +110,7 @@ const Archive = () => {
                 type="img"
               />
             </div>
-            <div className="w-full h-full col-start-2 row-start-8">
+            <div className="w-full h-full col-start-2 row-start-8 lg:-ml-14">
               <ProjectCard
                 image={WrappedImage.src}
                 bgColor="#22c55e"
@@ -119,7 +119,7 @@ const Archive = () => {
                 type="img"
               />
             </div>
-            <div className="w-full h-full col-start-1 row-start-9">
+            <div className="w-full h-full col-start-1 row-start-9 lg:ml-12">
               <ProjectCard
                 image={ChatlyImage.src}
                 bgColor="#6f6edb"

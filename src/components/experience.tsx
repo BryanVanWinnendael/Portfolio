@@ -20,7 +20,7 @@ const Experience = () => {
   return (
     <div
       id="experience"
-      className="w-full h-fit min-h-screen flex flex-col gap-5 bg-primary p-7 rounded-b"
+      className="w-full h-fit min-h-screen flex flex-col gap-5 bg-primary p-7 rounded-b-xl"
     >
       <AnimatedText direction="up">
         <h2 className="scroll-m-20 leading-none tracking-tight lg:text-8xl md:text-7xl text-5xl text-secondary uppercase">

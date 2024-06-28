@@ -8,10 +8,10 @@ export default function Home() {
   const { setActiveNav } = useStates();
   setActiveNav("home");
   return (
-    <>
+    <div data-scroll-section>
       <HomeAnimation />
       <ProjectsGrid />
       <Contact />
-    </>
+    </div>
   );
 }

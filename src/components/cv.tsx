@@ -1,5 +1,6 @@
 import { Dialog, DialogContent, DialogTrigger, DialogClose } from "./ui/dialog";
 import CvImage from "@/assets/images/cv.webp";
+import Image from "next/image";
 import { GrExpand } from "react-icons/gr";
 
 const Cv = () => {
@@ -23,7 +24,9 @@ const Cv = () => {
         </DialogClose>
         <DialogClose className="w-full h-full cursor-pointer">
           <a target="_blank" href="cv.pdf">
-            <img
+            <Image
+              width={1920}
+              height={1080}
               src={CvImage.src}
               alt="cv"
               className="rounded-sm w-full h-full object-contain"

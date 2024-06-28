@@ -17,16 +17,16 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="en">
-        <LenisWrapper>
+      <LenisWrapper>
+        <html lang="en">
           <StateProvider>
             <body className="bg-secondary">
               {children}
               <Footer />
             </body>
           </StateProvider>
-        </LenisWrapper>
-      </html>
+        </html>
+      </LenisWrapper>
     </ViewTransitions>
   );
 }

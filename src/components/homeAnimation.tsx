@@ -18,12 +18,18 @@ export default function HomeAnimation() {
     [0.8, 1, 1, 0.8],
   );
 
+  const filter = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ["blur(0px)", "blur(4px)"],
+  );
+
   return (
     <main ref={container} className="relative h-fit">
       <div className="h-screen w-full"></div>
-      <Hero />
+      <Hero filter={filter} />
       <motion.div
-        className="relative h-fit bg-primary w-full rounded"
+        className="relative h-fit bg-primary w-full rounded-xl"
         style={{ scale }}
       >
         <About />
