@@ -70,7 +70,7 @@ const Page = () => {
             >
               github page
             </a>{" "}
-            or
+            or{" "}
             <a
               className="text-blue-500"
               target="_blank"
@@ -115,7 +115,7 @@ const Page = () => {
               <p className="leading-7 text-muted-foreground">Download</p>
               <a
                 target="_blank"
-                href="https://github.com/BryanVanWinnendael/Noted/releases/latest"
+                href="https://write-noted.vercel.app/download"
                 className="w-full flex items-center text-blue-500 cursor-pointer"
               >
                 Download <IoIosArrowForward />
