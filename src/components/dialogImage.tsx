@@ -1,7 +1,7 @@
 "use client";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import useScreen from "@/hooks/useScreen";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const DialogImage = ({
   image,
@@ -16,7 +16,12 @@ const DialogImage = ({
   alt: string;
   type: "img" | "video";
 }) => {
-  const isMobile = useScreen().isSmall;
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsMobile(window.matchMedia("(max-width: 768px)").matches);
+  }, []);
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -46,7 +51,7 @@ const DialogImage = ({
             <video
               src={`/videos/${image}.mp4`}
               className="shadow-sm rounded-sm w-auto h-auto max-h-full absolute object-contain"
-              autoPlay
+              autoPlay={!isMobile}
               loop
               muted
             />

@@ -3,6 +3,7 @@ import { scrollToElement } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import Cv from "./cv";
 import { useStates } from "@/context/stateContext";
+import Link from "next/link";
 
 const Footer = () => {
   const { activeNav } = useStates();
@@ -67,12 +68,12 @@ const Footer = () => {
               </h2>
               <div className="flex flex-col">
                 {isProject ? (
-                  <a
+                  <Link
                     href="/#about"
                     className="scroll-m-20 text-xl tracking-tight first:mt-0 hover:underline cursor-pointer font-medium"
                   >
                     about
-                  </a>
+                  </Link>
                 ) : (
                   <p
                     onClick={() => scrollToElement("about")}
@@ -83,12 +84,12 @@ const Footer = () => {
                 )}
 
                 {isProject ? (
-                  <a
+                  <Link
                     href="/#experience"
                     className="scroll-m-20 text-xl tracking-tight first:mt-0 hover:underline cursor-pointer font-medium"
                   >
                     experience
-                  </a>
+                  </Link>
                 ) : (
                   <p
                     onClick={() => scrollToElement("experience")}
@@ -99,12 +100,12 @@ const Footer = () => {
                 )}
 
                 {isProject ? (
-                  <a
+                  <Link
                     href="/#select-work"
                     className="scroll-m-20 text-xl tracking-tight first:mt-0 hover:underline cursor-pointer font-medium"
                   >
                     select work
-                  </a>
+                  </Link>
                 ) : (
                   <p
                     onClick={() => scrollToElement("select-work")}
@@ -113,13 +114,20 @@ const Footer = () => {
                     select work
                   </p>
                 )}
+
+                <Link
+                  href="/archive"
+                  className="scroll-m-20 text-xl tracking-tight first:mt-0 hover:underline cursor-pointer font-medium"
+                >
+                  archive
+                </Link>
                 {isProject ? (
-                  <a
+                  <Link
                     href="/#lets-talk"
                     className="scroll-m-20 text-xl tracking-tight first:mt-0 hover:underline cursor-pointer font-medium"
                   >
                     let&apos;s talk
-                  </a>
+                  </Link>
                 ) : (
                   <p
                     onClick={() => scrollToElement("lets-talk")}
@@ -135,26 +143,26 @@ const Footer = () => {
                 socials
               </h2>
               <div className="flex flex-col">
-                <a
+                <Link
                   href="mailto: portfoliobryanvanwinnendael@gmail.com"
                   className="scroll-m-20 text-xl tracking-tight first:mt-0 hover:underline font-medium"
                 >
                   email
-                </a>
-                <a
+                </Link>
+                <Link
                   target="_blank"
                   href="https://github.com/BryanVanWinnendael"
                   className="scroll-m-20 text-xl tracking-tight first:mt-0 hover:underline font-medium"
                 >
                   github
-                </a>
-                <a
+                </Link>
+                <Link
                   target="_blank"
                   href="https://linkedin.com/in/bryanvanwinnendael"
                   className="scroll-m-20 text-xl tracking-tight first:mt-0 hover:underline font-medium"
                 >
                   linkdin
-                </a>
+                </Link>
                 <Cv />
               </div>
             </div>

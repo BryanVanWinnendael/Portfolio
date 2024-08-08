@@ -33,7 +33,6 @@ const ContactForm = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setLoading(true);
     const res = await sendContactForm(values);
-    console.log(res);
     if (res) {
       form.reset();
       toast({

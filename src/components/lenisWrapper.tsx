@@ -1,4 +1,5 @@
 "use client";
+import { LazyMotion, domAnimation } from "framer-motion";
 import Lenis from "lenis";
 import { useEffect } from "react";
 
@@ -18,7 +19,7 @@ const LenisWrapper = ({ children }: Props) => {
     requestAnimationFrame(raf);
   }, []);
 
-  return <>{children}</>;
+  return <LazyMotion features={domAnimation}>{children}</LazyMotion>;
 };
 
 export default LenisWrapper;

@@ -1,6 +1,7 @@
 import ContactForm from "./contactForm";
 import AnimatedText from "./animatedText";
 import Cv from "./cv";
+import Link from "next/link";
 
 const Contact = () => {
   return (
@@ -23,26 +24,26 @@ const Contact = () => {
               socials
             </h2>
             <div className="flex flex-col">
-              <a
+              <Link
                 href="mailto:portfoliobryanvanwinnendael@gmail.com"
                 className="scroll-m-20 text-lg tracking-tight first:mt-0 hover:underline"
               >
                 email
-              </a>
-              <a
+              </Link>
+              <Link
                 target="_blank"
                 href="https://github.com/BryanVanWinnendael"
                 className="scroll-m-20 text-lg tracking-tight first:mt-0 hover:underline"
               >
                 github
-              </a>
-              <a
+              </Link>
+              <Link
                 target="_blank"
                 href="https://linkedin.com/in/bryanvanwinnendael"
                 className="scroll-m-20 text-lg tracking-tight first:mt-0 hover:underline"
               >
                 linkedin
-              </a>
+              </Link>
               <Cv />
             </div>
           </div>

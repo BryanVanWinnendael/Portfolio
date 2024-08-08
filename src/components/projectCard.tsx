@@ -1,15 +1,9 @@
 "use client";
 import { useStates } from "@/context/stateContext";
-import useScreen from "@/hooks/useScreen";
 import Image from "next/image";
 import { Link } from "next-view-transitions";
-import {
-  motion,
-  useMotionTemplate,
-  useMotionValue,
-  useSpring,
-} from "framer-motion";
-import { useRef } from "react";
+import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const ROTATION_RANGE = 30;
 const HALF_ROTATION_RANGE = ROTATION_RANGE / 2;
@@ -28,7 +22,7 @@ const ProjectCard = ({
   type: "img" | "video";
 }) => {
   const { setBgColor, setTextColor } = useStates();
-  const isMobile = useScreen().isSmall;
+  const [isMobile, setIsMobile] = useState<boolean>(false);
   const divRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -68,6 +62,10 @@ const ProjectCard = ({
   };
 
   const transform = useMotionTemplate`rotateX(${x}deg) rotateY(${y}deg)`;
+
+  useEffect(() => {
+    setIsMobile(window.matchMedia("(max-width: 768px)").matches);
+  }, []);
 
   return (
     <div
@@ -113,7 +111,9 @@ const ProjectCard = ({
                   .toLowerCase(),
               }}
               src={`/videos/${image}.mp4`}
-              className="object-cover"
+              width={1920}
+              height={1080}
+              className="object-cover w-full h-full"
               autoPlay={!isMobile}
               loop
               muted

@@ -21,11 +21,12 @@ const About = () => {
   return (
     <div id="about" className="text-secondary font-medium h-screen">
       <article className="w-full h-full flex flex-col justify-center items-start p-7 sm:max-w-[90%]">
-        <p className="lg:text-6xl md:text-5xl text-3xl leading-none tracking-tight font-normal">
+        <p className="lg:text-7xl md:text-5xl text-4xl tracking-tight font-normal">
           My name is Bryan Van Winnendael. I&apos;m a {calculateAge()} year old
-          full stack developer based in Belgium. My work is driven by a passion
-          for innovation and a commitment to pushing the boundaries of what is
-          possible. I aspire to create meaningful work that solves a problem.
+          full stack developer based in Belgium. My work is driven by a desire
+          to create impactful solutions that address real-world problems. I
+          strive to blend creativity with technical expertise, crafting
+          meaningful projects that make a difference.
         </p>
       </article>
     </div>

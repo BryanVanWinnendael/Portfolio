@@ -1,29 +1,30 @@
 import { Dialog, DialogContent, DialogTrigger, DialogClose } from "./ui/dialog";
 import CvImage from "@/assets/images/cv.webp";
 import Image from "next/image";
+import Link from "next/link";
 import { GrExpand } from "react-icons/gr";
 
 const Cv = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <p className="scroll-m-20 text-xl tracking-tight first:mt-0 hover:underline cursor-pointer font-medium">
+        <button className="scroll-m-20 text-xl tracking-tight first:mt-0 hover:underline cursor-pointer font-medium text-left">
           cv
-        </p>
+        </button>
       </DialogTrigger>
 
       <DialogContent className="max-w-[900px] max-h-[90vh] w-full h-full flex justify-center items-center">
         <DialogClose>
-          <a
+          <Link
             target="_blank"
             href="cv.pdf"
             className="absolute top-[1rem] right-[3rem] opacity-70 hover:opacity-100 cursor-pointer"
           >
             <GrExpand className="w-4 h-4" />
-          </a>
+          </Link>
         </DialogClose>
         <DialogClose className="w-full h-full cursor-pointer">
-          <a target="_blank" href="cv.pdf">
+          <Link target="_blank" href="cv.pdf">
             <Image
               width={1920}
               height={1080}
@@ -31,7 +32,7 @@ const Cv = () => {
               alt="cv"
               className="rounded-sm w-full h-full object-contain"
             />
-          </a>
+          </Link>
         </DialogClose>
       </DialogContent>
     </Dialog>

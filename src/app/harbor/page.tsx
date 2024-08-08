@@ -6,6 +6,8 @@ import HarborImage4 from "@/assets/images/harbor/harbor4.webp";
 import BackNavigation from "@/components/backNavigation";
 import { IoIosArrowForward } from "react-icons/io";
 import { Metadata } from "next";
+import Link from "next/link";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Harbor - Bryan Van Winnendael",
@@ -29,8 +31,15 @@ const Page = () => {
             <h1 className="scroll-m-20 text-5xl font-medium tracking-wide lg:text-6xl text-secondary">
               Harbor
             </h1>
-            <p className="scroll-m-20 text-xl font-medium tracking-tight text-muted-foreground">
+            <p className="scroll-m-20 text-xl font-medium tracking-tight text-muted-foreground flex gap-1 items-start">
               2024
+              <Link
+                target="_blank"
+                href="https://github.com/BryanVanWinnendael/Harbor"
+                className="w-full flex items-center cursor-pointer"
+              >
+                <FaExternalLinkAlt className="w-4 h-4" />
+              </Link>
             </p>
           </div>
           <h4 className="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
@@ -101,13 +110,13 @@ const Page = () => {
           <div className="flex gap-5 w-fit mt-5">
             <div>
               <p className="leading-7 text-muted-foreground">Code</p>
-              <a
+              <Link
                 target="_blank"
                 className="w-full flex items-center text-blue-500 cursor-pointer"
                 href="https://github.com/BryanVanWinnendael/Harbor"
               >
                 View code <IoIosArrowForward />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

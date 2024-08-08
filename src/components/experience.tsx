@@ -27,7 +27,7 @@ const Experience = () => {
           experience
         </h2>
       </AnimatedText>
-      <ol className="border-l border-neutral-300 dark:border-neutral-500 m-5 lg:w-1/2">
+      <div className="border-l border-neutral-300 dark:border-neutral-500 m-5 lg:w-1/2">
         <Accordion
           defaultValue="item-1"
           type="single"
@@ -57,7 +57,7 @@ const Experience = () => {
               <div className="mb-2 ml-4 mt-2">
                 <div className="scroll-m-20 sm:text-xl text-lg tracking-tight leading-snug">
                   <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-                    <li className="">
+                    <li>
                       Developed the back-end infrastructure with FastAPI Python.
                     </li>
                     <li>
@@ -118,7 +118,7 @@ const Experience = () => {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-      </ol>
+      </div>
     </div>
   );
 };

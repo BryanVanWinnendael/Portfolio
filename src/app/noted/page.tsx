@@ -6,6 +6,8 @@ import NotedImage4 from "@/assets/images/noted/noted5.webp";
 import BackNavigation from "@/components/backNavigation";
 import { IoIosArrowForward } from "react-icons/io";
 import { Metadata } from "next";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Noted - Bryan Van Winnendael",
@@ -29,8 +31,15 @@ const Page = () => {
             <h1 className="scroll-m-20 text-5xl font-medium tracking-wide lg:text-6xl text-secondary">
               Noted
             </h1>
-            <p className="scroll-m-20 text-xl font-medium tracking-tight text-muted-foreground">
-              2023
+            <p className="scroll-m-20 text-xl font-medium tracking-tight text-muted-foreground flex gap-1 items-start">
+              2024
+              <Link
+                target="_blank"
+                href="https://write-noted.vercel.app/download"
+                className="w-full flex items-center cursor-pointer"
+              >
+                <FaExternalLinkAlt className="w-4 h-4" />
+              </Link>
             </p>
           </div>
           <h4 className="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
@@ -63,21 +72,21 @@ const Page = () => {
           </h4>
           <p className="leading-7 text-secondary">
             For a list of all the features, please visit the{" "}
-            <a
+            <Link
               className="text-blue-500"
               target="_blank"
               href="https://github.com/BryanVanWinnendael/Noted"
             >
               github page
-            </a>{" "}
+            </Link>{" "}
             or{" "}
-            <a
+            <Link
               className="text-blue-500"
               target="_blank"
               href="https://write-noted.vercel.app/docs"
             >
               Noted Docs
-            </a>
+            </Link>
             .
           </p>
           <h4 className="scroll-m-20 text-xl font-semibold tracking-tight mt-2">
@@ -113,23 +122,23 @@ const Page = () => {
           <div className="flex gap-5 w-fit rounded-lg mt-5">
             <div>
               <p className="leading-7 text-muted-foreground">Download</p>
-              <a
+              <Link
                 target="_blank"
                 href="https://write-noted.vercel.app/download"
                 className="w-full flex items-center text-blue-500 cursor-pointer"
               >
                 Download <IoIosArrowForward />
-              </a>
+              </Link>
             </div>
             <div>
               <p className="leading-7 text-muted-foreground">Code</p>
-              <a
+              <Link
                 target="_blank"
                 className="w-full flex items-center text-blue-500 cursor-pointer"
                 href="https://github.com/BryanVanWinnendael/Noted"
               >
                 View code <IoIosArrowForward />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
