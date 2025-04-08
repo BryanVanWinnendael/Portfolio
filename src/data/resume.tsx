@@ -3,8 +3,8 @@ import ucllImage from "@/assets/images/ucll.webp"
 
 import MomezImage from "@/assets/images/momez/momez.webp"
 import TwitterImage from "@/assets/images/twitter/twitter.webp"
-import WrappedImage from "@/assets/images/wrapped/wrapped.webp"
-import ChatlyImage from "@/assets/images/chatly/chatly.webp"
+import MinesweeperImage from "@/assets/images/minesweeper/minesweeper.webp"
+import TicTacToeImage from "@/assets/images/tictactoe/tictactoe.webp"
 
 export const DATA = {
   work: [
@@ -229,33 +229,33 @@ export const DATA = {
       Icon: "",
     },
     {
-      name: "Wrapped Now",
+      name: "TicTacToe Distributed App",
       description: "",
-      href: "/projects/wrapped",
+      href: "/projects/tictactoe",
       cta: "Learn more",
       className:
         "lg:col-start-2 lg:col-end-3 lg:row-start-8 lg:row-end-11 h-full",
       background: (
         <img
-          style={{ viewTransitionName: "wrapped" }}
+          style={{ viewTransitionName: "tictactoe" }}
           className="absolute left-0 top-0 h-full w-full border-none transition-all duration-300 ease-out opacity-70 [mask-image:linear-gradient(to_top,transparent_20%,#000_100%)] group-hover:scale-105 object-cover"
-          src={WrappedImage.src}
+          src={TicTacToeImage.src}
         />
       ),
       Icon: "",
     },
     {
-      name: "Chatly",
+      name: "MineSweeper",
       description: "",
-      href: "/projects/chatly",
+      href: "/projects/minesweeper",
       cta: "Learn more",
       className:
         "lg:col-start-3 lg:col-end-4 lg:row-start-9 lg:row-end-11 h-full",
       background: (
         <img
-          style={{ viewTransitionName: "chatly" }}
+          style={{ viewTransitionName: "minesweeper" }}
           className="absolute left-0 top-0 h-full w-full border-none transition-all duration-300 ease-out opacity-70 [mask-image:linear-gradient(to_top,transparent_20%,#000_100%)] group-hover:scale-105 object-cover"
-          src={ChatlyImage.src}
+          src={MinesweeperImage.src}
         />
       ),
       Icon: "",

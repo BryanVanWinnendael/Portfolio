@@ -1,0 +1,82 @@
+---
+import { ElixirIcon } from "@/components/icons"
+import { Button } from "@/components/ui/button"
+import Layout from "@/layouts/Layout.astro"
+
+import TicTacToeImage from "@/assets/images/tictactoe/tictactoe.webp"
+import TicTacToeImage1 from "@/assets/images/tictactoe/tictactoe1.webp"
+import { Github } from "lucide-react"
+import BackButton from "@/components/backButton"
+---
+
+<Layout title="TicTacToe Distributed App | Bryan Van Winnendael">
+  <main>
+    <div class="w-full mb-2">
+      <BackButton client:load />
+    </div>
+    <img
+      transition:name="tictactoe"
+      class="w-full h-full rounded-lg"
+      src={TicTacToeImage.src}
+    />
+  </main>
+  <h1 class="text-4xl font-extrabold tracking-tight lg:text-5xl text-left mt-2">
+    TicTacToe Distributed App
+  </h1>
+  <div class="my-2 flex gap-2 flex-wrap">
+    <div class="flex gap-2 border w-fit rounded-lg px-2 py-1 items-center">
+      <ElixirIcon width={16} height={16} /> Elixir
+    </div>
+  </div>
+  <p class="flex gap-2 items-center dark:text-gray-600 text-gray-400 mt-2">
+    A distributed tic tac toe game built with Elixir in the cli.
+  </p>
+  <div class="flex gap-2 mt-2">
+    <a
+      href="https://github.com/BryanVanWinnendael/ucll/tree/main/project-distributed-applications"
+      target="_blank"
+    >
+      <Button
+        variant="outline"
+        className="font-semibold size-fit flex items-center justify-center gap-2"
+        ><Github size={16} />Source
+      </Button>
+    </a>
+  </div>
+  <div class="mt-4 flex flex-col gap-4">
+    <div>
+      <h2
+        class="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0"
+      >
+        Overview
+      </h2>
+      <p>
+        For a course a colleague and I had to build a distributed game in
+        Elixir. We chose to build a tic tac toe game. The game is played in the
+        cli and is distributed over multiple nodes.
+      </p>
+    </div>
+    <div>
+      <h2
+        class="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0"
+      >
+        Built with
+      </h2>
+      <p>TicTacToe is built with Elixir.</p>
+    </div>
+    <div>
+      <h2
+        class="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0"
+      >
+        Screenshots
+      </h2>
+      <div class="grid lg:grid-cols-2 gap-2">
+        <img
+          class="rounded-lg"
+          src={TicTacToeImage1.src}
+          alt="Noted screenshot"
+        />
+      </div>
+    </div>
+  </div>
+</Layout>
