@@ -21,7 +21,7 @@ const Copy: React.FC<CopyProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const elementRef = useRef<HTMLDivElement[]>([])
-  const splitRef = useRef<any[]>([]) // SplitText doesn't expose types
+  const splitRef = useRef<globalThis.SplitText[]>([])
   const lines = useRef<HTMLElement[]>([])
 
   useGSAP(
@@ -105,6 +105,7 @@ const Copy: React.FC<CopyProps> = ({
   )
 
   if (React.Children.count(children) === 1 && React.isValidElement(children)) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return cloneElement(children as ReactElement<any, any>, {
       ref: containerRef,
     })

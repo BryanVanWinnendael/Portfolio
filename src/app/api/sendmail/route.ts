@@ -1,4 +1,3 @@
-import type { NextApiRequest, NextApiResponse } from "next"
 import nodemailer from "nodemailer"
 
 const emailTo = process.env.EMAIL
