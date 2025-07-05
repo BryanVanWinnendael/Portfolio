@@ -1,12 +1,12 @@
-import Noted from "@/components/works/noted"
+import Netweb from "@/components/works/netweb"
 import { Metadata } from "next/types"
 
 export const metadata: Metadata = {
-  title: "Noted | Bryan Van Winnendael",
+  title: "Netweb | Bryan Van Winnendael",
   description: "Portfolio",
 }
 const Page = () => {
-  return <Noted />
+  return <Netweb />
 }
 
 export default Page

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useRef, cloneElement } from "react"
+import React, { useRef, cloneElement, ReactNode, ReactElement } from "react"
 import gsap from "gsap"
 import { SplitText } from "gsap/SplitText"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -8,11 +8,21 @@ import { useGSAP } from "@gsap/react"
 
 gsap.registerPlugin(SplitText, ScrollTrigger)
 
-const Copy = ({ children, animationOnScroll = true, delay = 0 }) => {
-  const containerRef = useRef<HTMLDivElement>(null)
+interface CopyProps {
+  children: ReactNode
+  animationOnScroll?: boolean
+  delay?: number
+}
+
+const Copy: React.FC<CopyProps> = ({
+  children,
+  animationOnScroll = true,
+  delay = 0,
+}) => {
+  const containerRef = useRef<HTMLDivElement | null>(null)
   const elementRef = useRef<HTMLDivElement[]>([])
-  const splitRef = useRef([])
-  const lines = useRef([])
+  const splitRef = useRef<any[]>([]) // SplitText doesn't expose types
+  const lines = useRef<HTMLElement[]>([])
 
   useGSAP(
     () => {
@@ -22,7 +32,8 @@ const Copy = ({ children, animationOnScroll = true, delay = 0 }) => {
       elementRef.current = []
       lines.current = []
 
-      let elements = []
+      let elements: Element[] = []
+
       if (containerRef.current.hasAttribute("data-copy-wrapper")) {
         elements = Array.from(containerRef.current.children)
       } else {
@@ -30,26 +41,28 @@ const Copy = ({ children, animationOnScroll = true, delay = 0 }) => {
       }
 
       elements.forEach((el) => {
-        elementRef.current.push(el)
+        const htmlEl = el as HTMLDivElement
+        elementRef.current.push(htmlEl)
 
-        const split = SplitText.create(el, {
+        const split = SplitText.create(htmlEl, {
           type: "lines",
           mask: "lines",
           linesClass: "line++",
         })
 
         splitRef.current.push(split)
-        const computedStyle = window.getComputedStyle(el)
+
+        const computedStyle = window.getComputedStyle(htmlEl)
         const textIndent = computedStyle.textIndent
 
         if (textIndent && textIndent !== "0px") {
           if (split.lines.length > 0) {
-            split.lines[0].style.paddingLeft = textIndent
+            ;(split.lines[0] as HTMLElement).style.paddingLeft = textIndent
           }
-          el.style.textIndent = "0"
+          htmlEl.style.textIndent = "0"
         }
 
-        lines.current.push(...split.lines)
+        lines.current.push(...(split.lines as HTMLElement[]))
       })
 
       gsap.set(lines.current, {
@@ -79,7 +92,7 @@ const Copy = ({ children, animationOnScroll = true, delay = 0 }) => {
 
       return () => {
         splitRef.current.forEach((split) => {
-          if (split) {
+          if (split?.revert) {
             split.revert()
           }
         })
@@ -91,8 +104,8 @@ const Copy = ({ children, animationOnScroll = true, delay = 0 }) => {
     }
   )
 
-  if (React.Children.count(children) === 1) {
-    return cloneElement(children, {
+  if (React.Children.count(children) === 1 && React.isValidElement(children)) {
+    return cloneElement(children as ReactElement<any, any>, {
       ref: containerRef,
     })
   }

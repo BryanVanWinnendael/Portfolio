@@ -1,12 +1,12 @@
-import Noted from "@/components/works/noted"
+import UniMail from "@/components/works/uniMail"
 import { Metadata } from "next/types"
 
 export const metadata: Metadata = {
-  title: "Noted | Bryan Van Winnendael",
+  title: "UniMail | Bryan Van Winnendael",
   description: "Portfolio",
 }
 const Page = () => {
-  return <Noted />
+  return <UniMail />
 }
 
 export default Page

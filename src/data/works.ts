@@ -2,8 +2,9 @@ import { StaticImageData } from "next/image"
 
 import DroneImage4 from "@/assets/images/drone/drone4.webp"
 
-import NetwebImage1 from "@/assets/images/imec/imec.webp"
-import NetwebImage6 from "@/assets/images/imec/imec6.webp"
+import NetwebImage1 from "@/assets/images/imec/imec4.webp"
+import NetwebImage2 from "@/assets/images/imec/imec5.webp"
+import MomezImage1 from "@/assets/images/momez/momez.webp"
 
 export type MediaItem = {
   type: "image" | "video"
@@ -14,16 +15,24 @@ export type MediaItem = {
 
 type Project = {
   title: string
+  italic: boolean
+  year: number
   placement: "left" | "center" | "right"
   boldness: number
   media: MediaItem[]
+  href: string
+  newPage?: boolean
+  offset: number
 }
 
 export const projects: Project[] = [
   {
     title: "Noted",
+    italic: false,
+    year: 2024,
+    offset: 0,
     placement: "center",
-    boldness: 700,
+    boldness: 200,
     media: [
       {
         type: "video",
@@ -32,11 +41,38 @@ export const projects: Project[] = [
         placementIndex: 2,
       },
     ],
+    href: "/works/noted",
+  },
+  {
+    title: "Netweb",
+    italic: true,
+    offset: 10,
+    year: 2023,
+    placement: "right",
+    boldness: 400,
+    media: [
+      {
+        type: "image",
+        src: NetwebImage1,
+        alt: "Netweb Image 1",
+        placementIndex: 1,
+      },
+      {
+        type: "image",
+        src: NetwebImage2,
+        alt: "Netweb Image 2",
+        placementIndex: 4,
+      },
+    ],
+    href: "/works/netweb",
   },
   {
     title: "Point Cloud Processor",
+    italic: false,
+    offset: 0,
+    year: 2023,
     placement: "left",
-    boldness: 400,
+    boldness: 500,
     media: [
       {
         type: "image",
@@ -51,11 +87,15 @@ export const projects: Project[] = [
         placementIndex: 11,
       },
     ],
+    href: "/works/point-cloud-processor",
   },
   {
     title: "Harbor",
+    italic: false,
+    offset: -100,
+    year: 2024,
     placement: "right",
-    boldness: 600,
+    boldness: 500,
     media: [
       {
         type: "video",
@@ -64,24 +104,47 @@ export const projects: Project[] = [
         placementIndex: 2,
       },
     ],
+    href: "/works/harbor",
   },
   {
-    title: "Netweb",
-    placement: "left",
-    boldness: 350,
+    title: "UniMail",
+    italic: true,
+    offset: 100,
+    year: 2024,
+    placement: "center",
+    boldness: 600,
     media: [
       {
-        type: "image",
-        src: NetwebImage1,
-        alt: "Netweb Image 1",
-        placementIndex: 1,
+        type: "video",
+        src: "/videos/unimail.mp4",
+        alt: "UniMail Video",
+        placementIndex: 2,
+      },
+    ],
+    href: "/works/unimail",
+  },
+  {
+    title: "More",
+    italic: false,
+    offset: 100,
+    year: 2025,
+    placement: "left",
+    boldness: 600,
+    media: [
+      {
+        type: "video",
+        src: "/videos/zap.mp4",
+        alt: "Zap Video",
+        placementIndex: 0,
       },
       {
         type: "image",
-        src: NetwebImage6,
-        alt: "Netweb Image 6",
-        placementIndex: 4,
+        src: MomezImage1,
+        alt: "Momez Image",
+        placementIndex: 2,
       },
     ],
+    href: "https://github.com/BryanVanWinnendael/",
+    newPage: true,
   },
 ]

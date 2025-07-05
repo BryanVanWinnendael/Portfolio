@@ -1,4 +1,5 @@
 "use client"
+
 import { usePathname, useRouter } from "next/navigation"
 import { animatePageOut } from "@/utils/animations"
 
@@ -13,7 +14,9 @@ const TransitionLink = ({ href, label }: Props) => {
 
   const handleClick = () => {
     if (pathname !== href) {
-      animatePageOut(href, router)
+      if (pathname.includes("/works"))
+        animatePageOut(href, router, "banner-works")
+      else animatePageOut(href, router)
     }
   }
 

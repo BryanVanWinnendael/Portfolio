@@ -1,8 +1,42 @@
 @import "tailwindcss";
 
+:root {
+  --size: 200;
+  @media (min-width: 768px) {
+    --size: 600;
+  }
+  @media (min-width: 1200px) {
+    --size: 760;
+  }
+}
+
+html,
+body {
+  font-size: calc((100vw / var(--size)) * 10);
+  text-transform: uppercase;
+}
+
+p,
+h1 {
+  cursor: default;
+}
+
+::selection {
+  background: #ff8728;
+  color: black;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: #ff8728;
+  color: #eee;
+  text-shadow: none;
+}
+
 @theme {
   --color-black: #242424;
   --color-muted: rgba(36, 36, 36, 0.32);
+  --color-accent: #ff8728;
 }
 
 .revealer {
@@ -15,4 +49,8 @@
   background-color: var(--color-black);
   pointer-events: none;
   z-index: 2;
+}
+
+.text-full {
+  font-size: calc((100vw / var(--size)) * 10);
 }
