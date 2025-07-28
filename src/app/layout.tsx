@@ -76,7 +76,7 @@ export default function RootLayout({
     <html lang="en">
       <LenisWrapper>
         <body
-          className={`${grotesque.className} ${phemisterFont.style} antialiased font-semibold`}
+          className={`${grotesque.className} ${phemisterFont.style} antialiased font-semibold w-screen overflow-x-hidden`}
         >
           <Nav />
           <main className="min-h-screen w-screen">{children}</main>
