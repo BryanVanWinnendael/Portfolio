@@ -27,7 +27,14 @@ const Harbor = () => {
 
         <div className="flex justify-center w-full -mt-6 md:-mt-16 relative z-10 overflow-hidden">
           <AnimatedMedia delay={0.7} className="w-2/3 h-auto block">
-            <video src="/videos/harbor.mp4" autoPlay loop muted playsInline />
+            <video
+              preload="metadata"
+              src="/videos/harbor.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
           </AnimatedMedia>
         </div>
         <div className="flex justify-center py-8">
@@ -46,10 +53,20 @@ const Harbor = () => {
         <div className="flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 w-2/3 gap-2">
             <AnimatedMedia animationOnScroll={true}>
-              <Image src={HarborImage1} alt="harbor image 1" />
+              <Image
+                placeholder="blur"
+                loading="lazy"
+                src={HarborImage1}
+                alt="harbor image 1"
+              />
             </AnimatedMedia>
             <AnimatedMedia animationOnScroll={true}>
-              <Image src={HarborImage2} alt="harbor image 2" />
+              <Image
+                placeholder="blur"
+                loading="lazy"
+                src={HarborImage2}
+                alt="harbor image 2"
+              />
             </AnimatedMedia>
           </div>
         </div>
@@ -91,10 +108,20 @@ const Harbor = () => {
           <div className="flex justify-center">
             <div className="grid grid-cols-1 md:grid-cols-2 w-2/3 gap-2">
               <AnimatedMedia animationOnScroll={true}>
-                <Image src={HarborImage3} alt="harbor image 3" />
+                <Image
+                  placeholder="blur"
+                  loading="lazy"
+                  src={HarborImage3}
+                  alt="harbor image 3"
+                />
               </AnimatedMedia>
               <AnimatedMedia animationOnScroll={true}>
-                <Image src={HarborImage4} alt="harbor image 4" />
+                <Image
+                  placeholder="blur"
+                  loading="lazy"
+                  src={HarborImage4}
+                  alt="harbor image 4"
+                />
               </AnimatedMedia>
             </div>
           </div>

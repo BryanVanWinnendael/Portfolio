@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, memo } from "react"
 import Image from "next/image"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
@@ -103,12 +103,15 @@ const Work = ({
             >
               {media.type === "image" ? (
                 <Image
+                  placeholder="blur"
+                  loading="lazy"
                   className="h-full w-auto"
                   src={media.src}
                   alt={media.alt || ""}
                 />
               ) : (
                 <video
+                  preload="metadata"
                   className="h-full w-auto"
                   src={media.src as string}
                   autoPlay
@@ -184,4 +187,4 @@ const Work = ({
   )
 }
 
-export default Work
+export default memo(Work)

@@ -39,7 +39,7 @@ const About = () => {
                 </Link>
                 <span className="pl-2 text-muted">June 2025 - Present</span>
               </p>
-              <div className="pl-2 leading-relaxed ">
+              <div className="pl-2 leading-relaxed font-medium">
                 <p>
                   - Java Developer for the Commercial Channels & Products team.
                 </p>
@@ -57,7 +57,7 @@ const About = () => {
                 </Link>
                 <span className="pl-2 text-muted">MARCH 2023 - JUNE 2023</span>
               </p>
-              <div className="pl-2 leading-relaxed ">
+              <div className="pl-2 leading-relaxed font-medium">
                 <p>
                   - Developed the back-end infrastructure with FastAPI Python.
                 </p>
@@ -93,10 +93,10 @@ const About = () => {
                 </Link>{" "}
                 to manage network devices.
               </p>
-              <p>
+              <p className="pt-2">
                 (02) Noted, note taking app inspired by Notion and Obsidian.
               </p>
-              <p>
+              <p className="pt-2">
                 (03) Point Cloud Processor, desktop application for detecting
                 planes in a point cloud.
               </p>

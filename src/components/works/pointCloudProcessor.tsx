@@ -26,7 +26,14 @@ const PointCloudProcessor = () => {
 
         <div className="flex justify-center w-full -mt-4 md:-mt-12 relative z-10 overflow-hidden">
           <AnimatedMedia delay={0.7} className="w-2/3 h-auto block">
-            <video src="/videos/drone.mp4" autoPlay loop muted playsInline />
+            <video
+              preload="metadata"
+              src="/videos/drone.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
           </AnimatedMedia>
         </div>
         <div className="flex justify-center py-8">
@@ -43,10 +50,20 @@ const PointCloudProcessor = () => {
         <div className="flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 w-2/3 gap-2">
             <AnimatedMedia animationOnScroll={true}>
-              <Image src={DroneImage1} alt="drone image 1" />
+              <Image
+                placeholder="blur"
+                loading="lazy"
+                src={DroneImage1}
+                alt="drone image 1"
+              />
             </AnimatedMedia>
             <AnimatedMedia animationOnScroll={true}>
-              <Image src={DroneImage2} alt="drone image 2" />
+              <Image
+                placeholder="blur"
+                loading="lazy"
+                src={DroneImage2}
+                alt="drone image 2"
+              />
             </AnimatedMedia>
           </div>
         </div>
@@ -73,10 +90,10 @@ const PointCloudProcessor = () => {
             </Copy>
             <Copy>
               <p className="font-normal text-xs leading-[1.5]">
-                The application is seperated into 2 parts: The desktop
-                application that was made in Pyton using the PyQt5 library. The
-                model that will actually process the point cloud was made with
-                Python.
+                The application is seperated into 2 parts: - The desktop
+                application that was made in Pyton using the PyQt5 library. -
+                The model that will actually process the point cloud was made
+                with Python.
               </p>
             </Copy>
           </div>
@@ -101,7 +118,12 @@ const PointCloudProcessor = () => {
           <div className="flex justify-center">
             <div className="grid grid-cols-1 w-2/3 gap-2">
               <AnimatedMedia animationOnScroll={true}>
-                <Image src={DroneImage3} alt="drone image 3" />
+                <Image
+                  placeholder="blur"
+                  loading="lazy"
+                  src={DroneImage3}
+                  alt="drone image 3"
+                />
               </AnimatedMedia>
             </div>
           </div>

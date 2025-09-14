@@ -26,7 +26,14 @@ const Noted = () => {
 
         <div className="flex justify-center w-full -mt-6 md:-mt-16 relative z-10 overflow-hidden">
           <AnimatedMedia delay={0.7} className="w-2/3 h-auto block">
-            <video src="/videos/noted.mp4" autoPlay loop muted playsInline />
+            <video
+              preload="metadata"
+              src="/videos/noted.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
           </AnimatedMedia>
         </div>
         <div className="flex justify-center py-8">
@@ -44,10 +51,20 @@ const Noted = () => {
         <div className="flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 w-2/3 gap-2">
             <AnimatedMedia animationOnScroll={true}>
-              <Image src={NotedImage1} alt="noted image 1" />
+              <Image
+                placeholder="blur"
+                loading="lazy"
+                src={NotedImage1}
+                alt="noted image 1"
+              />
             </AnimatedMedia>
             <AnimatedMedia animationOnScroll={true}>
-              <Image src={NotedImage2} alt="noted image 2" />
+              <Image
+                placeholder="blur"
+                loading="lazy"
+                src={NotedImage2}
+                alt="noted image 2"
+              />
             </AnimatedMedia>
           </div>
         </div>
@@ -75,7 +92,7 @@ const Noted = () => {
             <Copy>
               <p className="font-normal text-xs leading-[1.5]">
                 The desktop app is made with Electron, React, Editor.js and
-                Zustand. The Server is made with FastAPI, Firebase and Nginx.
+                Zustand. The backend is made with FastAPI, Firebase and Nginx.
                 The Website is made with Astro.
               </p>
             </Copy>
@@ -111,10 +128,20 @@ const Noted = () => {
           <div className="flex justify-center">
             <div className="grid grid-cols-1 md:grid-cols-2 w-2/3 gap-2">
               <AnimatedMedia animationOnScroll={true}>
-                <Image src={NotedImage3} alt="noted image 3" />
+                <Image
+                  placeholder="blur"
+                  loading="lazy"
+                  src={NotedImage3}
+                  alt="noted image 3"
+                />
               </AnimatedMedia>
               <AnimatedMedia animationOnScroll={true}>
-                <Image src={NotedImage4} alt="noted image 4" />
+                <Image
+                  placeholder="blur"
+                  loading="lazy"
+                  src={NotedImage4}
+                  alt="noted image 4"
+                />
               </AnimatedMedia>
             </div>
           </div>

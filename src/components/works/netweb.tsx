@@ -28,14 +28,19 @@ const Netweb = () => {
 
         <div className="flex justify-center w-full -mt-6 md:-mt-16 relative z-10 overflow-hidden">
           <AnimatedMedia delay={0.7} className="w-2/3 h-auto block">
-            <Image src={NetwebImage1} alt="harbor image 1" />
+            <Image
+              placeholder="blur"
+              loading="lazy"
+              src={NetwebImage1}
+              alt="harbor image 1"
+            />
           </AnimatedMedia>
         </div>
         <div className="flex justify-center py-8">
           <div className="md:w-1/3 w-2/3">
             <Copy>
               <p className="font-normal text-xs leading-[1.5]">
-                For my intern at{" "}
+                Internship at{" "}
                 <Link
                   target="_blank"
                   href="https://www.imec-int.com/en"
@@ -43,9 +48,10 @@ const Netweb = () => {
                 >
                   IMEC
                 </Link>
-                , I worked on a web application that is used to do a host
-                lookup, create guest accounts for the network, manage ports and
-                more.
+                , Developed a web application for network management, enabling
+                host lookups, guest account creation, port management, and other
+                administrative tasks. The application streamlined network
+                operations and improved efficiency for IT staff.
               </p>
             </Copy>
           </div>
@@ -53,10 +59,20 @@ const Netweb = () => {
         <div className="flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 w-2/3 gap-2">
             <AnimatedMedia animationOnScroll={true}>
-              <Image src={NetwebImage2} alt="harbor image 1" />
+              <Image
+                placeholder="blur"
+                loading="lazy"
+                src={NetwebImage2}
+                alt="harbor image 1"
+              />
             </AnimatedMedia>
             <AnimatedMedia animationOnScroll={true}>
-              <Image src={NetwebImage3} alt="harbor image 2" />
+              <Image
+                placeholder="blur"
+                loading="lazy"
+                src={NetwebImage3}
+                alt="harbor image 2"
+              />
             </AnimatedMedia>
           </div>
         </div>
@@ -91,10 +107,20 @@ const Netweb = () => {
           <div className="flex justify-center">
             <div className="grid grid-cols-1 md:grid-cols-2 w-2/3 gap-2">
               <AnimatedMedia animationOnScroll={true}>
-                <Image src={NetwebImage4} alt="harbor image 3" />
+                <Image
+                  placeholder="blur"
+                  loading="lazy"
+                  src={NetwebImage4}
+                  alt="harbor image 3"
+                />
               </AnimatedMedia>
               <AnimatedMedia animationOnScroll={true}>
-                <Image src={NetwebImage5} alt="harbor image 4" />
+                <Image
+                  placeholder="blur"
+                  loading="lazy"
+                  src={NetwebImage5}
+                  alt="harbor image 4"
+                />
               </AnimatedMedia>
             </div>
           </div>

@@ -27,7 +27,14 @@ const UniMail = () => {
 
         <div className="flex justify-center w-full -mt-6 md:-mt-16 relative z-10 overflow-hidden">
           <AnimatedMedia delay={0.7} className="w-2/3 h-auto block">
-            <video src="/videos/unimail.mp4" autoPlay loop muted playsInline />
+            <video
+              preload="metadata"
+              src="/videos/unimail.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
           </AnimatedMedia>
         </div>
         <div className="flex justify-center py-8">
@@ -45,10 +52,20 @@ const UniMail = () => {
         <div className="flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 w-2/3 gap-2">
             <AnimatedMedia animationOnScroll={true}>
-              <Image src={UniMailImage1} alt="unimail image 1" />
+              <Image
+                placeholder="blur"
+                loading="lazy"
+                src={UniMailImage1}
+                alt="unimail image 1"
+              />
             </AnimatedMedia>
             <AnimatedMedia animationOnScroll={true}>
-              <Image src={UniMailImage2} alt="unimail image 2" />
+              <Image
+                placeholder="blur"
+                loading="lazy"
+                src={UniMailImage2}
+                alt="unimail image 2"
+              />
             </AnimatedMedia>
           </div>
         </div>
@@ -61,18 +78,28 @@ const UniMail = () => {
             </Copy>
             <Copy>
               <p className="font-normal text-xs leading-[1.5]">
-                The client is built with Nextjs, Redux and Tailwind CSS. The
-                server is built with FastAPI and Docker.
+                The frontend is built with Nextjs, Redux and Tailwind CSS. The
+                backend is built with FastAPI and Docker.
               </p>
             </Copy>
           </div>
           <div className="flex justify-center">
             <div className="grid grid-cols-1 md:grid-cols-2 w-2/3 gap-2">
               <AnimatedMedia animationOnScroll={true}>
-                <Image src={UniMailImage3} alt="unimail image 3" />
+                <Image
+                  placeholder="blur"
+                  loading="lazy"
+                  src={UniMailImage3}
+                  alt="unimail image 3"
+                />
               </AnimatedMedia>
               <AnimatedMedia animationOnScroll={true}>
-                <Image src={UniMailImage4} alt="unimail image 4" />
+                <Image
+                  placeholder="blur"
+                  loading="lazy"
+                  src={UniMailImage4}
+                  alt="unimail image 4"
+                />
               </AnimatedMedia>
             </div>
           </div>
