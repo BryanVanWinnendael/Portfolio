@@ -40,7 +40,7 @@ const UniMail = () => {
         <div className="flex justify-center py-8">
           <div className="md:w-1/3 w-2/3">
             <Copy>
-              <p className="font-normal text-xs leading-[1.5]">
+              <p className="font-normal text-xs leading-normal">
                 UniMail is a web app that unifies multiple email accounts into
                 one interface. It offers full-screen viewing, theme
                 customization, adjustable layouts, and AI-powered email
@@ -77,7 +77,7 @@ const UniMail = () => {
               </h2>
             </Copy>
             <Copy>
-              <p className="font-normal text-xs leading-[1.5]">
+              <p className="font-normal text-xs leading-normal">
                 The frontend is built with Nextjs, Redux and Tailwind CSS. The
                 backend is built with FastAPI and Docker.
               </p>
@@ -127,7 +127,7 @@ const UniMail = () => {
           </div>
         </div>
       </div>
-      <div className="h-[1px] bg-black w-full z-30 relative" />
+      <div className="h-px bg-black w-full z-30 relative" />
     </>
   )
 }

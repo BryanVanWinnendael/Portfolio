@@ -39,7 +39,7 @@ const Netweb = () => {
         <div className="flex justify-center py-8">
           <div className="md:w-1/3 w-2/3">
             <Copy>
-              <p className="font-normal text-xs leading-[1.5]">
+              <p className="font-normal text-xs leading-normal">
                 Internship at{" "}
                 <Link
                   target="_blank"
@@ -84,7 +84,7 @@ const Netweb = () => {
               </h2>
             </Copy>
             <Copy>
-              <p className="font-normal text-xs leading-[1.5]">
+              <p className="font-normal text-xs leading-normal">
                 - Host lookup - Port management - Guest account creation - Azure
                 NICs viewer - ACI endpoints viewer - Switch manager - ISE lookup
                 - SSL exceptions
@@ -98,7 +98,7 @@ const Netweb = () => {
               </h2>
             </Copy>
             <Copy>
-              <p className="font-normal text-xs leading-[1.5]">
+              <p className="font-normal text-xs leading-normal">
                 Netweb is built with FastAPI, Next.js, Python, TypeScript,
                 Docker and Azure AD for authentication and data extraction.
               </p>
@@ -126,7 +126,7 @@ const Netweb = () => {
           </div>
         </div>
       </div>
-      <div className="h-[1px] bg-black w-full z-30 relative" />
+      <div className="h-px bg-black w-full z-30 relative" />
     </>
   )
 }

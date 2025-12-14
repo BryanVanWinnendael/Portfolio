@@ -40,7 +40,7 @@ const Harbor = () => {
         <div className="flex justify-center py-8">
           <div className="md:w-1/3 w-2/3">
             <Copy>
-              <p className="font-normal text-xs leading-[1.5]">
+              <p className="font-normal text-xs leading-normal">
                 Harbor is a web app for managing Docker containers on your
                 server. It lets you easily create, start, stop, delete
                 containers, run commands inside them, manage Docker images,
@@ -78,7 +78,7 @@ const Harbor = () => {
               </h2>
             </Copy>
             <Copy>
-              <p className="font-normal text-xs leading-[1.5]">
+              <p className="font-normal text-xs leading-normal">
                 Clone the{" "}
                 <Link
                   href="https://github.com/BryanVanWinnendael/Harbor"
@@ -99,7 +99,7 @@ const Harbor = () => {
               </h2>
             </Copy>
             <Copy>
-              <p className="font-normal text-xs leading-[1.5]">
+              <p className="font-normal text-xs leading-normal">
                 Harbor is built with Go, Air, SQLite, Tailwind CSS and Htmx.
               </p>
             </Copy>
@@ -140,7 +140,7 @@ const Harbor = () => {
           </div>
         </div>
       </div>
-      <div className="h-[1px] bg-black w-full z-30 relative" />
+      <div className="h-px bg-black w-full z-30 relative" />
     </>
   )
 }

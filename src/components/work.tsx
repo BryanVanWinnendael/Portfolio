@@ -39,19 +39,19 @@ const Work = ({
 }: WorkProps) => {
   const router = useRouter()
   const pathname = usePathname()
+
   const dividerRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
-  // Ref for the text container to check overflow.
   const textRef = useRef<HTMLDivElement>(null)
+
   const [isOverflow, setIsOverflow] = useState(false)
 
-  // Check if the text container is overflowing.
   useEffect(() => {
     const el = textRef.current
     if (el) {
       setIsOverflow(el.scrollWidth > el.clientWidth)
     }
-    // Optionally add an event listener for window resize
+
     const handleResize = () => {
       if (el) setIsOverflow(el.scrollWidth > el.clientWidth)
     }
@@ -78,7 +78,6 @@ const Work = ({
     const chars = title.split("")
     const result: React.ReactNode[] = []
 
-    // Map media based on its placement index.
     const mediaMap = new Map<number, MediaItem[]>()
     media.forEach((media) => {
       if (!mediaMap.has(media.placementIndex)) {
@@ -127,7 +126,6 @@ const Work = ({
       }
     })
 
-    // Append the year in smaller font size at the end
     result.push(
       <Copy key="year" delay={delay}>
         <span className="inline-block text-xs align-top ml-1 text-black font-[grotesque]">
@@ -159,11 +157,9 @@ const Work = ({
       }`}
       style={{ fontWeight: boldness }}
     >
-      {/* TEXT */}
       <div
         ref={textRef}
         className="px-2 relative  md:text-[6vw] text-6xl md:h-[6vw] h-16 z-10 md:pb-[1.7vw] pb-1 group overflow-x-hidden overflow-y-hidden"
-        // Conditionally add the mask style if text is overflowing.
         style={{
           ...(isOverflow
             ? {
@@ -181,8 +177,7 @@ const Work = ({
         {renderTitleWithOptionalMedia()}
       </div>
 
-      {/* DIVIDER */}
-      <div ref={dividerRef} className="h-[1px] bg-black w-0 z-30 relative" />
+      <div ref={dividerRef} className="h-px bg-black w-0 z-30 relative" />
     </div>
   )
 }

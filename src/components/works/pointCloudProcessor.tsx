@@ -39,7 +39,7 @@ const PointCloudProcessor = () => {
         <div className="flex justify-center py-8">
           <div className="md:w-1/3 w-2/3">
             <Copy>
-              <p className="font-normal text-xs leading-[1.5]">
+              <p className="font-normal text-xs leading-normal">
                 Point Cloud Processor is a desktop application for detecting
                 planes inside a point cloud, in order to get information about
                 all the planes in a point cloud.
@@ -75,7 +75,7 @@ const PointCloudProcessor = () => {
               </h2>
             </Copy>
             <Copy>
-              <p className="font-normal text-xs leading-[1.5]">
+              <p className="font-normal text-xs leading-normal">
                 For my Graduation project my group and I had to make a project
                 that was about detecting planes inside a point cloud, in order
                 to get information about all the planes in a point cloud.
@@ -89,7 +89,7 @@ const PointCloudProcessor = () => {
               </h2>
             </Copy>
             <Copy>
-              <p className="font-normal text-xs leading-[1.5]">
+              <p className="font-normal text-xs leading-normal">
                 The application is seperated into 2 parts: - The desktop
                 application that was made in Pyton using the PyQt5 library. -
                 The model that will actually process the point cloud was made
@@ -104,7 +104,7 @@ const PointCloudProcessor = () => {
               </h2>
             </Copy>
             <Copy>
-              <p className="font-normal text-xs leading-[1.5]">
+              <p className="font-normal text-xs leading-normal">
                 - Load the point cloud. Use RANSAC to detect planes. - Possibly
                 cluster using a cluster strategy like DBSCAN or agglomerative
                 clustering, using no clustering is also possible. - Save each of
@@ -152,7 +152,7 @@ const PointCloudProcessor = () => {
           </div>
         </div>
       </div>
-      <div className="h-[1px] bg-black w-full z-30 relative" />
+      <div className="h-px bg-black w-full z-30 relative" />
     </>
   )
 }

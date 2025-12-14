@@ -9,7 +9,7 @@ const Contact = () => {
       <div className="flex flex-col items-center md:leading-24">
         <Copy delay={0.5}>
           <h1 className="md:text-[7vw] text-[9vw] font-[phemister] ">
-            WANT TO <span className="bg-[#ff8728]">CONNECT?</span>
+            WANT TO <span className="bg-accent">CONNECT?</span>
           </h1>
         </Copy>
         <Copy delay={0.7}>

@@ -5,7 +5,6 @@ import { ReactNode, useEffect } from "react"
 
 const Template = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
-    console.log("animating")
     animatePageIn()
   }, [])
   return (

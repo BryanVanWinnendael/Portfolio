@@ -6,9 +6,7 @@ import Link from "next/link"
 const About = () => {
   return (
     <div className="bg-white text-black px-4 w-full flex items-center min-h-screen py-12">
-      {/* Content Grid */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 w-full text-xs leading-4">
-        {/* Bio Section */}
         <div className="md:col-span-3">
           <Copy delay={0.5}>
             <h2 className="mb-4 tracking-wide text-muted">BIO</h2>
@@ -21,7 +19,6 @@ const About = () => {
           </Copy>
         </div>
 
-        {/* Experience Section */}
         <div className="md:col-span-5">
           <Copy delay={0.5}>
             <h2 className="mb-4 tracking-wide text-muted">EXPERIENCE</h2>
@@ -75,7 +72,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Selected Works Section */}
         <div className="md:col-span-4">
           <Copy delay={0.5}>
             <h2 className="mb-4 tracking-wide text-muted">SELECTED WORKS</h2>
@@ -104,7 +100,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Education Section */}
         <div className="md:col-span-4">
           <Copy delay={0.5}>
             <h2 className="mb-4 tracking-wide text-muted">EDUCATION</h2>

@@ -4,7 +4,6 @@ import { createContext, ReactNode, useState } from "react"
 
 type Nav = "/" | "/works" | "/contact" | null
 
-// Create the context with default values
 const NavContext = createContext<{
   nav: Nav
   setNav: (nav: Nav) => void

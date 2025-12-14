@@ -39,7 +39,7 @@ const Noted = () => {
         <div className="flex justify-center py-8">
           <div className="md:w-1/3 w-2/3">
             <Copy>
-              <p className="font-normal text-xs leading-[1.5]">
+              <p className="font-normal text-xs leading-normal">
                 Noted is a combination of notion and obsidian with an inspired
                 style by arc browser. It is a note taking app that allows you to
                 write notes in block-style just like notion. It is supported on
@@ -76,7 +76,7 @@ const Noted = () => {
               </h2>
             </Copy>
             <Copy>
-              <p className="font-normal text-xs leading-[1.5]">
+              <p className="font-normal text-xs leading-normal">
                 With the customizations, like obsidian, you can fully customize
                 your application. Don&apos;t like the default theme? Change it!
                 Don&apos;t like the font? Change it!
@@ -90,7 +90,7 @@ const Noted = () => {
               </h2>
             </Copy>
             <Copy>
-              <p className="font-normal text-xs leading-[1.5]">
+              <p className="font-normal text-xs leading-normal">
                 The desktop app is made with Electron, React, Editor.js and
                 Zustand. The backend is made with FastAPI, Firebase and Nginx.
                 The Website is made with Astro.
@@ -104,7 +104,7 @@ const Noted = () => {
               </h2>
             </Copy>
             <Copy>
-              <p className="font-normal text-xs leading-[1.5]">
+              <p className="font-normal text-xs leading-normal">
                 For a list of all the features, please visit the{" "}
                 <Link
                   href="https://github.com/BryanVanWinnendael/Noted"
@@ -169,7 +169,7 @@ const Noted = () => {
           </div>
         </div>
       </div>
-      <div className="h-[1px] bg-black w-full z-30 relative" />
+      <div className="h-px bg-black w-full z-30 relative" />
     </>
   )
 }

@@ -105,7 +105,6 @@ const Copy: React.FC<CopyProps> = ({
   )
 
   if (React.Children.count(children) === 1 && React.isValidElement(children)) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return cloneElement(children as ReactElement<any, any>, {
       ref: containerRef,
     })
