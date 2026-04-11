@@ -5,6 +5,9 @@ import DroneImage4 from "@/assets/images/drone/drone4.webp"
 import NetwebImage1 from "@/assets/images/imec/imec4.webp"
 import NetwebImage2 from "@/assets/images/imec/imec5.webp"
 import MomezImage1 from "@/assets/images/momez/momez.webp"
+import ShoppingListImage1 from "@/assets/images/shopping-list/img10.png"
+import ShoppingListImage2 from "@/assets/images/shopping-list/img4.png"
+import ShoppingListImage3 from "@/assets/images/shopping-list/img9.png"
 
 export type MediaItem = {
   type: "image" | "video"
@@ -27,11 +30,40 @@ type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Shopping List",
+    italic: true,
+    offset: -200,
+    year: 2025,
+    placement: "center",
+    boldness: 600,
+    media: [
+      {
+        type: "image",
+        src: ShoppingListImage1,
+        alt: "Shopping List Image",
+        placementIndex: 2,
+      },
+      {
+        type: "image",
+        src: ShoppingListImage2,
+        alt: "Shopping List Image2",
+        placementIndex: 5,
+      },
+      {
+        type: "image",
+        src: ShoppingListImage3,
+        alt: "Shopping List Image3",
+        placementIndex: 9,
+      },
+    ],
+    href: "/works/shopping-list",
+  },
+  {
     title: "Noted",
     italic: false,
     year: 2024,
-    offset: 0,
-    placement: "center",
+    offset: -200,
+    placement: "right",
     boldness: 200,
     media: [
       {
@@ -42,6 +74,23 @@ export const projects: Project[] = [
       },
     ],
     href: "/works/noted",
+  },
+  {
+    title: "Harbor",
+    italic: false,
+    offset: 200,
+    year: 2024,
+    placement: "left",
+    boldness: 500,
+    media: [
+      {
+        type: "video",
+        src: "/videos/harbor.mp4",
+        alt: "Harbor Video",
+        placementIndex: 2,
+      },
+    ],
+    href: "/works/harbor",
   },
   {
     title: "Netweb",
@@ -90,44 +139,10 @@ export const projects: Project[] = [
     href: "/works/point-cloud-processor",
   },
   {
-    title: "Harbor",
-    italic: false,
-    offset: -100,
-    year: 2024,
-    placement: "right",
-    boldness: 500,
-    media: [
-      {
-        type: "video",
-        src: "/videos/harbor.mp4",
-        alt: "Harbor Video",
-        placementIndex: 2,
-      },
-    ],
-    href: "/works/harbor",
-  },
-  {
-    title: "UniMail",
-    italic: true,
-    offset: 100,
-    year: 2024,
-    placement: "center",
-    boldness: 600,
-    media: [
-      {
-        type: "video",
-        src: "/videos/unimail.mp4",
-        alt: "UniMail Video",
-        placementIndex: 2,
-      },
-    ],
-    href: "/works/unimail",
-  },
-  {
     title: "More",
     italic: false,
     offset: 100,
-    year: 2025,
+    year: 2026,
     placement: "left",
     boldness: 600,
     media: [

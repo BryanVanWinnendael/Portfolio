@@ -13,7 +13,6 @@
 html,
 body {
   font-size: calc((100vw / var(--size)) * 10);
-  text-transform: uppercase;
 }
 
 p,

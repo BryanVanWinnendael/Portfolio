@@ -12,7 +12,7 @@ const About = () => {
             <h2 className="mb-4 tracking-wide text-muted">BIO</h2>
           </Copy>
           <Copy>
-            <p className="">
+            <p>
               Bryan Van Winnendael, Software developer based in Winksele,
               Belgium.
             </p>
@@ -39,6 +39,9 @@ const About = () => {
               <div className="pl-2 leading-relaxed font-medium">
                 <p>
                   - Java Developer for the Commercial Channels & Products team.
+                </p>
+                <p>
+                  - Developing backend systems for train ticketing and subscription platforms using Java, Spring Boot, SQL, Maven, Git, JUnit, SonarQube, and Jenkins.
                 </p>
               </div>
             </Copy>

@@ -1,12 +1,12 @@
-import UniMail from "@/components/works/uniMail"
 import { Metadata } from "next/types"
+import ShoppingList from "@/components/works/shoppingList";
 
 export const metadata: Metadata = {
-  title: "UniMail | Bryan Van Winnendael",
+  title: "Shopping List | Bryan Van Winnendael",
   description: "Portfolio",
 }
 const Page = () => {
-  return <UniMail />
+  return <ShoppingList />
 }
 
 export default Page
