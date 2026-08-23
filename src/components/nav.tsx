@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useEffect, Fragment } from "react"
+import { Fragment, useEffect, useRef } from "react"
 import gsap from "gsap"
 import TransitionLink from "./transitionLink"
 import { usePathname } from "next/navigation"

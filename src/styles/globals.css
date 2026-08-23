@@ -2,9 +2,12 @@
 
 :root {
   --size: 200;
+  --color-accent: #0014a8;
+
   @media (min-width: 768px) {
     --size: 600;
   }
+
   @media (min-width: 1200px) {
     --size: 760;
   }
@@ -13,6 +16,13 @@
 html,
 body {
   font-size: calc((100vw / var(--size)) * 10);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }
 
 p,
@@ -21,21 +31,21 @@ h1 {
 }
 
 ::selection {
-  background: #ff8728;
-  color: black;
+  background: var(--color-accent);
+  color: white;
   text-shadow: none;
 }
 
 ::-moz-selection {
-  background: #ff8728;
-  color: #eee;
+  background: var(--color-accent);
+  color: white;
   text-shadow: none;
 }
 
 @theme {
   --color-black: #242424;
   --color-muted: rgba(36, 36, 36, 0.32);
-  --color-accent: #ff8728;
+  --color-accent: var(--color-accent);
 }
 
 .revealer {

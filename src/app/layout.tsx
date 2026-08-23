@@ -1,5 +1,8 @@
 import type { Metadata } from "next"
-import "./globals.css"
+
+import "@/styles/globals.css"
+import "dialkit/styles.css"
+
 import Nav from "@/components/nav"
 import localFont from "next/font/local"
 import LenisWrapper from "@/components/lenisWrapper"

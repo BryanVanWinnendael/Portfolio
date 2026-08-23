@@ -4,28 +4,28 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Copy from "@/components/copy"
 import Image from "next/image"
+import Link from "next/link"
+import AnimatedMedia from "@/components/animatedMedia"
 
 import NotedImage1 from "@/assets/images/noted/noted2.webp"
 import NotedImage2 from "@/assets/images/noted/noted3.webp"
 import NotedImage3 from "@/assets/images/noted/noted4.webp"
 import NotedImage4 from "@/assets/images/noted/noted5.webp"
-import Link from "next/link"
-import AnimatedMedia from "@/components/animatedMedia"
 
 gsap.registerPlugin(ScrollTrigger)
 
 const Noted = () => {
   return (
     <>
-      <div className="sm:pt-16 pt-10 pb-12">
+      <div className="pb-12 pt-10 sm:pt-16">
         <Copy delay={0.5}>
-          <h1 className="font-semibold uppercase leading-none text-center text-[20vw]">
+          <h1 className="text-center text-[20vw] font-semibold uppercase leading-none">
             NOTED
           </h1>
         </Copy>
 
-        <div className="flex justify-center w-full -mt-6 md:-mt-16 relative z-10 overflow-hidden">
-          <AnimatedMedia delay={0.7} className="w-2/3 h-auto block">
+        <div className="relative z-10 -mt-6 flex w-full justify-center overflow-hidden md:-mt-16">
+          <AnimatedMedia delay={0.7} className="block h-auto w-2/3">
             <video
               preload="metadata"
               src="/videos/noted.mp4"
@@ -36,140 +36,168 @@ const Noted = () => {
             />
           </AnimatedMedia>
         </div>
-        <div className="flex justify-center py-8">
-          <div className="md:w-1/3 w-2/3">
+
+        <div className="flex justify-center px-4 py-10 md:py-12">
+          <div className="w-full max-w-xl">
             <Copy>
-              <p className="font-normal text-xs leading-normal">
-                Noted is a combination of notion and obsidian with an inspired
-                style by arc browser. It is a note taking app that allows you to
-                write notes in block-style just like notion. It is supported on
-                Windows, MacOS and Linux.{" "}
+              <p className="text-sm leading-relaxed text-black/80 md:text-base">
+                Noted is a note taking application inspired by Notion, Obsidian,
+                and the Arc browser.
+              </p>
+
+              <p className="mt-4 text-sm leading-relaxed text-black/80 md:text-base">
+                It combines block based editing with extensive customization,
+                allowing users to create and organize notes in a flexible
+                workspace.
+              </p>
+
+              <p className="mt-4 text-sm leading-relaxed text-black/80 md:text-base">
+                Noted is available for Windows, macOS, and Linux.
               </p>
             </Copy>
           </div>
         </div>
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 w-2/3 gap-2">
+
+        <div className="flex justify-center px-4">
+          <div className="grid w-full max-w-4xl grid-cols-1 gap-2 md:grid-cols-2">
             <AnimatedMedia animationOnScroll={true}>
               <Image
                 placeholder="blur"
                 loading="lazy"
                 src={NotedImage1}
-                alt="noted image 1"
+                alt="Noted application"
               />
             </AnimatedMedia>
+
             <AnimatedMedia animationOnScroll={true}>
               <Image
                 placeholder="blur"
                 loading="lazy"
                 src={NotedImage2}
-                alt="noted image 2"
+                alt="Noted application"
               />
             </AnimatedMedia>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-4 py-8">
-          <div className="md:w-1/3 w-2/3">
+
+        <div className="flex flex-col items-center gap-10 py-12 md:py-16">
+          <div className="w-full max-w-xl px-4">
             <Copy delay={0.5}>
-              <h2 className="text-xs font-medium mb-2 tracking-wide text-muted">
+              <h2 className="mb-3 text-[10px] font-medium uppercase tracking-widest text-muted">
                 Customize
               </h2>
             </Copy>
+
             <Copy>
-              <p className="font-normal text-xs leading-normal">
-                With the customizations, like obsidian, you can fully customize
-                your application. Don&apos;t like the default theme? Change it!
-                Don&apos;t like the font? Change it!
+              <p className="text-sm leading-relaxed text-black/80 md:text-base">
+                Noted is designed to be highly customizable. Change the theme,
+                typography, and appearance to create a workspace that fits your
+                workflow.
               </p>
             </Copy>
           </div>
-          <div className="md:w-1/3 w-2/3">
+
+          <div className="w-full max-w-xl px-4">
             <Copy delay={0.5}>
-              <h2 className="text-xs font-medium mb-2 tracking-wide text-muted">
+              <h2 className="mb-3 text-[10px] font-medium uppercase tracking-widest text-muted">
                 Built with
               </h2>
             </Copy>
+
             <Copy>
-              <p className="font-normal text-xs leading-normal">
-                The desktop app is made with Electron, React, Editor.js and
-                Zustand. The backend is made with FastAPI, Firebase and Nginx.
-                The Website is made with Astro.
+              <p className="text-sm leading-relaxed text-black/80 md:text-base">
+                The desktop application is built with Electron, React,
+                Editor.js, and Zustand.
+              </p>
+
+              <p className="mt-4 text-sm leading-relaxed text-black/80 md:text-base">
+                The backend uses FastAPI, Firebase, and Nginx, while the website
+                is built with Astro.
               </p>
             </Copy>
           </div>
-          <div className="md:w-1/3 w-2/3">
+
+          <div className="w-full max-w-xl px-4">
             <Copy delay={0.5}>
-              <h2 className="text-xs font-medium mb-2 tracking-wide text-muted">
+              <h2 className="mb-3 text-[10px] font-medium uppercase tracking-widest text-muted">
                 Features
               </h2>
             </Copy>
+
             <Copy>
-              <p className="font-normal text-xs leading-normal">
-                For a list of all the features, please visit the{" "}
+              <p className="text-sm leading-relaxed text-black/80 md:text-base">
+                For a complete list of features, visit the{" "}
                 <Link
                   href="https://github.com/BryanVanWinnendael/Noted"
                   target="_blank"
-                  className="underline bg-accent"
+                  rel="noopener noreferrer"
+                  className="bg-accent text-white underline underline-offset-2"
                 >
-                  github page
+                  GitHub repository
                 </Link>{" "}
-                or{" "}
+                or read the{" "}
                 <Link
                   href="https://write-noted.vercel.app/docs"
                   target="_blank"
-                  className="underline bg-accent"
+                  rel="noopener noreferrer"
+                  className="bg-accent text-white underline underline-offset-2"
                 >
                   Noted Docs
-                </Link>{" "}
+                </Link>
                 .
               </p>
             </Copy>
           </div>
-          <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 w-2/3 gap-2">
+
+          <div className="flex w-full justify-center px-4">
+            <div className="grid w-full max-w-4xl grid-cols-1 gap-2 md:grid-cols-2">
               <AnimatedMedia animationOnScroll={true}>
                 <Image
                   placeholder="blur"
                   loading="lazy"
                   src={NotedImage3}
-                  alt="noted image 3"
+                  alt="Noted application"
                 />
               </AnimatedMedia>
+
               <AnimatedMedia animationOnScroll={true}>
                 <Image
                   placeholder="blur"
                   loading="lazy"
                   src={NotedImage4}
-                  alt="noted image 4"
+                  alt="Noted application"
                 />
               </AnimatedMedia>
             </div>
           </div>
-          <div className="flex gap-4">
+
+          <div className="flex gap-5 pt-2">
             <Copy>
               <Link
-                target="_blank"
-                className="underline"
                 href="https://write-noted.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs underline underline-offset-4 transition-opacity hover:opacity-60"
               >
-                Download {">"}
-                {">"}
+                Download {">>"}
               </Link>
             </Copy>
+
             <Copy>
               <Link
-                target="_blank"
-                className="underline"
                 href="https://github.com/BryanVanWinnendael/Noted"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs underline underline-offset-4 transition-opacity hover:opacity-60"
               >
-                Source {">"}
-                {">"}
+                Source {">>"}
               </Link>
             </Copy>
           </div>
         </div>
       </div>
-      <div className="h-px bg-black w-full z-30 relative" />
+
+      <div className="relative z-30 h-px w-full bg-black" />
     </>
   )
 }

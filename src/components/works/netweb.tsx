@@ -4,6 +4,8 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Copy from "@/components/copy"
 import Image from "next/image"
+import Link from "next/link"
+import AnimatedMedia from "@/components/animatedMedia"
 
 import NetwebImage1 from "@/assets/images/imec/imec.webp"
 import NetwebImage2 from "@/assets/images/imec/imec2.webp"
@@ -11,122 +13,149 @@ import NetwebImage3 from "@/assets/images/imec/imec3.webp"
 import NetwebImage4 from "@/assets/images/imec/imec4.webp"
 import NetwebImage5 from "@/assets/images/imec/imec5.webp"
 
-import Link from "next/link"
-import AnimatedMedia from "@/components/animatedMedia"
-
 gsap.registerPlugin(ScrollTrigger)
+
+const features = [
+  "Host lookup",
+  "Port management",
+  "Guest account creation",
+  "Azure NICs viewer",
+  "ACI endpoints viewer",
+  "Switch manager",
+  "ISE lookup",
+  "SSL exceptions",
+]
 
 const Netweb = () => {
   return (
     <>
-      <div className="sm:pt-16 pt-10 pb-12">
+      <div className="pb-12 pt-10 sm:pt-16">
         <Copy delay={0.5}>
-          <h1 className="font-semibold uppercase leading-none text-center text-[20vw]">
+          <h1 className="text-center text-[20vw] font-semibold uppercase leading-none">
             NETWEB
           </h1>
         </Copy>
 
-        <div className="flex justify-center w-full -mt-6 md:-mt-16 relative z-10 overflow-hidden">
-          <AnimatedMedia delay={0.7} className="w-2/3 h-auto block">
+        <div className="relative z-10 -mt-6 flex w-full justify-center overflow-hidden md:-mt-16">
+          <AnimatedMedia delay={0.7} className="block h-auto w-2/3">
             <Image
               placeholder="blur"
               loading="lazy"
               src={NetwebImage1}
-              alt="harbor image 1"
+              alt="Netweb application"
             />
           </AnimatedMedia>
         </div>
-        <div className="flex justify-center py-8">
-          <div className="md:w-1/3 w-2/3">
+
+        <div className="flex justify-center px-4 py-10 md:py-12">
+          <div className="w-full max-w-xl">
             <Copy>
-              <p className="font-normal text-xs leading-normal">
-                Internship at{" "}
+              <p className="text-sm leading-relaxed text-black/80 md:text-base">
+                Internship project at{" "}
                 <Link
-                  target="_blank"
                   href="https://www.imec-int.com/en"
-                  className="underline bg-accent"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-accent text-white underline underline-offset-2"
                 >
                   IMEC
                 </Link>
-                , Developed a web application for network management, enabling
+                .
+              </p>
+
+              <p className="mt-4 text-sm leading-relaxed text-black/80 md:text-base">
+                Netweb is a web application for network management, enabling
                 host lookups, guest account creation, port management, and other
-                administrative tasks. The application streamlined network
-                operations and improved efficiency for IT staff.
+                administrative tasks.
+              </p>
+
+              <p className="mt-4 text-sm leading-relaxed text-black/80 md:text-base">
+                The application streamlined network operations and improved
+                efficiency for IT staff.
               </p>
             </Copy>
           </div>
         </div>
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 w-2/3 gap-2">
+
+        <div className="flex justify-center px-4">
+          <div className="grid w-full max-w-4xl grid-cols-1 gap-2 md:grid-cols-2">
             <AnimatedMedia animationOnScroll={true}>
               <Image
                 placeholder="blur"
                 loading="lazy"
                 src={NetwebImage2}
-                alt="harbor image 1"
+                alt="Netweb interface"
               />
             </AnimatedMedia>
+
             <AnimatedMedia animationOnScroll={true}>
               <Image
                 placeholder="blur"
                 loading="lazy"
                 src={NetwebImage3}
-                alt="harbor image 2"
+                alt="Netweb interface"
               />
             </AnimatedMedia>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-4 py-8">
-          <div className="md:w-1/3 w-2/3">
+
+        <div className="flex flex-col items-center gap-10 py-12 md:py-16">
+          <div className="w-full max-w-xl px-4">
             <Copy delay={0.5}>
-              <h2 className="text-xs font-medium mb-2 tracking-wide text-muted">
+              <h2 className="mb-3 text-[10px] font-medium uppercase tracking-widest text-muted">
                 Features
               </h2>
             </Copy>
+
             <Copy>
-              <p className="font-normal text-xs leading-normal">
-                - Host lookup - Port management - Guest account creation - Azure
-                NICs viewer - ACI endpoints viewer - Switch manager - ISE lookup
-                - SSL exceptions
-              </p>
+              <div className="grid grid-cols-1 gap-x-8 gap-y-1 text-sm leading-relaxed text-black/80 sm:grid-cols-2 md:text-base">
+                {features.map((feature) => (
+                  <p key={feature}>— {feature}</p>
+                ))}
+              </div>
             </Copy>
           </div>
-          <div className="md:w-1/3 w-2/3">
+
+          <div className="w-full max-w-xl px-4">
             <Copy delay={0.5}>
-              <h2 className="text-xs font-medium mb-2 tracking-wide text-muted">
+              <h2 className="mb-3 text-[10px] font-medium uppercase tracking-widest text-muted">
                 Built with
               </h2>
             </Copy>
+
             <Copy>
-              <p className="font-normal text-xs leading-normal">
+              <p className="text-sm leading-relaxed text-black/80 md:text-base">
                 Netweb is built with FastAPI, Next.js, Python, TypeScript,
-                Docker and Azure AD for authentication and data extraction.
+                Docker, and Azure AD for authentication and data extraction.
               </p>
             </Copy>
           </div>
-          <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 w-2/3 gap-2">
+
+          <div className="flex w-full justify-center px-4">
+            <div className="grid w-full max-w-4xl grid-cols-1 gap-2 md:grid-cols-2">
               <AnimatedMedia animationOnScroll={true}>
                 <Image
                   placeholder="blur"
                   loading="lazy"
                   src={NetwebImage4}
-                  alt="harbor image 3"
+                  alt="Netweb interface"
                 />
               </AnimatedMedia>
+
               <AnimatedMedia animationOnScroll={true}>
                 <Image
                   placeholder="blur"
                   loading="lazy"
                   src={NetwebImage5}
-                  alt="harbor image 4"
+                  alt="Netweb interface"
                 />
               </AnimatedMedia>
             </div>
           </div>
         </div>
       </div>
-      <div className="h-px bg-black w-full z-30 relative" />
+
+      <div className="relative z-30 h-px w-full bg-black" />
     </>
   )
 }

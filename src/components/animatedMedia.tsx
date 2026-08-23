@@ -45,13 +45,13 @@ const AnimatedMedia: React.FC<AnimatedMediaProps> = ({
               toggleActions: "play none none none",
               once: true,
             },
-          }
+          },
         )
       } else {
         gsap.fromTo(
           ref.current,
           { y: startY, opacity: 0 },
-          { y: 0, opacity: 1, duration, delay, ease: "power4.out" }
+          { y: 0, opacity: 1, duration, delay, ease: "power4.out" },
         )
       }
     }, ref)

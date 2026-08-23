@@ -18,7 +18,7 @@ const Footer = () => {
             <Link
               target="_blank"
               href="https://www.ypto.be/en/"
-              className="underline bg-accent"
+              className="underline bg-accent text-white"
             >
               YPTO
             </Link>

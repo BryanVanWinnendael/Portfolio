@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef, memo } from "react"
+import { memo, useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
@@ -90,7 +90,7 @@ const Work = ({
       result.push(
         <Copy key={`char-${i}`} delay={delay}>
           <span className="inline-block">{char}</span>
-        </Copy>
+        </Copy>,
       )
 
       if (mediaMap.has(i)) {
@@ -120,7 +120,7 @@ const Work = ({
                 />
               )}
               <span className="absolute right-0 top-0 h-full w-full bg-white z-10 transition-all duration-700 ease-in-out group-hover:w-0" />
-            </span>
+            </span>,
           )
         })
       }
@@ -131,7 +131,7 @@ const Work = ({
         <span className="inline-block text-xs align-top ml-1 text-black font-[grotesque]">
           {year}
         </span>
-      </Copy>
+      </Copy>,
     )
 
     return result
@@ -152,8 +152,8 @@ const Work = ({
         placement === "center"
           ? "text-center"
           : placement === "left"
-          ? "text-left"
-          : "text-right"
+            ? "text-left"
+            : "text-right"
       }`}
       style={{ fontWeight: boldness }}
     >

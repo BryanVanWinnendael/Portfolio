@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useRef, cloneElement, ReactNode, ReactElement } from "react"
+import React, { cloneElement, ReactElement, ReactNode, useRef } from "react"
 import gsap from "gsap"
 import { SplitText } from "gsap/SplitText"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -101,7 +101,7 @@ const Copy: React.FC<CopyProps> = ({
     {
       scope: containerRef,
       dependencies: [animationOnScroll, delay],
-    }
+    },
   )
 
   if (React.Children.count(children) === 1 && React.isValidElement(children)) {

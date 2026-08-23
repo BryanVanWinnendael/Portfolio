@@ -3,131 +3,173 @@
 import Copy from "@/components/copy"
 import Link from "next/link"
 
+const experiences = [
+  {
+    title: "JAVA DEVELOPER",
+    company: "YPTO",
+    href: "https://www.ypto.be/en/",
+    date: "JUNE 2025 — PRESENT",
+    description: [
+      "Java Developer for the Commercial Channels & Products team.",
+      "Developing backend systems using Java, Spring Boot, SQL, Maven, Git, JUnit, SonarQube, and Jenkins.",
+    ],
+  },
+  {
+    title: "INTERN SOFTWARE DEVELOPER",
+    company: "IMEC",
+    href: "https://www.imec-int.com/en",
+    date: "MARCH 2023 — JUNE 2023",
+    description: [
+      "Developed the backend infrastructure with FastAPI and Python.",
+      "Architected and implemented the frontend interface using Next.js.",
+      "Collaborated with team members to gather requirements, refine specifications, and iterate on features throughout the development lifecycle.",
+    ],
+  },
+]
+
+const works = [
+  {
+    name: "Netweb",
+    description: "web application for",
+    link: "Imec",
+    href: "https://www.imec-int.com/en",
+    suffix: "to manage network devices.",
+  },
+  {
+    name: "Noted",
+    description: "note taking app inspired by Notion and Obsidian.",
+  },
+  {
+    name: "Point Cloud Processor",
+    description: "desktop application for detecting planes in a point cloud.",
+  },
+]
+
+const Section = ({
+  title,
+  children,
+  className = "",
+}: {
+  title: string
+  children: React.ReactNode
+  className?: string
+}) => {
+  return (
+    <section className={className}>
+      <Copy delay={0.5}>
+        <h2 className="mb-4 tracking-wide text-muted">{title}</h2>
+      </Copy>
+
+      {children}
+    </section>
+  )
+}
+
 const About = () => {
   return (
-    <div className="bg-white text-black px-4 w-full flex items-center min-h-screen py-12">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 w-full text-xs leading-4">
-        <div className="md:col-span-3">
-          <Copy delay={0.5}>
-            <h2 className="mb-4 tracking-wide text-muted">BIO</h2>
-          </Copy>
+    <main className="min-h-screen w-full bg-white px-4 pt-16 pb-32 text-xs leading-4 text-black md:px-6 md:pt-24 md:pb-40">
+      <div className="mx-auto w-full max-w-400">
+        <header className="mb-14 md:mb-20">
           <Copy>
-            <p>
-              Bryan Van Winnendael, Software developer based in Winksele,
-              Belgium.
-            </p>
+            <h1 className="text-4xl tracking-tight md:text-7xl lg:text-8xl">
+              <span className="bg-accent text-white">BRYAN</span>
+              <br />
+              VAN WINNENDAEL
+            </h1>
           </Copy>
-        </div>
+        </header>
 
-        <div className="md:col-span-5">
-          <Copy delay={0.5}>
-            <h2 className="mb-4 tracking-wide text-muted">EXPERIENCE</h2>
-          </Copy>
-          <div className="flex flex-col gap-2">
+        <div className="grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-12 md:gap-y-16">
+          <Section title="BIO" className="md:col-span-3">
             <Copy>
-              <p>
-                (01) JAVA DEVELOPER,{" "}
-                <Link
-                  target="_blank"
-                  href="https://www.ypto.be/en/"
-                  className="underline bg-accent"
-                >
-                  YPTO
-                </Link>
-                <span className="pl-2 text-muted">June 2025 - Present</span>
+              <p className="max-w-xs">
+                Software developer based in Winksele, Belgium.
               </p>
-              <div className="pl-2 leading-relaxed font-medium">
+            </Copy>
+          </Section>
+
+          <Section title="EXPERIENCE" className="md:col-span-5">
+            <div className="space-y-8">
+              {experiences.map((experience) => (
+                <Copy key={experience.company}>
+                  <div>
+                    <p>
+                      {experience.title},{" "}
+                      <Link
+                        href={experience.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-accent text-white underline underline-offset-2"
+                      >
+                        {experience.company}
+                      </Link>
+                      <span className="ml-2 text-muted">{experience.date}</span>
+                    </p>
+
+                    <div className="mt-2 space-y-1 pl-4 leading-relaxed font-medium">
+                      {experience.description.map((item) => (
+                        <p key={item}>— {item}</p>
+                      ))}
+                    </div>
+                  </div>
+                </Copy>
+              ))}
+            </div>
+          </Section>
+
+          <Section title="SELECTED WORKS" className="md:col-span-4">
+            <Copy>
+              <div className="space-y-2">
+                {works.map((work, index) => (
+                  <p key={work.name}>
+                    <span className="text-muted">
+                      ({String(index + 1).padStart(2, "0")})
+                    </span>{" "}
+                    <span>{work.name}</span>, {work.description}{" "}
+                    {work.link && (
+                      <>
+                        <Link
+                          href={work.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-accent text-white underline underline-offset-2"
+                        >
+                          {work.link}
+                        </Link>{" "}
+                      </>
+                    )}
+                    {work.suffix}
+                  </p>
+                ))}
+              </div>
+            </Copy>
+          </Section>
+
+          <Section title="EDUCATION" className="md:col-span-4">
+            <Copy>
+              <div className="space-y-2">
                 <p>
-                  - Java Developer for the Commercial Channels & Products team.
+                  APPLIED COMPUTER SCIENCE,{" "}
+                  <Link
+                    href="https://www.ucll.be/en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-accent text-white underline underline-offset-2"
+                  >
+                    UCLL
+                  </Link>
                 </p>
+
                 <p>
-                  - Developing backend systems for train ticketing and subscription platforms using Java, Spring Boot, SQL, Maven, Git, JUnit, SonarQube, and Jenkins.
+                  Studied applied computer science for three years and graduated
+                  in 2023 <span className="text-muted">cum laude</span>.
                 </p>
               </div>
             </Copy>
-            <Copy>
-              <p>
-                (02) INTERN SOFTWARE DEVELOPER,{" "}
-                <Link
-                  target="_blank"
-                  href="https://www.imec-int.com/en"
-                  className="underline bg-accent"
-                >
-                  IMEC
-                </Link>
-                <span className="pl-2 text-muted">MARCH 2023 - JUNE 2023</span>
-              </p>
-              <div className="pl-2 leading-relaxed font-medium">
-                <p>
-                  - Developed the back-end infrastructure with FastAPI Python.
-                </p>
-                <p>
-                  - Architected and implemented the front-end interface using
-                  Next.js.
-                </p>
-                <p>
-                  - Collaborated closely with team members to gather
-                  requirements, refine design specifications, and iterate on
-                  features throughout the development lifecycle.
-                </p>
-              </div>
-            </Copy>
-          </div>
-        </div>
-
-        <div className="md:col-span-4">
-          <Copy delay={0.5}>
-            <h2 className="mb-4 tracking-wide text-muted">SELECTED WORKS</h2>
-          </Copy>
-          <div>
-            <Copy>
-              <p>
-                (01) <span>Netweb</span>, web application for{" "}
-                <Link
-                  target="_blank"
-                  className="underline bg-accent"
-                  href="https://www.imec-int.com/en"
-                >
-                  Imec
-                </Link>{" "}
-                to manage network devices.
-              </p>
-              <p className="pt-2">
-                (02) Noted, note taking app inspired by Notion and Obsidian.
-              </p>
-              <p className="pt-2">
-                (03) Point Cloud Processor, desktop application for detecting
-                planes in a point cloud.
-              </p>
-            </Copy>
-          </div>
-        </div>
-
-        <div className="md:col-span-4">
-          <Copy delay={0.5}>
-            <h2 className="mb-4 tracking-wide text-muted">EDUCATION</h2>
-          </Copy>
-          <div>
-            <Copy>
-              <p>
-                APPLIED COMPUTER SCIENCE,{" "}
-                <Link
-                  href="https://www.ucll.be/en"
-                  className="underline bg-accent"
-                  target="_blank"
-                >
-                  UCLL
-                </Link>
-              </p>
-              <p>
-                For three years I studied applied computer science at UCLL and
-                graduated in 2023 with a cum laude.
-              </p>
-            </Copy>
-          </div>
+          </Section>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
 

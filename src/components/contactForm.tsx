@@ -1,14 +1,14 @@
 "use client"
 
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useState } from "react"
 import { formSchema } from "@/lib/schema"
 
 const sendmail = async (values: z.infer<typeof formSchema>) => {
   try {
-    const data = await fetch("/api/sendmail", {
+    const response = await fetch("/api/sendmail", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -16,7 +16,7 @@ const sendmail = async (values: z.infer<typeof formSchema>) => {
       body: JSON.stringify(values),
     })
 
-    if (!data.ok) {
+    if (!response.ok) {
       throw new Error("Network error.")
     }
 
@@ -42,84 +42,96 @@ const ContactForm = () => {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setLoading(true)
     setStatusMessage("")
-    const res = await sendmail(values)
-    if (res) {
+
+    const success = await sendmail(values)
+
+    if (success) {
       form.reset()
       setStatusMessage(
-        "Message sent! I'll get back to you as soon as possible."
+        "Message sent! I'll get back to you as soon as possible.",
       )
     } else {
       setStatusMessage("Message failed to send. Please try again later.")
     }
+
     setLoading(false)
   }
 
-  const inputStyle = {
-    display: "block",
-    width: "100%",
-    marginBottom: "8px",
-    padding: "8px",
-    border: "1px solid white",
-    backgroundColor: "transparent",
-    color: "white",
-  }
-
   return (
-    <form className="w-full font-normal" onSubmit={form.handleSubmit(onSubmit)}>
+    <form
+      onSubmit={form.handleSubmit(onSubmit)}
+      className="w-full space-y-7 text-sm md:space-y-8"
+    >
       <div>
-        <label htmlFor="email" style={{ color: "white" }}>
+        <label
+          htmlFor="email"
+          className="mb-2 block text-[10px] uppercase tracking-widest text-white/60 md:text-xs"
+        >
           Email
         </label>
+
         <input
           id="email"
           type="email"
-          {...form.register("email")}
           placeholder="email@email.com"
-          style={inputStyle}
-          onChange={(e) => {
-            form.setValue("email", e.target.value)
-            setStatusMessage("")
-          }}
+          {...form.register("email", {
+            onChange: () => setStatusMessage(""),
+          })}
+          className="w-full border-b border-white/30 bg-transparent px-0 py-3 text-sm text-white outline-none transition-colors placeholder:text-white/30 focus:border-white md:text-base"
         />
+
         {form.formState.errors.email && (
-          <p style={{ color: "red" }}>{form.formState.errors.email.message}</p>
+          <p className="mt-2 text-xs text-red-400">
+            {form.formState.errors.email.message}
+          </p>
         )}
       </div>
 
       <div>
-        <label htmlFor="text" style={{ color: "white" }}>
+        <label
+          htmlFor="text"
+          className="mb-2 block text-[10px] uppercase tracking-widest text-white/60 md:text-xs"
+        >
           Message
         </label>
+
         <textarea
           id="text"
-          {...form.register("text")}
           placeholder="Type here..."
-          style={{ ...inputStyle, height: "200px" }}
-          onChange={(e) => {
-            form.setValue("text", e.target.value)
-            setStatusMessage("")
-          }}
+          {...form.register("text", {
+            onChange: () => setStatusMessage(""),
+          })}
+          className="min-h-35 w-full resize-none border-b border-white/30 bg-transparent px-0 py-3 text-sm text-white outline-none transition-colors placeholder:text-white/30 focus:border-white md:min-h-45 md:text-base"
         />
+
         {form.formState.errors.text && (
-          <p style={{ color: "red" }}>{form.formState.errors.text.message}</p>
+          <p className="mt-2 text-xs text-red-400">
+            {form.formState.errors.text.message}
+          </p>
         )}
       </div>
 
-      <div>
+      <div className="flex flex-col items-start gap-5 md:flex-row md:items-center md:justify-between">
         <button
-          className={`${loading ? "" : "cursor-pointer"}`}
           type="submit"
           disabled={loading}
+          className="w-full bg-accent px-5 py-3 text-xs text-white transition-opacity hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50 md:w-auto"
         >
-          {loading ? "Please wait..." : "Submit"}
+          {loading ? "SENDING..." : "SEND MESSAGE"}
         </button>
-      </div>
 
-      {statusMessage && (
-        <p style={{ marginTop: "12px", color: loading ? "gray" : "green" }}>
-          {statusMessage}
-        </p>
-      )}
+        {statusMessage && (
+          <p
+            className={`max-w-full text-xs leading-relaxed md:max-w-xs md:text-right ${
+              statusMessage.startsWith("Message sent")
+                ? "text-white/60"
+                : "text-red-400"
+            }`}
+          >
+            {statusMessage}
+          </p>
+        )}
+      </div>
     </form>
   )
 }

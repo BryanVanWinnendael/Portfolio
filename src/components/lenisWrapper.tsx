@@ -1,10 +1,10 @@
 "use client"
 
 import gsap from "gsap"
+import type { LenisRef } from "lenis/react"
 import { ReactLenis } from "lenis/react"
 import { ReactNode, useEffect, useRef } from "react"
-
-import type { LenisRef } from "lenis/react"
+import Scrollbar from "./scrollbar/scrollbar"
 
 const LenisWrapper = ({ children }: { children: ReactNode }) => {
   const lenisRef = useRef<LenisRef | null>(null)
@@ -25,6 +25,7 @@ const LenisWrapper = ({ children }: { children: ReactNode }) => {
     <>
       <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
       {children}
+      <Scrollbar />
     </>
   )
 }

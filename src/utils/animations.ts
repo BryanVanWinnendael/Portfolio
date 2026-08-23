@@ -19,7 +19,7 @@ export const animatePageIn = (id = "banner") => {
 export const animatePageOut = (
   href: string,
   router: AppRouterInstance,
-  id = "banner"
+  id = "banner",
 ) => {
   const banner = document.getElementById(id)
 

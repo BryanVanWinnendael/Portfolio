@@ -5,7 +5,7 @@ import Link from "next/link"
 
 const Contact = () => {
   return (
-    <div className="flex flex-col justify-center items-center text-white bg-[#000] min-h-screen">
+    <div className="flex flex-col justify-center items-center text-white bg-[#000] min-h-screen pt-16">
       <div className="flex flex-col items-center md:leading-24">
         <Copy delay={0.5}>
           <h1 className="md:text-[7vw] text-[9vw] font-[phemister] ">
@@ -42,9 +42,12 @@ const Contact = () => {
           </Link>
         </Copy>
       </div>
-      <div className="md:w-2/3 mt-8 w-full px-4">
+
+      <div className="w-full px-4 mt-12 md:mt-16 md:w-2/3 lg:w-1/2">
         <AnimatedMedia delay={1}>
-          <ContactForm />
+          <div className="pt-4 md:pt-6">
+            <ContactForm />
+          </div>
         </AnimatedMedia>
       </div>
     </div>

@@ -4,28 +4,37 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Copy from "@/components/copy"
 import Image from "next/image"
+import Link from "next/link"
+import AnimatedMedia from "@/components/animatedMedia"
 
 import DroneImage1 from "@/assets/images/drone/drone2.webp"
 import DroneImage2 from "@/assets/images/drone/drone3.webp"
 import DroneImage3 from "@/assets/images/drone/drone4.webp"
 
-import AnimatedMedia from "@/components/animatedMedia"
-import Link from "next/link"
-
 gsap.registerPlugin(ScrollTrigger)
+
+const process = [
+  "Load the point cloud.",
+  "Use RANSAC to detect planes.",
+  "Optionally cluster the detected points using DBSCAN or agglomerative clustering.",
+  "Save each detected plane as a .ply file.",
+  "Generate a color range for each plane and apply the colors to the complete point cloud.",
+  "Calculate the surface area of each plane.",
+  "Export information about each plane to a .csv file.",
+]
 
 const PointCloudProcessor = () => {
   return (
     <>
-      <div className="sm:pt-16 pt-10 pb-12">
+      <div className="pb-12 pt-10 sm:pt-16">
         <Copy>
-          <h1 className="font-semibold uppercase leading-none text-center text-[14vw] md:text-[12vw]">
+          <h1 className="text-center text-[14vw] font-semibold uppercase leading-none md:text-[12vw]">
             POINT CLOUD PROCESSOR
           </h1>
         </Copy>
 
-        <div className="flex justify-center w-full -mt-4 md:-mt-12 relative z-10 overflow-hidden">
-          <AnimatedMedia delay={0.7} className="w-2/3 h-auto block">
+        <div className="relative z-10 -mt-4 flex w-full justify-center overflow-hidden md:-mt-12">
+          <AnimatedMedia delay={0.7} className="block h-auto w-2/3">
             <video
               preload="metadata"
               src="/videos/drone.mp4"
@@ -36,123 +45,143 @@ const PointCloudProcessor = () => {
             />
           </AnimatedMedia>
         </div>
-        <div className="flex justify-center py-8">
-          <div className="md:w-1/3 w-2/3">
+
+        <div className="flex justify-center px-4 py-10 md:py-12">
+          <div className="w-full max-w-xl">
             <Copy>
-              <p className="font-normal text-xs leading-normal">
+              <p className="text-sm leading-relaxed text-black/80 md:text-base">
                 Point Cloud Processor is a desktop application for detecting
-                planes inside a point cloud, in order to get information about
-                all the planes in a point cloud.
+                planes inside a point cloud and extracting information about
+                each detected plane.
               </p>
             </Copy>
           </div>
         </div>
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 w-2/3 gap-2">
+
+        <div className="flex justify-center px-4">
+          <div className="grid w-full max-w-4xl grid-cols-1 gap-2 md:grid-cols-2">
             <AnimatedMedia animationOnScroll={true}>
               <Image
                 placeholder="blur"
                 loading="lazy"
                 src={DroneImage1}
-                alt="drone image 1"
+                alt="Point Cloud Processor interface"
               />
             </AnimatedMedia>
+
             <AnimatedMedia animationOnScroll={true}>
               <Image
                 placeholder="blur"
                 loading="lazy"
                 src={DroneImage2}
-                alt="drone image 2"
+                alt="Point Cloud Processor interface"
               />
             </AnimatedMedia>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-4 py-8">
-          <div className="md:w-1/3 w-2/3">
+
+        <div className="flex flex-col items-center gap-10 py-12 md:py-16">
+          <div className="w-full max-w-xl px-4">
             <Copy delay={0.5}>
-              <h2 className="text-xs font-medium mb-2 tracking-wide text-muted">
+              <h2 className="mb-3 text-[10px] font-medium uppercase tracking-widest text-muted">
                 Problem
               </h2>
             </Copy>
+
             <Copy>
-              <p className="font-normal text-xs leading-normal">
-                For my Graduation project my group and I had to make a project
-                that was about detecting planes inside a point cloud, in order
-                to get information about all the planes in a point cloud.
+              <p className="text-sm leading-relaxed text-black/80 md:text-base">
+                As part of my graduation project, my group and I developed a
+                solution for detecting planes inside point clouds and extracting
+                useful information from them.
               </p>
             </Copy>
           </div>
-          <div className="md:w-1/3 w-2/3">
+
+          <div className="w-full max-w-xl px-4">
             <Copy delay={0.5}>
-              <h2 className="text-xs font-medium mb-2 tracking-wide text-muted">
+              <h2 className="mb-3 text-[10px] font-medium uppercase tracking-widest text-muted">
                 Built with
               </h2>
             </Copy>
+
             <Copy>
-              <p className="font-normal text-xs leading-normal">
-                The application is seperated into 2 parts: - The desktop
-                application that was made in Pyton using the PyQt5 library. -
-                The model that will actually process the point cloud was made
-                with Python.
+              <p className="text-sm leading-relaxed text-black/80 md:text-base">
+                The application is split into two parts.
               </p>
+
+              <div className="mt-4 space-y-2 text-sm leading-relaxed text-black/80 md:text-base">
+                <p>
+                  — The desktop application was built with Python and PyQt5.
+                </p>
+
+                <p>
+                  — The point cloud processing model was developed in Python.
+                </p>
+              </div>
             </Copy>
           </div>
-          <div className="md:w-1/3 w-2/3">
+
+          <div className="w-full max-w-xl px-4">
             <Copy delay={0.5}>
-              <h2 className="text-xs font-medium mb-2 tracking-wide text-muted">
+              <h2 className="mb-3 text-[10px] font-medium uppercase tracking-widest text-muted">
                 Process
               </h2>
             </Copy>
+
             <Copy>
-              <p className="font-normal text-xs leading-normal">
-                - Load the point cloud. Use RANSAC to detect planes. - Possibly
-                cluster using a cluster strategy like DBSCAN or agglomerative
-                clustering, using no clustering is also possible. - Save each of
-                the planes as a .ply file. - Generate a color range for each
-                plane and save the entire point cloud with the colors. -
-                Calculate the surface area of each plane. - Write the info for
-                each plane to a .csv file.
-              </p>
+              <div className="space-y-2 text-sm leading-relaxed text-black/80 md:text-base">
+                {process.map((step, index) => (
+                  <p key={step}>
+                    <span className="mr-2 text-muted">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    {step}
+                  </p>
+                ))}
+              </div>
             </Copy>
           </div>
-          <div className="flex justify-center">
-            <div className="grid grid-cols-1 w-2/3 gap-2">
+
+          <div className="flex w-full justify-center px-4">
+            <div className="w-full max-w-4xl">
               <AnimatedMedia animationOnScroll={true}>
                 <Image
                   placeholder="blur"
                   loading="lazy"
                   src={DroneImage3}
-                  alt="drone image 3"
+                  alt="Point Cloud Processor visualization"
                 />
               </AnimatedMedia>
             </div>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-5 pt-2">
             <Copy>
               <Link
-                target="_blank"
-                className="underline"
                 href="https://github.com/BryanVanWinnendael/Drone_project/releases/tag/v1.0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs underline underline-offset-4 transition-opacity hover:opacity-60"
               >
-                Download {">"}
-                {">"}
+                Download {">>"}
               </Link>
             </Copy>
+
             <Copy>
               <Link
-                target="_blank"
-                className="underline"
                 href="https://github.com/BryanVanWinnendael/Drone_project"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs underline underline-offset-4 transition-opacity hover:opacity-60"
               >
-                Source {">"}
-                {">"}
+                Source {">>"}
               </Link>
             </Copy>
           </div>
         </div>
       </div>
-      <div className="h-px bg-black w-full z-30 relative" />
+
+      <div className="relative z-30 h-px w-full bg-black" />
     </>
   )
 }
