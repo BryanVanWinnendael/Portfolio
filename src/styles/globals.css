@@ -2,7 +2,7 @@
 
 :root {
   --size: 200;
-  --color-accent: #0014a8;
+  --color-accent: #0222f3;
 
   @media (min-width: 768px) {
     --size: 600;

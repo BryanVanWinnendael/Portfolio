@@ -51,7 +51,7 @@ export function useScrollbarSettings() {
 
     appearance: {
       dotColor: "#a6a6a6",
-      hoverColor: "#0014a8",
+      hoverColor: "#0222f3",
       strokeWidth: [4, 1, 12, 0.5],
     },
   })
