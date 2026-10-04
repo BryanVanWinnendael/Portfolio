@@ -9,7 +9,7 @@ const Footer = () => {
 
   return (
     <footer
-      className={`px-6 lg:px-8 pb-8 ${isContact && "bg-[#000] text-white"}`}
+      className={`px-6 lg:px-8 pb-8 ${isContact && "bg-accent text-white"}`}
     >
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end max-w-7xl mx-auto">
         <div className="mb-4 lg:mb-0">
@@ -28,7 +28,7 @@ const Footer = () => {
           <p className="text-sm font-medium mb-1">BRYAN VAN WINNENDAEL</p>
           <div
             className={`flex gap-4 text-xs ${
-              isContact ? "text-neutral-700" : "text-muted"
+              isContact ? "text-neutral-500" : "text-muted"
             }`}
           >
             <Link

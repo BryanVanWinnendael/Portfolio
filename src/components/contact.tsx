@@ -5,11 +5,11 @@ import Link from "next/link"
 
 const Contact = () => {
   return (
-    <div className="flex flex-col justify-center items-center text-white bg-[#000] min-h-screen pt-16">
+    <div className="flex flex-col justify-center items-center text-white bg-accent min-h-screen pt-16">
       <div className="flex flex-col items-center md:leading-24">
         <Copy delay={0.5}>
           <h1 className="md:text-[7vw] text-[9vw] font-[phemister] ">
-            WANT TO <span className="bg-accent">CONNECT?</span>
+            WANT TO CONNECT?
           </h1>
         </Copy>
         <Copy delay={0.7}>

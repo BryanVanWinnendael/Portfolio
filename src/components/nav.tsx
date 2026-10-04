@@ -55,7 +55,7 @@ const Nav = () => {
                 ref={(el) => {
                   underlineRefs.current[index] = el!
                 }}
-                className="absolute bottom-0 left-0 w-full h-[0.5px] bg-black origin-left scale-x-100"
+                className={`absolute bottom-0 left-0 w-full h-[0.5px] ${isContact ? "bg-white" : "bg-black"} origin-left scale-x-100`}
               />
             </li>
             {index < links.length - 1 && <p className="font-semibold">/</p>}

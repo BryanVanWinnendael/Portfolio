@@ -55,7 +55,7 @@ h1 {
   width: 100vw;
   height: 100svh;
   transform-origin: center top;
-  background-color: var(--color-black);
+  background-color: var(--color-accent);
   pointer-events: none;
   z-index: 2;
 }

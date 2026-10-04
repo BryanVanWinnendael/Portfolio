@@ -13,7 +13,7 @@ const Template = ({ children }: { children: ReactNode }) => {
     <div className="pb-40 pt-12 min-h-screen">
       <div
         id="banner-works"
-        className="min-h-screen bg-[#000] z-50 fixed top-0 left-0 w-screen"
+        className="min-h-screen bg-accent z-50 fixed top-0 left-0 w-screen"
       />
       {children}
       <div className="flex flex-col ">
