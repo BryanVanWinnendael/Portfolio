@@ -1,0 +1,48 @@
+---
+import ProjectPage from '../../components/ProjectPage.astro';
+import { getProjectImages } from '../../data/projectImages';
+---
+
+<ProjectPage
+  title="Harbor"
+  description="A web app for managing Docker containers on your server."
+  icon="/icons/harbor.png"
+  images={getProjectImages('harbor')}
+  sections={[
+    {
+      title: 'What it is',
+      items: [
+        { text: 'A web app for managing Docker containers on your server — focused on operators, not app developers.' },
+      ],
+    },
+    {
+      title: 'Features',
+      items: [
+        { text: 'Create, start, stop and delete containers.' },
+        { text: 'Execute commands inside a container.' },
+        { text: 'Manage images and pull new ones.' },
+        { text: 'Create MySQL databases from the dashboard.' },
+        { text: 'Monitor container and image resources with analytics.' },
+        { text: 'Prune your Docker environment from the UI.' },
+      ],
+    },
+    {
+      title: 'Built with',
+      items: [
+        { text: 'Go, Air, SQLite, Tailwind CSS and HTMX' },
+      ],
+    },
+    {
+      title: 'Use',
+      items: [
+        { text: 'Follow the README for requirements and the docker-compose instructions to run the app locally.' },
+      ],
+    },
+    {
+      title: 'Source',
+      items: [
+        { text: 'Harbor (GitHub)', href: 'https://github.com/BryanVanWinnendael/Harbor' },
+      ],
+    },
+  ]}
+/>

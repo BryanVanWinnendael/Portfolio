@@ -1,0 +1,384 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site, experience, projectGroups, education } from '../data/site';
+
+const socials = [
+  {
+    label: 'GitHub',
+    href: site.socials.github,
+    path: 'M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12',
+  },
+  {
+    label: 'LinkedIn',
+    href: site.socials.linkedin,
+    path: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.85 1.637-1.71 3.37-1.71 3.601 0 4.267 2.37 4.267 4.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z',
+  },
+  {
+    label: 'CV',
+    title: 'View CV (opens in a new tab)',
+    href: site.cv,
+    stroke: true,
+    path: 'M7 3h7l4 4v14H7zM14 3v4h4M10 12h5M10 16h5',
+  },
+];
+
+const [firstName, ...restName] = site.name.split(' ');
+const skillIcons = Object.fromEntries(site.skills.map((skill) => [skill.name, skill.icon]));
+
+const nav = [
+  { label: 'Experience', href: '#experience' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Education', href: '#education' },
+  { label: 'Contact', href: '#contact' },
+];
+---
+
+<Layout
+  title={`${site.name} — ${site.role}`}
+  description={`${site.name}, ${site.role} in ${site.location}. Experience, projects, education and contact.`}
+>
+  <header class="topbar">
+    <p class="now-line">
+      <span>{site.country}</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <span class="now-time">--:--</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <span class="now-weather">--</span>
+    </p>
+    <nav aria-label="Sections">
+      {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+  </header>
+
+  <main id="main" class="page" tabindex="-1">
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="name-row">
+        <h1 id="intro-title" class="name">
+          <span class="name-mark">{firstName}</span> {restName.join(' ')}
+        </h1>
+        <ul class="socials">
+          {socials.map((social) => (
+            <li>
+              <a
+                class="social"
+                href={social.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={social.title ?? social.label}
+                title={social.title ?? social.label}
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  focusable="false"
+                  style={social.stroke ? 'fill:none;stroke:currentColor' : undefined}
+                  stroke-width={social.stroke ? '1.6' : undefined}
+                  stroke-linecap={social.stroke ? 'round' : undefined}
+                  stroke-linejoin={social.stroke ? 'round' : undefined}
+                >
+                  <path d={social.path}></path>
+                </svg>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <p class="tagline">
+        {site.tagline}
+        <a
+          class="company-link"
+          href={site.company.url}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`${site.company.name} website (opens in a new tab)`}
+        >{site.company.name}</a>
+      </p>
+      <div class="intro-copy">
+        <p>
+          {site.intro}
+          <a
+            class="company-link"
+            href={site.company.url}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`${site.company.name} website (opens in a new tab)`}
+          >{site.company.name}</a>
+        </p>
+        <p>
+          Say hello at <a href={`mailto:${site.email}`}>{site.email}</a>.
+        </p>
+      </div>
+    </section>
+
+    <section id="experience" class="section" aria-labelledby="experience-title">
+      <h2 id="experience-title" class="rule-label">Experience</h2>
+      <ol class="journey">
+        {experience.map((job) => (
+          <li class="chapter" data-current={job.current ? 'true' : undefined}>
+            <span class="chapter-node" aria-hidden="true"></span>
+            <span class="chapter-period">{job.period}</span>
+            <div class="chapter-heading">
+              <a
+                class="chapter-logo-link"
+                href={job.url}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Visit ${job.company} website (opens in a new tab)`}
+              >
+                <img class="chapter-logo" src={job.logo} alt="" width="32" height="32" />
+              </a>
+              <div>
+                <h3 class="chapter-title">{job.title}</h3>
+                <p class="chapter-role">
+                  <a
+                    class="company-link"
+                    href={job.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Visit ${job.company} website (opens in a new tab)`}
+                  >{job.company}</a>
+                </p>
+              </div>
+            </div>
+            <ul class="points">
+              {job.points.map((point) => (
+                <li><span class="point-dash" aria-hidden="true">&mdash;</span>{point}</li>
+              ))}
+            </ul>
+            <ul class="chips">
+              {job.stack.map((item) => (
+                <li class="chip">
+                  <img src={skillIcons[item]} alt="" width="16" height="16" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <h2 id="projects-title" class="rule-label">Projects</h2>
+      {projectGroups.map((group) => (
+        <div class="catalog-group">
+          <h3 class="catalog-label">{group.label}</h3>
+          <ul class="catalog-list">
+            {group.projects.map((project) => {
+              const slug = project.href.split('/').filter(Boolean).pop();
+              return (
+                <li>
+                  <a class="catalog-row" href={project.href}>
+                    <img
+                      class="tile"
+                      src={project.icon}
+                      alt=""
+                      width="22"
+                      height="22"
+                      transition:name={`project-icon-${slug}`}
+                    />
+                    <span>
+                      <span class="catalog-name" transition:name={`project-title-${slug}`}>
+                        {project.name}
+                      </span>
+                      <span class="catalog-note">{project.note}</span>
+                    </span>
+                    <svg
+                      class="out-arrow"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M2 6h8M6.5 2.5 10 6l-3.5 3.5"></path>
+                    </svg>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ))}
+    </section>
+
+    <section id="education" class="section" aria-labelledby="education-title">
+      <h2 id="education-title" class="rule-label">Education</h2>
+      <ol class="journey">
+        {education.map((item) => (
+          <li class="chapter">
+            <span class="chapter-node" aria-hidden="true"></span>
+            <div class="chapter-heading">
+              <a
+                class="chapter-logo-link"
+                href={item.url}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Visit ${item.company} website (opens in a new tab)`}
+              >
+                <img class="chapter-logo" src={item.logo} alt="" width="32" height="32" />
+              </a>
+              <div>
+                <h3 class="chapter-title">{item.title}</h3>
+                <p class="chapter-role">
+                  <a
+                    class="company-link"
+                    href={item.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Visit ${item.company} website (opens in a new tab)`}
+                  >{item.company}</a>
+                </p>
+              </div>
+            </div>
+            <p class="chapter-story">{item.story}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="rule-label">Contact</h2>
+      <p class="contact-lede">Have a project in mind, or just want to say hi? Send a note.</p>
+      <form class="contact-form" id="contact-form">
+        <div class="field-row">
+          <label class="field">
+            <span>Name</span>
+            <input type="text" name="name" autocomplete="name" placeholder="Your name" required />
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input
+              type="email"
+              name="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              required
+            />
+          </label>
+        </div>
+        <label class="field">
+          <span>Message</span>
+          <textarea name="message" rows="5" placeholder="What are you working on?" required></textarea>
+        </label>
+        <div class="form-foot">
+          <button class="btn" type="submit">Send message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+      <p class="contact-alt">
+        Prefer email? <a href={`mailto:${site.email}`}>{site.email}</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="colophon">
+    <p class="fineprint">
+      <span>© {new Date().getFullYear()} {site.name}</span>
+      <span aria-hidden="true">·</span>
+      <span>{site.location}</span>
+      <span aria-hidden="true">·</span>
+      <span>Built with <a href="https://astro.build" target="_blank" rel="noreferrer">Astro</a></span>
+      <span aria-hidden="true">·</span>
+      <a href="#main">Back to top</a>
+    </p>
+  </footer>
+</Layout>
+
+<script>
+  let clockTimer: number | undefined;
+
+  document.addEventListener('astro:before-swap', () => clearInterval(clockTimer));
+
+  document.addEventListener('astro:page-load', () => {
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    const status = document.getElementById('form-status');
+
+    const submitButton = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
+
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const data = new FormData(form);
+      const name = String(data.get('name') ?? '').trim();
+      const email = String(data.get('email') ?? '').trim();
+      const message = String(data.get('message') ?? '').trim();
+      const text = `${message}\n\n— ${name} (${email})`;
+
+      if (submitButton) submitButton.disabled = true;
+      if (status) {
+        status.textContent = 'Sending…';
+        status.removeAttribute('data-tone');
+      }
+
+      try {
+        const response = await fetch('/api/sendmail', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, text }),
+        });
+
+        if (!response.ok) throw new Error(await response.text());
+
+        if (status) {
+          status.textContent = 'Message sent — thank you!';
+          status.dataset.tone = 'success';
+        }
+        form.reset();
+      } catch (error) {
+        console.error(error);
+        if (status) {
+          status.textContent = 'Could not send your message. Please email me directly.';
+          status.dataset.tone = 'error';
+        }
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+      }
+    });
+
+    const timeEl = document.querySelector<HTMLElement>('.now-time');
+    const weatherEl = document.querySelector<HTMLElement>('.now-weather');
+    if (!timeEl) return;
+
+    const updateTime = () => {
+      timeEl.textContent = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Europe/Brussels',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false,
+      }).format(new Date());
+    };
+    updateTime();
+    clearInterval(clockTimer);
+    clockTimer = setInterval(updateTime, 30_000);
+
+    const weatherLabel = (code: number): string => {
+      if (code === 0) return 'clear sky';
+      if (code <= 2) return 'partly cloudy';
+      if (code === 3) return 'overcast';
+      if (code <= 48) return 'fog';
+      if (code <= 57) return 'drizzle';
+      if (code <= 67) return 'rain';
+      if (code <= 77) return 'snow';
+      if (code <= 82) return 'showers';
+      return 'thunderstorm';
+    };
+
+    fetch(
+      'https://api.open-meteo.com/v1/forecast?latitude=50.8798&longitude=4.7005&current=temperature_2m,weather_code&timezone=Europe/Brussels',
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        if (!weatherEl || !data.current) return;
+        const temp = Math.round(data.current.temperature_2m);
+        weatherEl.textContent = `${temp}°C, ${weatherLabel(data.current.weather_code)}`;
+      })
+      .catch(() => {
+        if (weatherEl) weatherEl.textContent = '--';
+      });
+  });
+</script>

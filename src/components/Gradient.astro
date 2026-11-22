@@ -1,0 +1,14 @@
+---
+import { DitherGradient } from './dithercn/dither-gradient';
+---
+
+<DitherGradient
+  className="gradient"
+  cell={1}
+  matrix="blue-noise"
+  from={0}
+  to={1}
+  noise={0.3}
+  palette={['transparent', '#6d84ff']}
+  client:load
+/>

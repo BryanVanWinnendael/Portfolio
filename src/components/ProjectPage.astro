@@ -1,0 +1,145 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import Layout from '../layouts/Layout.astro';
+
+interface Item {
+  text: string;
+  href?: string;
+}
+
+interface Section {
+  title: string;
+  items: Item[];
+}
+
+interface ProjectImage {
+  src: ImageMetadata;
+  alt: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  icon: string;
+  sections: Section[];
+  images?: ProjectImage[];
+}
+
+const { title, description, icon, sections, images = [] } = Astro.props;
+const sectionId = (name: string) => name.toLowerCase().replace(/\s+/g, '-');
+const slug = Astro.url.pathname.split('/').filter(Boolean).pop();
+const widthsFor = (width: number) => [...[560, 1120].filter((candidate) => candidate < width), width];
+---
+
+<Layout title={`${title} — Bryan Van Winnendael`} description={description}>
+  <div class="project-page">
+    <a class="project-back" href="/" data-back-to-projects>&larr; All projects</a>
+
+    <header class="project-brand">
+      <img
+        class="project-icon"
+        src={icon}
+        alt=""
+        width="44"
+        height="44"
+        decoding="async"
+        transition:name={`project-icon-${slug}`}
+      />
+      <h1 class="project-title" transition:name={`project-title-${slug}`}>{title}</h1>
+    </header>
+
+    <main id="main" class="project-content" tabindex="-1">
+      {images.length > 0 && (
+        <section class="project-gallery" aria-label={`${title} screenshots`}>
+          {images.map((image, index) => (
+            <figure
+              class:list={[
+                'project-shot',
+                { 'project-shot--portrait': image.src.height > image.src.width },
+              ]}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                widths={widthsFor(image.src.width)}
+                sizes="(max-width: 600px) calc(100vw - 40px), 560px"
+                loading={index === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
+            </figure>
+          ))}
+        </section>
+      )}
+
+      {sections.map((section) => (
+        <section class="project-section">
+          <h2 id={sectionId(section.title)} class="rule-label">
+            {section.title}
+          </h2>
+          <ul class="project-list">
+            {section.items.map((item) => (
+              <li class="project-item">
+                <span class="point-dash" aria-hidden="true">&mdash;</span>
+                {item.href ? (
+                  <a href={item.href} target="_blank" rel="noreferrer">{item.text}</a>
+                ) : (
+                  <span>{item.text}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </main>
+
+    <footer class="colophon">
+      <p class="fineprint">
+        <span>© {new Date().getFullYear()} Bryan Van Winnendael</span>
+        <span>·</span>
+        <span><a href="/" data-back-to-projects>Back to all projects</a></span>
+      </p>
+    </footer>
+  </div>
+</Layout>
+
+<script>
+  type HistoryState = { index?: number } | null;
+
+  const bindBackLinks = () => {
+    document.querySelectorAll<HTMLAnchorElement>('[data-back-to-projects]').forEach((link) => {
+      if (link.dataset.backBound === 'true') return;
+      link.dataset.backBound = 'true';
+
+      link.addEventListener('click', (event) => {
+        const state = history.state as HistoryState;
+        if ((state?.index ?? 0) > 0) {
+          event.preventDefault();
+          history.back();
+        }
+      });
+    });
+  };
+
+  const globalScope = window as Window & { __projectBackLinksBound?: boolean };
+  if (!globalScope.__projectBackLinksBound) {
+    globalScope.__projectBackLinksBound = true;
+    document.addEventListener('astro:page-load', bindBackLinks);
+  }
+  bindBackLinks();
+</script>
+
+<style>
+  @media (hover: hover) and (pointer: fine) {
+    .project-back:hover,
+    .project-item a:hover {
+      color: var(--ink);
+      border-color: var(--accent-2);
+    }
+  }
+
+  .project-back:active,
+  .project-item a:active {
+    color: var(--ink);
+  }
+</style>

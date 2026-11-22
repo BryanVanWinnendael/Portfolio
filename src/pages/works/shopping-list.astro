@@ -1,0 +1,45 @@
+---
+import ProjectPage from '../../components/ProjectPage.astro';
+import { getProjectImages } from '../../data/projectImages';
+---
+
+<ProjectPage
+  title="Shopping List"
+  description="Mobile app for managing shared shopping lists and recipes."
+  icon="/icons/shopping-list.png"
+  images={getProjectImages('shopping-list')}
+  sections={[
+    {
+      title: 'What it is',
+      items: [
+        { text: 'A private, family-focused shopping and recipe app — built for small groups to sync lists in real time.' },
+      ],
+    },
+    {
+      title: 'Features',
+      items: [
+        { text: 'Shared shopping lists that update live for everyone in the group.' },
+        { text: 'Recipe manager with favorites and searching for specific products.' },
+        { text: 'Automatic product categorisation using a prediction model.' },
+        { text: 'Weekly products that get added automatically every two months.' },
+        { text: 'Live notifications when items are added, removed, or updated.' },
+        { text: 'Customisation: dark mode, liquid glass, and per-project accent colours.' },
+        { text: 'Admin tools and activity logs for list management.' },
+      ],
+    },
+    {
+      title: 'Built with',
+      items: [
+        { text: 'Expo + React Native for the mobile app' },
+        { text: 'Zustand for local state and Firebase Realtime Database for sync' },
+        { text: 'Go microservices, bbolt, Nginx, Docker and GitHub Actions for CI/CD' },
+      ],
+    },
+    {
+      title: 'Source',
+      items: [
+        { text: 'Shopping-List (GitHub)', href: 'https://github.com/BryanVanWinnendael/Shopping-List' },
+      ],
+    },
+  ]}
+/>

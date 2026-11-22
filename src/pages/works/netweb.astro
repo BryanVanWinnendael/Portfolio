@@ -1,0 +1,45 @@
+---
+import ProjectPage from '../../components/ProjectPage.astro';
+import { getProjectImages } from '../../data/projectImages';
+---
+
+<ProjectPage
+  title="Netweb"
+  description="A web app for network management, enabling host lookups, guest accounts, and administrative tasks."
+  icon="/icons/netweb.png"
+  images={getProjectImages('netweb')}
+  sections={[
+    {
+      title: 'What it is',
+      items: [
+        { text: 'A web application for network management — built during a internship at IMEC — that automates routine IT tasks for employees.' },
+      ],
+    },
+    {
+      title: 'Features',
+      items: [
+        { text: 'Host lookup to resolve MAC addresses, IP addresses and owner information.' },
+        { text: 'Port management across all your switches in one place.' },
+        { text: 'Guest account creation and lifecycle management.' },
+        { text: 'Azure NICs viewer with filtered views across tenants.' },
+        { text: 'ACI endpoints viewer for Azure Container Instances.' },
+        { text: 'Switch manager to configure and diagnose network switches.' },
+        { text: 'ISE lookup and SSL exceptions for certificate diagnostics.' },
+        { text: 'Microsoft Azure AD authentication for secure internal access.' },
+      ],
+    },
+    {
+      title: 'Built with',
+      items: [
+        { text: 'FastAPI, Next.js, Python, TypeScript and Docker.' },
+        { text: 'Microsoft Azure AD for authentication.' },
+      ],
+    },
+    {
+      title: 'Internship',
+      items: [
+        { text: 'Q1 2023 — Q3 2023 at IMEC — a real-world network tool used internally.' },
+      ],
+    },
+  ]}
+/>

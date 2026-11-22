@@ -1,0 +1,43 @@
+---
+import ProjectPage from '../../components/ProjectPage.astro';
+import { getProjectImages } from '../../data/projectImages';
+---
+
+<ProjectPage
+  title="Point Cloud Processor"
+  description="A desktop application for detecting planes inside point clouds."
+  icon="/icons/point-cloud.png"
+  images={getProjectImages('point-cloud-processor')}
+  sections={[
+    {
+      title: 'What it is',
+      items: [
+        { text: 'A desktop application that detects planes inside point clouds and exports per-plane information — built as a graduation project with 3 collleagues.' },
+      ],
+    },
+    {
+      title: 'Features',
+      items: [
+        { text: 'Load .ply files, zipped exports or folders of previous exports.' },
+        { text: 'Automatic plane detection with RANSAC on the Open3D backend.' },
+        { text: 'Optional clustering using DBSCAN or agglomerative clustering.' },
+        { text: '3D visualisation of the original and segmented point clouds.' },
+        { text: 'Surface area, class assignments and estimated segmentation accuracy.' },
+        { text: 'Merge, delete and recolour individual segments.' },
+        { text: 'Export ZIPs containing the planes and a CSV with surface areas.' },
+      ],
+    },
+    {
+      title: 'Built with',
+      items: [
+        { text: 'Python + PyQt5 front-end, Python + Open3D/Scikit-Learn model, pluggable clustering strategies.' },
+      ],
+    },
+    {
+      title: 'Source',
+      items: [
+        { text: 'Drone_project — GitHub Releases', href: 'https://github.com/BryanVanWinnendael/Drone_project/releases/latest' },
+      ],
+    },
+  ]}
+/>

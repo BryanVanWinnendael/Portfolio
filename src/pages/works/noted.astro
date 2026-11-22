@@ -1,0 +1,43 @@
+---
+import ProjectPage from '../../components/ProjectPage.astro';
+import { getProjectImages } from '../../data/projectImages';
+---
+
+<ProjectPage
+  title="Noted"
+  description="Note taking app inspired by Notion, Obsidian and Arc."
+  icon="/icons/noted.png"
+  images={getProjectImages('noted')}
+  sections={[
+    {
+      title: 'What it is',
+      items: [
+        { text: 'A desktop note-taking app that blends structured blocks with free-form editing, inspired by Notion, Obsidian and Arc.' },
+      ],
+    },
+    {
+      title: 'Features',
+      items: [
+        { text: 'Block-based editing — paragraphs, headings, lists, quotes, tables and code blocks.' },
+        { text: 'Extensive customisation: themes, typography, appearance and shareable notebooks.' },
+        { text: 'Glass UI inspired by liquid glass with translucent layers.' },
+        { text: 'Widgets, fonts and shortcut toggles for power users.' },
+        { text: 'Backend: FastAPI, Firebase and Nginx; website: Astro.' },
+        { text: 'Open-source components — see the GitHub repo and Noted Docs for the full changelog.' },
+      ],
+    },
+    {
+      title: 'Built with',
+      items: [
+        { text: 'Electron, React, Editor.js and Zustand' },
+      ],
+    },
+    {
+      title: 'Get',
+      items: [
+        { text: 'Download Noted', href: 'https://write-noted.vercel.app/' },
+        { text: 'Read the Noted Docs', href: 'https://write-noted.vercel.app/docs' },
+      ],
+    },
+  ]}
+/>
