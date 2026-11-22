@@ -2,7 +2,7 @@
 export const site = {
   name: 'Bryan Van Winnendael',
   role: 'software developer',
-  location: 'Winksele, Belgium',
+  location: 'Belgium',
   country: 'Belgium',
   company: {
     name: 'Ypto',

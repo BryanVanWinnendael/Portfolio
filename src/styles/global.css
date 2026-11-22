@@ -752,11 +752,44 @@ textarea {
   text-wrap: pretty;
 }
 
-.project-item a {
-  color: inherit;
+.project-item--link {
+  align-items: center;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
   text-decoration: none;
-  border-bottom: 1px solid var(--line);
-  transition: color 150ms ease, border-color 150ms ease;
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    transform 100ms ease;
+}
+
+.project-link-icon {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+
+.project-link-icon--github {
+  fill: currentColor;
+}
+
+.project-link-icon--globe {
+  fill: none;
+}
+
+.project-link:active {
+  transform: translateY(1px);
 }
 
 .colophon {
